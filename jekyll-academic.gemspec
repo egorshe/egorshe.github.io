@@ -2,8 +2,8 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-academic"
-  spec.version       = "1.1.0"
-  spec.authors       = ["Mike Liang"]
+  spec.version       = "1.2.0"
+  spec.authors       = ["Mike Liang (modified by egorshe)"]
   spec.email         = ["liang.mike.to@gmail.com"]
 
   spec.summary       = "A simple beautiful theme for any academic usecase."

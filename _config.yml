@@ -47,6 +47,7 @@ plugins:
   - jekyll-feed
   - jekyll-toc
   - jekyll-glossary_tooltip
+  - jekyll-target-blank
 
 toc:
   min_level: 1
