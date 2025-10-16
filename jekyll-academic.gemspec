@@ -18,5 +18,4 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-sitemap"
 
   spec.add_development_dependency "jekyll", "~> 4.2"
-  spec.add_development_dependency "bundler", "~> 2.2.16"
 end
