@@ -35,15 +35,16 @@ layout: default
     </div>
     <h2 style="color: #cc0000">Posts</h2>
     <ul>
-        {% for post in site.posts %}
+        {% for post in site.posts %} {% if post.draft != true %}
         <li>
             <a style="color: black" href="{{ site.baseurl }}{{ post.url }}"
                 >{{ post.title }}</a
-            ><time datetime="{{ post.date | date_to_xmlschema }}"
+            >
+            <time datetime="{{ post.date | date_to_xmlschema }}"
                 >{{ post.date | date: "%m-%d-%Y" }}</time
             >
         </li>
-        {% endfor %}
+        {% endif %} {% endfor %}
     </ul>
     <h2 style="color: #cc0000">Tags</h2>
     {% assign tags = site.tags | sort %}
