@@ -1,7 +1,7 @@
 ---
+date: 2025-10-16T18:15:06
 layout: post
 title: This is Draft
-draft: true
 ---
 
 This is a draft post.
