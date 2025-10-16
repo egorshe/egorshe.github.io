@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Baltic Cinemas Research Resources"
-stack: "Put your stack or a short snippet here"
+stack: "Primary sources and digital archives"
 pinned: true
 order: 1
 ---

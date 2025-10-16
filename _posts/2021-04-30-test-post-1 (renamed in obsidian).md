@@ -1,7 +1,9 @@
 ---
 layout: post
 usehighlight: true
-tags: [First post, Test]
+tags:
+  - First post
+  - Test
 title: First post with code snippets
 ---
 
