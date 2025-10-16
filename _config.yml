@@ -41,6 +41,9 @@ collections:
     output: true
     permalink: /:collection/:title/
 
+include:
+  - _pages
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
