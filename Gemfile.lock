@@ -96,7 +96,7 @@ PLATFORMS
   x86_64-darwin-22
 
 DEPENDENCIES
-  bundler (~> 2.2.16)
+  bundler (~> 2.7.2)
   jekyll (~> 4.2)
   jekyll-academic!
   jekyll-feed
