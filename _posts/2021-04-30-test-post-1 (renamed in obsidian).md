@@ -9,7 +9,8 @@ title: First post with code snippets
 
 This post was posted on May 1<sup>st</sup> 2021. 
 
-Want to add code snippets? 
+Want to add code snippets? [[Baltic Cinemas Research Resources]]
+and also [[2021-05-01-test-post-2]]
 
 ```c++
 #include <iostream>
