@@ -1,5 +1,5 @@
 ---
-date: 2025-10-16T18:14:53
+date: 2025-10-16
 layout: post
 tags:
   - tag one
