@@ -6,8 +6,9 @@
 
 class BidirectionalLinksGenerator < Jekyll::Generator
   def generate(site)
-    graph_nodes = []
-    graph_edges = []
+    # --- GRAPH CODE REMOVED ---
+    # graph_nodes = []
+    # graph_edges = []
 
     # Collect all docs we want to include
     posts    = site.collections['posts']&.docs || []
@@ -55,43 +56,47 @@ class BidirectionalLinksGenerator < Jekyll::Generator
         <<~HTML.delete("\n")
           <span title='There is no document that matches this link.' class='invalid-link'>
             <span class='invalid-link-brackets'>[[</span>
-            \\1
+            \1
             <span class='invalid-link-brackets'>]]</span>
           </span>
         HTML
       )
     end
 
-    # --- Backlinks + Graph Generation ---
+    # ----------------------------------------------------
+    # --- Backlinks Generation (Keep this section) ---
+    # ----------------------------------------------------
     all_docs.each do |current_doc|
       docs_linking_to_current = all_docs.select do |doc|
         doc.url != current_doc.url && doc.content.include?(current_doc.url)
       end
 
+      # --- GRAPH CODE REMOVED ---
       # Graph node
-      graph_nodes << {
-        id: doc_id(current_doc),
-        path: "#{site.baseurl}#{current_doc.url}#{link_extension}",
-        label: current_doc.data['title']
-      }
+      # graph_nodes << {
+      #   id: doc_id(current_doc),
+      #   path: "#{site.baseurl}#{current_doc.url}#{link_extension}",
+      #   label: current_doc.data['title']
+      # }
 
-      # Add backlinks
+      # Add backlinks (KEEP THIS!)
       current_doc.data['backlinks'] = docs_linking_to_current
 
+      # --- GRAPH CODE REMOVED ---
       # Graph edges
-      docs_linking_to_current.each do |linked_doc|
-        graph_edges << {
-          source: doc_id(linked_doc),
-          target: doc_id(current_doc)
-        }
-      end
+      # docs_linking_to_current.each do |linked_doc|
+      #   graph_edges << {
+      #     source: doc_id(linked_doc),
+      #     target: doc_id(current_doc)
+      #   }
+      # end
     end
 
-    # Write graph data
-    File.write('_includes/notes_graph.json', JSON.dump({
-      edges: graph_edges,
-      nodes: graph_nodes
-    }))
+    # --- REMOVE THIS FINAL SECTION ---
+    # File.write('_includes/notes_graph.json', JSON.dump({
+    #   edges: graph_edges,
+    #   nodes: graph_nodes
+    # }))
   end
 
   private
