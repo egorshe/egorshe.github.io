@@ -1,0 +1,255 @@
+{
+  "main": {
+    "id": "5dc16c95721ab931",
+    "type": "split",
+    "children": [
+      {
+        "id": "105587a879fd8e99",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "94091e144720cd0d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      },
+      {
+        "id": "d1747a212a1afb7f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08984598cba1e097",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_meta/Ob_Templates/Blog post rename for publishing.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Blog post rename for publishing"
+            }
+          },
+          {
+            "id": "d9cf85d9c1524d5c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_meta/Ob_Templates/Blog post rename for publishing.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Blog post rename for publishing"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "111ddbc5f857f074",
+    "type": "split",
+    "children": [
+      {
+        "id": "05e9fe2a38ad6033",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "86790936787fd453",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "4cb36c4fe59fad5d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0b47610695bc6f05",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fd95e0f215dd790f",
+    "type": "split",
+    "children": [
+      {
+        "id": "44bf035aadb4c3e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a7ba1a724543436",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2025-10-17-test.md.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2025-10-17-test.md"
+            }
+          },
+          {
+            "id": "c5bbf3fc8d7ce562",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2025-10-17-test.md.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2025-10-17-test.md"
+            }
+          },
+          {
+            "id": "3d49edfe921ae1d4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b1c729961ad40a70",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2025-10-17-test.md.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2025-10-17-test.md"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "d9cf85d9c1524d5c",
+  "lastOpenFiles": [
+    "_site/projects/sample-other-post/index.html",
+    "_site/projects/Baltic-Cinemas-Research-Resources/index.html",
+    "_site/projects/sample-other-post",
+    "_site/projects/Baltic-Cinemas-Research-Resources",
+    "_site/projects",
+    "_site/projects.html",
+    "_site/overview.html",
+    "_site/blog.html",
+    "_site/about.html",
+    "_site/2025/10/16/this-is-draft.html",
+    "_site/2025/10/16/pinky.html",
+    "_site/favicon-light.png",
+    "_site/favicon-dark.png",
+    "_site/README.md",
+    "_site/00_meta/Ob_Templates/Blog post rename for publishing.md",
+    "_site/assets/img/image-insert-testing/my-mage-of-second-cup.jpeg",
+    "_site/assets/img/2025-10-17-test blog post with images and obsidian templater.md/Stefan Christoff playing guitar, by Philippe Teixeira St Cyr.png",
+    "_site/assets/img/2025-10-17-test blog post with images and obsidian templater.md/Screenshot from TV broadcast produced for the German channel ZDF by Indulis Bilzens.jpg",
+    "_site/assets/img/2025-10-17-test/README.md",
+    "_site/assets/img/2025-10-17-Image-insert-testing/obersee.webp",
+    "_site/assets/img/2025-10-17-Image-insert-testing/my-test-image.jpeg",
+    "_site/assets/img/test-image.jpeg",
+    "_site/assets/img/favicon-light.png",
+    "_site/assets/img/favicon-dark.png",
+    "_site/assets/img/2025-10-17-test blog post with images and obsidian templater.md",
+    "_posts/2025-10-17-test-templater.md",
+    "_posts/2025-10-17-test.md",
+    "_posts/test (Copy).md",
+    "assets/img/2025-10-17-test/README.md",
+    "00_meta/Ob_Templates/Blog post rename for publishing.md",
+    "assets/img/test/README.md",
+    "_posts/2025-10-17-test.md.md",
+    "home/egorshe/website/egorshe.github.io/assets/img/test/README.md",
+    "/home/egorshe/website/egorshe.github.io/assets/img/test/README.md",
+    "_posts/2025-10-17-title-for-renaming.md.md",
+    "home/egorshe/website/egorshe.github.io/assets/img/title-for-renaming/README.md",
+    "/home/egorshe/website/egorshe.github.io/assets/img/title-for-renaming/README.md",
+    "_posts/2025-10-16-this-is-draft.md",
+    "index.md",
+    "README.md",
+    "Untitled.canvas",
+    "_posts/2025-10-17-test blog post with images and obsidian templater.md.md",
+    "assets/img/2025-10-17-test blog post with images and obsidian templater.md",
+    "_posts/2025-10-17-Image-insert-testing.md",
+    "00_meta/Ob_Templates/Blog Post Template.md",
+    "_posts/2025-10-16-Blog-name-without-date-and-dashes.md.md.md",
+    "_posts/2025-10-16-Pinky.md",
+    "_site/Untitled.canvas"
+  ]
+}
