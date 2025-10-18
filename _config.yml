@@ -46,6 +46,7 @@ include:
 
 exclude:
   - 00_meta/
+  - .obsidian/
 
 plugins:
   - jekyll-sitemap
