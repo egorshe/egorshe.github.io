@@ -1,40 +1,17 @@
-{% if site.jekyllacademic.contentlicense == "MIT" %}
-  <a href="https://opensource.org/licenses/MIT" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-    MIT
-  </a>
-{% endif %}
-{% if site.jekyllacademic.contentlicense == "Commons Clause" %}
-  <a href="http://commonsclause.com" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-    Commons Clause
-  </a>
-{% endif %}
-{% if site.jekyllacademic.contentlicense == "CC BY 4.0" %}
-  <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-    CC BY 4.0
-  </a>
-{% endif %}
-{% if site.jekyllacademic.contentlicense == "CC BY-NC 4.0" %}
-  <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-    CC BY-NC 4.0
-  </a>
-{% endif %}
-{% if site.jekyllacademic.contentlicense == "CC BY-ND 4.0" %}
-  <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-    CC BY-ND 4.0
-  </a>
-{% endif %}
-{% if site.jekyllacademic.contentlicense == "CC BY-NC-ND 4.0" %}
-  <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-    CC BY-NC-ND 4.0
-  </a>
-{% endif %}
-{% if site.jekyllacademic.contentlicense == "CC BY-NC-SA 4.0" %}
-  <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-    CC BY-NC-SA 4.0
-  </a>
-{% endif %}
-{% if site.jekyllacademic.contentlicense == "CC BY-SA 4.0" %}
-  <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-    CC BY-SA 4.0
-  </a>
-{% endif %}
+{% assign license_map = "MIT:https://opensource.org/licenses/MIT,Commons Clause:http://commonsclause.com,CC BY 4.0:http://creativecommons.org/licenses/by/4.0/,CC BY-NC 4.0:http://creativecommons.org/licenses/by-nc/4.0/,CC BY-ND 4.0:http://creativecommons.org/licenses/by-nd/4.0/,CC BY-NC-ND 4.0:http://creativecommons.org/licenses/by-nc-nd/4.0/,CC BY-NC-SA 4.0:http://creativecommons.org/licenses/by-nc-sa/4.0/,CC BY-SA 4.0:http://creativecommons.org/licenses/by-sa/4.0/" | split: "," %}
+
+{% for pair in license_map %}
+  {% assign parts = pair | split: ":" %}
+  {% assign license_name = parts[0] %}
+  {% assign license_url = parts[1] | append: ":" | append: parts[2] %}
+  
+  {% if site.jekyllacademic.contentlicense == license_name %}
+    <a href="{{ license_url }}" 
+       target="_blank" 
+       rel="license noopener noreferrer" 
+       style="display:inline-block;">
+      {{ license_name }}
+    </a>
+    {% break %}
+  {% endif %}
+{% endfor %}
