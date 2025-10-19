@@ -12,7 +12,6 @@ baseurl: "" # The subpath of your site, e.g. /blog
 
 jekyllacademic:
   homepage_title: "Why the Baltics?" # Your homepage title
-  disqusname: "" # Your disqus sitename
   footer: egorshe
   contentlicense: "MIT" # Choose either one of these to put: MIT, Commons Clause, CC BY 4.0, CC BY-NC 4.0, CC BY-ND 4.0, CC BY-NC-ND 4.0, CC BY-NC-SA 4.0, CC BY-NC-SA 4.0, CC BY-SA 4.0
   socials:

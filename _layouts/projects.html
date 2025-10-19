@@ -2,40 +2,38 @@
 layout: default
 ---
 
-<h1 style="color: #cc0000">Projects</h1>
+<h1 class="page-title">Projects</h1>
+
 {% assign ordering = site.projects | sort: "order" %} {% for project in ordering
 %} {% if project.pinned %}
 <div class="row py-2">
     <div class="col">
-        <div class="card border border-4">
+        <div class="card border border-4 project-card">
             {% if project.banner_image %}
             <div class="p-3">
                 <img
                     class="card-img-top rounded"
                     src="{{ project.banner_image }}"
-                    alt="Banner image for project"
+                    alt="Banner for {{ project.title | escape }}"
+                    loading="lazy"
+                    width="1200"
+                    height="600"
                 />
             </div>
             {% endif %}
             <div class="card-body">
-                <h1
-                    class="card-title pb-2"
-                    style="color: #333; font-size: 120%"
-                >
-                    {{ project.title }}
-                </h1>
-                <h6
-                    class="text-muted mb-2 card-subtitle"
-                    style="font-size: 110%"
-                >
+                <h1 class="card-title pb-2">{{ project.title }}</h1>
+                <h6 class="text-muted mb-2 card-subtitle">
                     {{ project.stack }}
                 </h6>
                 <p class="card-text">{{ project.snippet }}</p>
-                <span
-                    >{% if project.githublink %}<a
+                <span>
+                    {% if project.githublink %}
+                    <a
                         href="{{ project.githublink }}"
-                        style="color: #000"
+                        class="github-link"
                         target="_blank"
+                        rel="noopener noreferrer"
                         ><span class="fa fa-github fa-lg"></span></a
                     >{% endif %}</span
                 ><a href="{{ site.baseurl }}{{ project.url }}"
@@ -48,26 +46,20 @@ layout: default
 {% else %}
 <div class="row py-2">
     <div class="col">
-        <div class="card">
+        <div class="card project-card">
             <div class="card-body">
-                <h1
-                    class="card-title pb-2"
-                    style="color: #333; font-size: 120%"
-                >
-                    {{ project.title }}
-                </h1>
-                <h6
-                    class="text-muted mb-2 card-subtitle"
-                    style="font-size: 110%"
-                >
+                <h1 class="card-title pb-2">{{ project.title }}</h1>
+                <h6 class="text-muted mb-2 card-subtitle">
                     {{ project.stack }}
                 </h6>
                 <p class="card-text">{{ project.snippet }}</p>
-                <span
-                    >{% if project.githublink %}<a
+                <span>
+                    {% if project.githublink %}
+                    <a
                         href="{{ project.githublink }}"
-                        style="color: #000"
+                        class="github-link"
                         target="_blank"
+                        rel="noopener noreferrer"
                         ><span class="fa fa-github fa-lg"></span></a
                     >{% endif %}</span
                 ><a href="{{ site.baseurl }}{{ project.url }}"

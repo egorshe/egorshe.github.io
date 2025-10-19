@@ -1,11 +1,21 @@
+/* This is your main style partial, imported by main.scss */
+
+/* ============================================ */
+/* 1. Variables */
+/* ============================================ */
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
 $bodyFont:
     Verdana, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
 
+/* ============================================ */
+/* 2. Sticky Footer & Base Layout */
+/* ============================================ */
+
 html {
     position: relative;
+    /* OPTIMIZATION: Use min-height 100% for modern sticky footer */
     min-height: 100%;
 }
 
@@ -14,7 +24,12 @@ body {
     color: $bodyColor;
     font-family: $bodyFont;
     font-size: 14px;
-    margin-bottom: 40px;
+
+    /* OPTIMIZATION: Switched to flexbox for sticky footer */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Remove default margin */
 }
 
 main {
@@ -23,7 +38,21 @@ main {
     max-width: 54rem;
     margin: 2rem 0;
     padding: 1rem;
+
+    /* OPTIMIZATION: This makes <main> grow to fill available space */
+    /* This pushes the footer to the bottom */
+    flex-grow: 1;
 }
+
+/* OPTIMIZATION: Added a new rule for your footer */
+/* This ensures it doesn't shrink, completing the sticky footer */
+footer {
+    flex-shrink: 0;
+}
+
+/* ============================================ */
+/* 3. Original Site Styles */
+/* ============================================ */
 
 section {
     flex-basis: 0;
@@ -164,12 +193,15 @@ a:hover {
     border-bottom: 1px gray dotted;
 }
 
+/* OPTIMIZATION: This class is no longer needed with the flexbox sticky footer */
+/*
 .stickyfooter {
     position: absolute;
     bottom: 0;
     height: 40px;
     width: 100%;
 }
+*/
 
 code {
     font-size: 100%;
@@ -220,6 +252,62 @@ table tr td h4 {
     padding: 0;
     font-weight: normal;
 }
+
+/* =================================================== */
+/* 4. OPTIMIZATION: Styles moved from HTML to SCSS */
+/* =================================================== */
+
+/* Replaces inline style="color: #cc0000" on H1 tags */
+.page-title {
+    color: #cc0000;
+}
+
+/* Replaces inline style="color: #cc0000" on H2 tags in blog.html */
+.page-title-h2 {
+    color: #cc0000;
+}
+
+/* Styles for .project-card, moved from projects.html */
+.project-card {
+    .card-title {
+        color: #333;
+        font-size: 120%;
+    }
+    .card-subtitle {
+        font-size: 110%;
+    }
+    .github-link {
+        color: #000;
+        &:hover {
+            color: #333; /* Example hover */
+            border-bottom: none; /* Keep icon from getting an underline */
+        }
+    }
+}
+
+/* Styles moved from <style> block in blog.html */
+#search-container {
+    max-width: 100%;
+}
+input[type="text"] {
+    font-size: normal;
+    outline: none;
+    padding: 0.7rem;
+    width: 100%;
+    -webkit-appearance: none;
+    font-family: inherit;
+    font-size: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+#results-container {
+    margin: 1rem 0;
+    background-color: #f9f9f9;
+}
+
+/* ============================================ */
+/* 5. Media Queries (Responsive) */
+/* ============================================ */
 
 @media screen and (max-width: 45rem) {
     header li {
