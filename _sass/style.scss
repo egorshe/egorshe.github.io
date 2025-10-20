@@ -484,3 +484,42 @@ figure {
         }
     }
 }
+
+/* ============================================ */
+/* 15. Digest & Content Enhancements */
+/* ============================================ */
+
+/* Improve readability of body text */
+.digest-post-content {
+    line-height: 1.65;
+    font-size: 1.05em; /* Slightly larger text */
+
+    /* Ensure a clear separation between content and footer/metadata */
+    margin-bottom: 2em;
+}
+
+/* Ensure all block elements (like lists and paragraphs) have bottom margin */
+.digest-post-content p,
+.digest-post-content ul,
+.digest-post-content ol {
+    margin-bottom: 1em;
+}
+
+/* Ensure strong headings within the post have space below them */
+.digest-post-content h2,
+.digest-post-content h3 {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    color: $accentGray; /* Use a secondary color for internal headings */
+}
+
+/* Consistent link styling within content */
+.digest-post-content a {
+    color: $primaryRed;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($primaryRed, 10%);
+        border-bottom: none;
+    }
+}
