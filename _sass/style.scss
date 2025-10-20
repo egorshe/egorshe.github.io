@@ -10,10 +10,10 @@ $accentGray: #2f4f4f;
 $bodyFont:
     Verdana, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
-
-// ADD THESE NEW VARIABLES HERE:
 $transition-base: 250ms ease;
 $transition-fast: 150ms ease;
+$border-light: 1px solid #eee;
+$border-gray: 1px solid #ccc;
 
 /* ============================================ */
 /* 2. Sticky Footer & Base Layout */
@@ -21,7 +21,6 @@ $transition-fast: 150ms ease;
 
 html {
     position: relative;
-    /* OPTIMIZATION: Use min-height 100% for modern sticky footer */
     min-height: 100%;
 }
 
@@ -30,76 +29,90 @@ body {
     color: $bodyColor;
     font-family: $bodyFont;
     font-size: 14px;
-
-    /* OPTIMIZATION: Switched to flexbox for sticky footer */
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
     max-width: 54rem;
+    width: 100%;
     margin: 2rem 0;
     padding: 1rem;
-
-    /* OPTIMIZATION: This makes <main> grow to fill available space */
-    /* This pushes the footer to the bottom */
-    flex-grow: 1;
+    flex: 1 0 auto;
+    box-sizing: border-box;
 }
 
-/* OPTIMIZATION: Added a new rule for your footer */
-/* This ensures it doesn't shrink, completing the sticky footer */
 footer {
     flex-shrink: 0;
+    max-width: 54rem;
+    width: 100%;
+    padding-left: calc(10rem + 0.5rem);
+    box-sizing: border-box;
+    padding-top: 1rem;
 }
 
 /* ============================================ */
-/* 3. Original Site Styles */
+/* 3. Typography */
 /* ============================================ */
 
-section {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-width: 70%;
-    display: flex;
-    flex-direction: column;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1;
+    margin: 1rem 0;
+}
 
+section {
     h1 {
         font-size: 150%;
     }
-
     h2 {
         font-size: 120%;
     }
-
     h3 {
         font-size: 115%;
     }
-
     h4 {
         font-size: 110%;
     }
-
     h5 {
         font-size: 100%;
     }
 }
 
-header,
-section {
-    padding: 1rem;
+.posts {
+    h1 {
+        font-size: 150%;
+    }
+    h2 {
+        font-size: 130%;
+    }
+    h3 {
+        font-size: 120%;
+    }
+    h4 {
+        font-size: 110%;
+    }
+    h5 {
+        font-size: 100%;
+    }
 }
+
+/* ============================================ */
+/* 4. Layout Components */
+/* ============================================ */
 
 header {
     flex-grow: 1;
     flex-basis: 10rem;
     position: relative;
-}
 
-header {
     ul {
         list-style: none;
     }
@@ -107,27 +120,61 @@ header {
     a {
         color: $bodyColor;
         text-decoration: none;
-    }
-}
 
-header {
+        &:hover {
+            color: $bodyColor;
+            border-bottom: 1px gray dotted;
+        }
+    }
+
     li {
         margin-bottom: 0.2rem;
         text-align: right;
         margin-right: 2rem;
     }
+}
 
-    a:hover {
-        color: $bodyColor;
+section {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+section {
+    padding: 1rem;
+}
+
+nav ul {
+    border-right: $border-light;
+}
+
+/* ============================================ */
+/* 5. Links */
+/* ============================================ */
+
+a {
+    text-decoration: none;
+
+    &:hover {
         border-bottom: 1px gray dotted;
     }
 }
 
-nav {
-    ul {
-        border-right: 1px solid #eee;
+.rss {
+    color: #000000;
+
+    &:hover {
+        border-bottom: none;
+        color: #333;
     }
 }
+
+/* ============================================ */
+/* 6. Posts/Lists */
+/* ============================================ */
 
 .posts {
     ul {
@@ -143,8 +190,8 @@ nav {
         a {
             white-space: nowrap;
             overflow: hidden;
-            text-decoration: none;
             text-overflow: ellipsis;
+            color: $bodyColor;
         }
 
         time {
@@ -155,59 +202,9 @@ nav {
     }
 }
 
-.posts {
-    h1 {
-        margin: 1rem 0;
-        font-size: 150%;
-    }
-
-    h2 {
-        margin: 1rem 0;
-        font-size: 130%;
-    }
-
-    h3 {
-        margin: 1rem 0;
-        font-size: 120%;
-    }
-
-    h4 {
-        margin: 1rem 0;
-        font-size: 110%;
-    }
-
-    h5 {
-        margin: 1rem 0;
-        font-size: 100%;
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    line-height: 1;
-    margin: 1rem 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    border-bottom: 1px gray dotted;
-}
-
-/* OPTIMIZATION: This class is no longer needed with the flexbox sticky footer */
-/*
-.stickyfooter {
-    position: absolute;
-    bottom: 0;
-    height: 40px;
-    width: 100%;
-}
-*/
+/* ============================================ */
+/* 7. Code Blocks */
+/* ============================================ */
 
 code {
     font-size: 100%;
@@ -216,6 +213,7 @@ code {
 pre {
     border-radius: 5px;
     box-shadow: 2px 2px 2px #eee;
+
     code {
         border-radius: 5px;
         font-size: 125%;
@@ -228,75 +226,75 @@ blockquote {
     padding: 0 1em;
 }
 
-.rss {
-    text-decoration: none;
-    color: #000000;
+/* ============================================ */
+/* 8. Tables */
+/* ============================================ */
+
+table {
+    tr th {
+        background: #eeeee1;
+        color: #333;
+        padding: 0;
+        border: #aaa solid 1px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    tr td {
+        border: $border-gray;
+        padding: 5px;
+
+        &.rightright {
+            background: #eeeee1;
+        }
+
+        h4 {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+    }
 }
 
-.rss:hover {
-    border-bottom: none;
-    color: #333;
-}
+/* ============================================ */
+/* 9. Page-Specific Styles */
+/* ============================================ */
 
-table tr th {
-    background: #eeeee1;
-    color: #333;
-    padding: 0;
-    border: #aaa solid 1px;
-    text-align: center;
-    font-weight: bold;
-}
-table tr td {
-    border: 1px #ccc solid;
-    padding: 5px;
-}
-table tr td.rightright {
-    background: #eeeee1;
-}
-table tr td h4 {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-}
-
-/* =================================================== */
-/* 4. OPTIMIZATION: Styles moved from HTML to SCSS */
-/* =================================================== */
-
-/* Replaces inline style="color: #cc0000" on H1 tags */
 .page-title {
     color: $primaryRed;
 }
 
-/* Replaces inline style="color: #cc0000" on H2 tags in blog.html */
 .page-title-h2 {
     color: $primaryRed;
 }
 
-/* Styles for .project-card, moved from projects.html */
+/* Project Cards */
 .project-card {
     .card-title {
         color: #333;
         font-size: 120%;
     }
+
     .card-subtitle {
         font-size: 110%;
     }
+
     .github-link {
         color: #000;
+
         &:hover {
-            color: #333; /* Example hover */
-            border-bottom: none; /* Keep icon from getting an underline */
+            color: #333;
+            border-bottom: none;
         }
     }
 }
 
-/* Styles moved from <style> block in blog.html */
+/* Search */
 #search-container {
     max-width: 100%;
 }
+
 input[type="text"] {
-    font-size: normal;
     outline: none;
     padding: 0.7rem;
     width: 100%;
@@ -306,42 +304,16 @@ input[type="text"] {
     border: none;
     border-bottom: 1px solid gray;
 }
+
 #results-container {
     margin: 1rem 0;
     background-color: #f9f9f9;
 }
 
-/* =================================================== */
-/* 5. PERFORMANCE: GPU Acceleration for Animations */
-/* =================================================== */
-// ADD THIS NEW SECTION HERE:
-.jekyll-glossary .jekyll-glossary-tooltip {
-    will-change: opacity;
-    transform: translateZ(0);
-}
+/* ============================================ */
+/* 10. Images & Figures */
+/* ============================================ */
 
-/* ============================================ */
-/* 6. ACCESSIBILITY: Skip Link */
-/* ============================================ */
-// ADD THIS NEW SECTION HERE:
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000;
-    color: #fff;
-    padding: 8px;
-    text-decoration: none;
-    z-index: 100;
-
-    &:focus {
-        top: 0;
-    }
-}
-
-/* ============================================ */
-/* 7. IMAGE TREATMENT */
-/* ============================================ */
 figure {
     margin: 2.5rem 0;
 
@@ -362,17 +334,45 @@ figure {
 }
 
 /* ============================================ */
-/* 8. MOBILE NAVIGATION */
+/* 11. Accessibility */
+/* ============================================ */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+
+    &:focus {
+        top: 0;
+    }
+}
+
+/* ============================================ */
+/* 12. Performance Optimizations */
+/* ============================================ */
+
+.jekyll-glossary .jekyll-glossary-tooltip {
+    will-change: opacity;
+    transform: translateZ(0);
+}
+
+/* ============================================ */
+/* 13. Mobile Navigation */
 /* ============================================ */
 
 .nav-toggle {
-    display: none; /* Hidden on desktop */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1000;
-    
+
     .hamburger {
         display: block;
         width: 25px;
@@ -382,14 +382,16 @@ figure {
         transition: all $transition-base;
         border-radius: 3px;
     }
-    
+
     &.active {
         .hamburger:nth-child(1) {
             transform: rotate(45deg) translate(7px, 7px);
         }
+
         .hamburger:nth-child(2) {
             opacity: 0;
         }
+
         .hamburger:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
         }
@@ -397,20 +399,21 @@ figure {
 }
 
 /* ============================================ */
-/* 7. Media Queries (Responsive) */
+/* 14. Media Queries (Responsive) */
 /* ============================================ */
 
 @media screen and (max-width: 45rem) {
-    /* Original mobile styles for header/footer */
-    header li {
-        display: inline;
-        margin-right: 1rem;
-        font-size: 110%;
-    }
+    header {
+        li {
+            display: inline;
+            margin-right: 1rem;
+            font-size: 110%;
+        }
 
-    header ul {
-        border-bottom: 1px solid #eee;
-        padding-bottom: 2rem;
+        ul {
+            border-bottom: $border-light;
+            padding-bottom: 2rem;
+        }
     }
 
     footer {
@@ -419,14 +422,13 @@ figure {
         padding-right: 0.5rem;
     }
 
-    /* Mobile Navigation - MUST COME AFTER general styles */
     .nav-toggle {
         display: block !important;
         position: fixed;
         top: 1rem;
         right: 1rem;
     }
-    
+
     nav ul {
         display: none !important;
         position: fixed;
@@ -438,16 +440,16 @@ figure {
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
         padding: 4rem 2rem 2rem;
         border-right: none !important;
-        border-left: 1px solid #eee !important;
+        border-left: $border-light !important;
         border-bottom: none !important;
         z-index: 999;
         list-style: none;
-        
+
         &.nav-open {
             display: block !important;
             animation: slideIn $transition-base;
         }
-        
+
         li {
             display: block !important;
             text-align: left !important;
@@ -458,10 +460,10 @@ figure {
         }
 
         br {
-            display: none; /* Hide the <br> in mobile menu */
+            display: none;
         }
     }
-    
+
     @keyframes slideIn {
         from {
             transform: translateX(100%);
