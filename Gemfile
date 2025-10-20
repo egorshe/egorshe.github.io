@@ -8,4 +8,5 @@ group :jekyll_plugins do
   gem 'jekyll-toc'
   gem 'jekyll-glossary_tooltip' # Note the spelling (jekyll-glossary-tooltip)
   gem 'jekyll-target-blank'
+  gem 'logger'
 end

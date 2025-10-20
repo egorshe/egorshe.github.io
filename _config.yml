@@ -43,8 +43,8 @@ collections:
     output: true
     permalink: /digest/:title/
 
-include:
-  - _pages
+# include:
+  # - _pages
 
 exclude:
   - 00_meta/

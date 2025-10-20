@@ -2,28 +2,26 @@
 layout: default
 ---
 
-<section class="posts">
-    <h1 class="page-title">{{ page.title }}</h1>
+<h1 class="page-title">{{ page.title }}</h1>
 
-    <ul>
-        {% assign digests = site.digest | sort: 'date' | reverse %} {% for
-        digest in digests %} {% if digest.date %}
-        <li>
-            <a style="color: black" href="{{ site.baseurl }}{{ digest.url }}"
-                >{{ digest.title }}</a
-            >
-            <time datetime="{{ digest.date | date_to_xmlschema }}"
-                >{{ digest.date | date: "%m-%d-%Y" }}</time
-            >
-        </li>
-        {% endif %} {% endfor %}
-    </ul>
+<ul class="posts">
+    {% assign digests = site.digest | sort: 'date' | reverse %}
+    {% for digest in digests %}
+    {% if digest.date %}
+    <li>
+        <a href="{{ site.baseurl }}{{ digest.url }}">{{ digest.title }}</a>
+        <time datetime="{{ digest.date | date_to_xmlschema }}">
+            {{ digest.date | date: "%m-%d-%Y" }}
+        </time>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
 
-    <h2 class="page-title-h2">Feed</h2>
-    <a href="{{ site.baseurl }}/digest-feed.xml" class="rss"
-        >RSS <span class="fa fa-rss" style="color: #ee802f"></span
-    ></a>
-    <a href="{{ site.baseurl }}/feed.json" class="rss"
-        >JSON <span class="fa fa-rss" style="color: #ee802f"></span
-    ></a>
-</section>
+<h2 class="page-title-h2">Feed</h2>
+<a href="{{ site.baseurl }}/digest-feed.xml" class="rss">
+    RSS <span class="fa fa-rss" style="color: #ee802f"></span>
+</a>
+<a href="{{ site.baseurl }}/feed.json" class="rss">
+    JSON <span class="fa fa-rss" style="color: #ee802f"></span>
+</a>
