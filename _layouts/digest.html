@@ -5,17 +5,12 @@ layout: default
 <h1 class="page-title">{{ page.title }}</h1>
 
 <ul class="posts">
-    {% assign digests = site.digest | sort: 'date' | reverse %}
-    {% for digest in digests %}
-    {% if digest.date %}
+    {% assign digests = site.digest | sort: 'date' | reverse %} {% for digest in
+    digests %} {% if digest.date %}
     <li>
         <a href="{{ site.baseurl }}{{ digest.url }}">{{ digest.title }}</a>
-        <time datetime="{{ digest.date | date_to_xmlschema }}">
-            {{ digest.date | date: "%m-%d-%Y" }}
-        </time>
     </li>
-    {% endif %}
-    {% endfor %}
+    {% endif %} {% endfor %}
 </ul>
 
 <h2 class="page-title-h2">Feed</h2>
