@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#cc0000" />
 
-<!-- Preconnect to CDNs for performance -->
+    <!-- Preconnect to CDNs for performance -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
 
@@ -60,7 +60,7 @@
         defer
     ></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener("DOMContentLoaded", function () {
             hljs.highlightAll();
         });
     </script>
@@ -68,7 +68,10 @@
 
     <!-- ChartJS (Conditionally loaded) -->
     {% if page.usechartjs %}
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+        defer
+    ></script>
     {% endif %}
 
     <!-- MathJax support (Updated CDN) -->
@@ -76,10 +79,16 @@
     <script>
         MathJax = {
             tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                tags: 'ams'
-            }
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"],
+                ],
+                displayMath: [
+                    ["$$", "$$"],
+                    ["\\[", "\\]"],
+                ],
+                tags: "ams",
+            },
         };
     </script>
     <script
@@ -90,7 +99,7 @@
     ></script>
     {% endif %}
 
-     <!-- Custom CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
 
     <!-- SEO -->
@@ -104,5 +113,5 @@
         title="sitemap"
         href="{{ site.baseurl }}/sitemap.xml"
     />
-    {% seo title=false %}
+    {% seo title=false %} {% include structured-data.html %}
 </head>

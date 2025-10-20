@@ -6,6 +6,7 @@
 // ============================================
 @use "style";
 @use "glossary";
+@use "print";
 
 // ============================================
 // Table of Contents (jekyll-toc)
@@ -106,7 +107,8 @@
     border-left-color: var(--color-border-dark, #ccc);
 }
 
-// Dark mode adjustments
+// Dark mode adjustments - DISABLED
+/*
 @media (prefers-color-scheme: dark) {
     .toc-wrapper {
         background-color: var(--color-highlight, #2a2a2a);
@@ -122,6 +124,7 @@
         }
     }
 }
+*/
 
 // Responsive adjustments
 @media screen and (max-width: 768px) {

@@ -3,11 +3,17 @@
 /* ============================================ */
 /* 1. Variables */
 /* ============================================ */
-$backgroundColor: #ffffff;
-$bodyColor: #000000;
+$backgroundColor: #fefefe;
+$bodyColor: #1a1a1a;
+$primaryRed: #cc0000;
+$accentGray: #2f4f4f;
 $bodyFont:
     Verdana, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
+
+// ADD THESE NEW VARIABLES HERE:
+$transition-base: 250ms ease;
+$transition-fast: 150ms ease;
 
 /* ============================================ */
 /* 2. Sticky Footer & Base Layout */
@@ -259,12 +265,12 @@ table tr td h4 {
 
 /* Replaces inline style="color: #cc0000" on H1 tags */
 .page-title {
-    color: #cc0000;
+    color: $primaryRed;
 }
 
 /* Replaces inline style="color: #cc0000" on H2 tags in blog.html */
 .page-title-h2 {
-    color: #cc0000;
+    color: $primaryRed;
 }
 
 /* Styles for .project-card, moved from projects.html */
@@ -305,8 +311,58 @@ input[type="text"] {
     background-color: #f9f9f9;
 }
 
+/* =================================================== */
+/* 5. PERFORMANCE: GPU Acceleration for Animations */
+/* =================================================== */
+// ADD THIS NEW SECTION HERE:
+.jekyll-glossary .jekyll-glossary-tooltip {
+    will-change: opacity;
+    transform: translateZ(0);
+}
+
 /* ============================================ */
-/* 5. Media Queries (Responsive) */
+/* 6. ACCESSIBILITY: Skip Link */
+/* ============================================ */
+// ADD THIS NEW SECTION HERE:
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+
+    &:focus {
+        top: 0;
+    }
+}
+
+/* ============================================ */
+/* 7. IMAGE TREATMENT */
+/* ============================================ */
+figure {
+    margin: 2.5rem 0;
+
+    img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    figcaption {
+        font-size: 0.9em;
+        font-style: italic;
+        color: #666;
+        margin-top: 0.75rem;
+        text-align: center;
+    }
+}
+
+/* ============================================ */
+/* 7. Media Queries (Responsive) */
 /* ============================================ */
 
 @media screen and (max-width: 45rem) {
@@ -329,5 +385,411 @@ input[type="text"] {
         margin-bottom: 1rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+    }
+    /* 8. RESEARCH DIGEST STYLES */
+    /* ============================================ */
+
+    .digest-section {
+        max-width: 100%;
+    }
+
+    .digest-header {
+        margin-bottom: 3rem;
+
+        .digest-description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 1rem 0 2rem;
+            max-width: 800px;
+        }
+    }
+
+    .digest-tools {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    .rss-link {
+        color: $bodyColor;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: all 0.2s;
+
+        .fa-rss {
+            color: #ee802f;
+        }
+
+        &:hover {
+            background: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+    }
+
+    /* Фильтры */
+    .digest-filters {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: $bodyFont;
+        font-size: 0.9rem;
+
+        &:hover {
+            background: #f9f9f9;
+        }
+
+        &.active {
+            background: $primaryRed;
+            color: white;
+            border-color: $primaryRed;
+        }
+    }
+
+    /* Сетка карточек */
+    .digest-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .digest-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 1.5rem;
+        position: relative;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    /* Бейджи типов публикаций */
+    .digest-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+    }
+
+    .digest-badge-article {
+        background: #e3f2fd;
+        color: #1565c0;
+    }
+
+    .digest-badge-book {
+        background: #f3e5f5;
+        color: #6a1b9a;
+    }
+
+    .digest-badge-quarterly_review {
+        background: #fff3e0;
+        color: #e65100;
+    }
+
+    .digest-badge-thesis {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+
+    .digest-badge-conference {
+        background: #fce4ec;
+        color: #c2185b;
+    }
+
+    /* Заголовок карточки */
+    .digest-card-title {
+        font-size: 1.2rem;
+        margin: 0.5rem 0 1rem;
+        line-height: 1.4;
+
+        a {
+            color: $bodyColor;
+            text-decoration: none;
+
+            &:hover {
+                color: $primaryRed;
+                border-bottom: none;
+            }
+        }
+    }
+
+    /* Авторы */
+    .digest-authors {
+        font-size: 0.95rem;
+        color: #444;
+        margin: 0.5rem 0;
+    }
+
+    /* Метаданные публикации */
+    .digest-meta {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 0.5rem 0;
+    }
+
+    /* Дата */
+    .digest-date {
+        display: block;
+        font-size: 0.85rem;
+        color: #999;
+        margin: 1rem 0 0.5rem;
+    }
+
+    /* Теги */
+    .digest-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .tag {
+        background: #f5f5f5;
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        color: #666;
+        white-space: nowrap;
+    }
+
+    /* Open Access badge */
+    .oa-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: #4caf50;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    /* Пустое состояние */
+    .digest-empty {
+        grid-column: 1 / -1;
+        text-align: center;
+        color: #999;
+        font-size: 1.1rem;
+        padding: 3rem;
+    }
+
+    /* ============================================ */
+    /* DIGEST POST PAGE */
+    /* ============================================ */
+
+    .digest-post {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .breadcrumb {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 2rem;
+
+        a {
+            color: #666;
+            text-decoration: none;
+
+            &:hover {
+                color: $primaryRed;
+            }
+        }
+
+        span:not(.oa-badge-large) {
+            margin: 0 0.5rem;
+        }
+    }
+
+    .digest-post-header {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #eee;
+
+        h1 {
+            color: $primaryRed;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+    }
+
+    .digest-post-meta {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+
+        time {
+            color: #666;
+            font-size: 0.95rem;
+        }
+    }
+
+    .digest-authors-large {
+        color: #444;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .digest-publication {
+        color: #666;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .oa-badge-large {
+        background: #4caf50;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .digest-tags-header {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+
+        .tag {
+            font-size: 0.9rem;
+        }
+    }
+
+    .digest-post-content {
+        line-height: 1.8;
+        font-size: 1.05rem;
+        margin-bottom: 3rem;
+
+        h2 {
+            color: $primaryRed;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        ul,
+        ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        blockquote {
+            background: #f9f9f9;
+            border-left: 4px solid $primaryRed;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+    }
+
+    .digest-post-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+    }
+
+    .digest-tags-footer {
+        strong {
+            margin-right: 0.5rem;
+        }
+
+        .tag {
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+    }
+
+    .digest-back-link {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+
+        a {
+            color: $bodyColor;
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover {
+                color: $primaryRed;
+            }
+        }
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+        .digest-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .digest-tools {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .digest-filters {
+            width: 100%;
+        }
+
+        .filter-btn {
+            flex: 1;
+            text-align: center;
+        }
+
+        .digest-post-header h1 {
+            font-size: 1.5rem;
+        }
+
+        .digest-post-content {
+            font-size: 1rem;
+        }
     }
 }

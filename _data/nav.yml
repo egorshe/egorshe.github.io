@@ -3,7 +3,9 @@ links:
     url: /overview
   - title: projects
     url: /projects
-  - title: blog
+  - title: digest
+    url: /digest
+  - title: field notes
     url: /blog
   - title: about
     url: /about

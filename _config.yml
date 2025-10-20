@@ -39,6 +39,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:title/
+  digest:
+    output: true
+    permalink: /digest/:title/
 
 include:
   - _pages
@@ -70,6 +73,8 @@ feed:
       path: "/feed.xml" # Main feed for blog posts
     projects:
       path: "/projects-feed.xml" # Optional: Separate feed for projects
+    digest:
+      path: "/digest-feed.xml" # Optional: Separate feed for digest
 
 glossary_tooltip:
   lookup_file: "glossary"

@@ -2,16 +2,15 @@
 layout: default
 ---
 
-<div>
-    <h1 class="page-title">{{ page.title }}</h1>
-
-    <span>
-        <i class="fa-solid fa-tags"></i>&nbsp;{% for tag in page.tags %}
-        <a href="/tag/{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {%
-        endunless %} {% endfor %}
-    </span>
-    <br />
-    <br />
+<article itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <header>
+        <h1 class="page-title" itemprop="headline">{{ page.title }}</h1>
+        <span>
+            <i class="fa-solid fa-tags"></i>&nbsp;{% for tag in page.tags %}
+            <a href="/tag/{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {%
+            endunless %} {% endfor %}
+        </span>
+    </header>
 
     {% if page.toc %}
     <div class="toc-wrapper">
@@ -19,8 +18,17 @@ layout: default
         {% toc %}
     </div>
     <br />
-    {% endif %} {{ content }}
+    {% endif %}
 
-    <hr />
+    <div itemprop="articleBody">{{ content }}</div>
+
+    <p class="byline" style="text-align: right">
+        <time
+            itemprop="datePublished"
+            datetime="{{ page.date | date_to_xmlschema }}"
+        >
+            {{ page.date | date: "%B %d, %Y" }}
+        </time>
+    </p>
     <a href="#top">Back to top</a>
-</div>
+</article>

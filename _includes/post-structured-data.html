@@ -1,0 +1,23 @@
+{% if page.layout == "post" %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ page.title }}",
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ site.author.name }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.title }}"
+        },
+        "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ site.url }}{{ page.url }}"
+        }
+    }
+</script>
+{% endif %}
