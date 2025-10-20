@@ -1,0 +1,56 @@
+/* Print Stylesheet for Academic Articles */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    header,
+    footer,
+    nav,
+    .skip-link {
+        display: none !important;
+    }
+
+    main {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+
+    figure,
+    blockquote,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+    }
+
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+
+    .toc-wrapper {
+        border: 1px solid #000;
+        background: transparent !important;
+    }
+}
