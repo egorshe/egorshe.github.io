@@ -1,5 +1,5 @@
 /* This is your main style partial, imported by main.scss */
-
+@use "sass:color";
 /* ============================================ */
 /* 1. Variables */
 /* ============================================ */
@@ -519,7 +519,7 @@ figure {
     text-decoration: none;
 
     &:hover {
-        color: darken($primaryRed, 10%);
+        color: color.adjust($primaryRed, $lightness: -10%);
         border-bottom: none;
     }
 }

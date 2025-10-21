@@ -166,6 +166,8 @@ DEPENDENCIES
   jekyll-academic!
   jekyll-feed
   jekyll-glossary_tooltip
+  jekyll-seo-tag
+  jekyll-sitemap
   jekyll-target-blank
   jekyll-toc
   logger

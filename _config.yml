@@ -44,7 +44,7 @@ collections:
     permalink: /digest/:title/
 
 # include:
-  # - _pages
+# - _pages
 
 exclude:
   - 00_meta/
@@ -79,3 +79,5 @@ feed:
 glossary_tooltip:
   lookup_file: "glossary"
   # class_name: 'custom-tooltip' # Optional: Add custom CSS class here
+  jekyll-target-blank:
+    external_only: true

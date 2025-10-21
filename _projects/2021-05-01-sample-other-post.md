@@ -8,7 +8,7 @@ order: 2
 usehighlight: true
 ---
 
-<h1 style="color: #cc0000">Jekyll Academic Deployment Status</h1>  
+<h1 class="page-title">Jekyll Academic Deployment Status</h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ae78d271-5b51-4601-9dc4-6bc72326b0c1/deploy-status)](https://app.netlify.com/sites/jekyll-academic/deploys)
 

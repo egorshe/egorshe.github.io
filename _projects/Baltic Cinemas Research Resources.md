@@ -6,7 +6,7 @@ pinned: true
 order: 1
 ---
 
-<h1 style="color: #cc0000">Baltic Cinemas Research Resources</h1>
+<h1 class="page-title">Baltic Cinemas Research Resources</h1>
 
 # Introduction
 
@@ -176,7 +176,7 @@ order: 1
 - [Lithuanian Shorts](https://lithuanianshorts.com/en/film-database/)
 
 ## VOD and streaming
-- [Kino pavasaris at Telia.lt](https://play.telia.lt/more/vod_all_kino_pavasaris) 
+- [Kino pavasaris at Telia.lt](https://play.telia.lt/more/vod_all_kino_pavasaris)
 
 ## Film Festivals
 - [Vilnius International Film Festival — Kinopavasaris](https://kinopavasaris.lt/en/about/)

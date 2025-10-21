@@ -7,6 +7,7 @@
             <section>{{ content }}</section>
             {% include footer.html %}
         </main>
-        <script src="{{ site.baseurl }}/assets/js/nav.js"></script>
+        <!-- defer so script doesn't block rendering -->
+        <script src="{{ site.baseurl }}/assets/js/nav.js" defer></script>
     </body>
 </html>

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1 style="color: #cc0000;">Overview</h1>
+<h1 class="page-title">Overview</h1>
 
 
 
@@ -17,4 +17,4 @@ In erat risus, pulvinar in imperdiet dapibus, placerat eget ante. Etiam vitae sa
 
 Aenean cursus nisl pharetra, tristique tellus eget, feugiat erat. Etiam congue dui odio, ut accumsan orci cursus ac. Maecenas fermentum ac lorem id pretium. Vestibulum laoreet nisi at tellus posuere, at dictum arcu fringilla. Nullam eu turpis justo. Fusce accumsan et massa in varius. Cras eget fringilla purus, et fringilla urna. Nunc facilisis laoreet ligula vitae congue.
 
-Morbi in nibh lacinia, molestie sem quis, facilisis mauris. Nullam vel dolor in arcu tincidunt accumsan ac a justo. Nunc sollicitudin posuere arcu sit amet pellentesque. Integer gravida pharetra accumsan. Sed id commodo orci. Aliquam vitae nisl vitae magna suscipit imperdiet. Aliquam erat volutpat. Curabitur mi felis, viverra in felis eget, euismod tincidunt nulla. Nam feugiat malesuada quam, ac laoreet sem. 
+Morbi in nibh lacinia, molestie sem quis, facilisis mauris. Nullam vel dolor in arcu tincidunt accumsan ac a justo. Nunc sollicitudin posuere arcu sit amet pellentesque. Integer gravida pharetra accumsan. Sed id commodo orci. Aliquam vitae nisl vitae magna suscipit imperdiet. Aliquam erat volutpat. Curabitur mi felis, viverra in felis eget, euismod tincidunt nulla. Nam feugiat malesuada quam, ac laoreet sem.
