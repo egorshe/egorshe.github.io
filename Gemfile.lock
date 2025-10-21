@@ -1,11 +1,3 @@
-PATH
-  remote: .
-  specs:
-    jekyll-academic (1.2.0)
-      jekyll (~> 4.2)
-      jekyll-seo-tag
-      jekyll-sitemap
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -163,7 +155,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.2)
-  jekyll-academic!
   jekyll-feed
   jekyll-glossary_tooltip
   jekyll-seo-tag
