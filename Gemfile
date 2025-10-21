@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-gemspec
 
 # Core Jekyll and its dependencies
 gem 'jekyll', '~> 4.2' # Specify the version used by your theme or project
