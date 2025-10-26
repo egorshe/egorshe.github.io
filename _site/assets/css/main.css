@@ -1,0 +1,692 @@
+@charset "UTF-8";
+/* This is your main style partial, imported by main.scss */
+/* ============================================ */
+/* 1. Variables */
+/* ============================================ */
+/* ============================================ */
+/* 2. Sticky Footer & Base Layout */
+/* ============================================ */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background: #fefefe;
+  color: #1a1a1a;
+  font-family: Verdana, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 54rem;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1rem;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  max-width: 54rem;
+  width: 100%;
+  height: 50px;
+  padding-left: 10rem;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 45rem) {
+  footer {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+}
+
+/* ============================================ */
+/* 3. Typography */
+/* ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1;
+  margin: 1rem 0;
+}
+
+section h1 {
+  font-size: 150%;
+}
+section h2 {
+  font-size: 120%;
+}
+section h3 {
+  font-size: 115%;
+}
+section h4 {
+  font-size: 110%;
+}
+section h5 {
+  font-size: 100%;
+}
+
+.posts h1 {
+  font-size: 150%;
+}
+.posts h2 {
+  font-size: 130%;
+}
+.posts h3 {
+  font-size: 120%;
+}
+.posts h4 {
+  font-size: 110%;
+}
+.posts h5 {
+  font-size: 100%;
+}
+
+/* ============================================ */
+/* 4. Layout Components */
+/* ============================================ */
+header {
+  flex-grow: 1;
+  flex-basis: 10rem;
+  position: relative;
+}
+header ul {
+  list-style: none;
+}
+header a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+header a:hover {
+  color: #1a1a1a;
+  border-bottom: 1px gray dotted;
+}
+header li {
+  margin-bottom: 0.2rem;
+  text-align: right;
+  margin-right: 2rem;
+}
+
+section {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+section {
+  padding: 1rem;
+}
+
+nav ul {
+  border-right: 1px solid #eee;
+}
+
+/* ============================================ */
+/* 5. Links */
+/* ============================================ */
+a {
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px gray dotted;
+}
+
+.rss {
+  color: #000000;
+}
+.rss:hover {
+  border-bottom: none;
+  color: #333;
+}
+
+/* ============================================ */
+/* 6. Posts/Lists */
+/* ============================================ */
+.posts ul {
+  list-style: none;
+}
+.posts li {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.posts li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #1a1a1a;
+}
+.posts li time {
+  padding-left: 1rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================ */
+/* 7. Code Blocks */
+/* ============================================ */
+code {
+  font-size: 100%;
+}
+
+pre {
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #eee;
+}
+pre code {
+  border-radius: 5px;
+  font-size: 125%;
+}
+
+blockquote {
+  border-left: 0.25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+/* ============================================ */
+/* 8. Tables */
+/* ============================================ */
+table tr th {
+  background: #eeeee1;
+  color: #333;
+  padding: 0;
+  border: #aaa solid 1px;
+  text-align: center;
+  font-weight: bold;
+}
+table tr td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+table tr td.rightright {
+  background: #eeeee1;
+}
+table tr td h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* ============================================ */
+/* 9. Page-Specific Styles */
+/* ============================================ */
+.page-title {
+  color: #cc0000;
+}
+
+.page-title-h2 {
+  color: #cc0000;
+}
+
+/* Project Cards */
+.project-card .card-title {
+  color: #333;
+  font-size: 120%;
+}
+.project-card .card-subtitle {
+  font-size: 110%;
+}
+.project-card .github-link {
+  color: #000;
+}
+.project-card .github-link:hover {
+  color: #333;
+  border-bottom: none;
+}
+
+/* Search */
+#search-container {
+  max-width: 100%;
+}
+
+input[type=text] {
+  outline: none;
+  padding: 0.7rem;
+  width: 100%;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 100%;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+#results-container {
+  margin: 1rem 0;
+  background-color: #f9f9f9;
+}
+
+/* ============================================ */
+/* 10. Images & Figures */
+/* ============================================ */
+figure {
+  margin: 2.5rem 0;
+}
+figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+figure figcaption {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #666;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* ============================================ */
+/* 11. Accessibility */
+/* ============================================ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================ */
+/* 12. Performance Optimizations */
+/* ============================================ */
+.jekyll-glossary .jekyll-glossary-tooltip {
+  will-change: opacity;
+  transform: translateZ(0);
+}
+
+/* ============================================ */
+/* 13. Mobile Navigation */
+/* ============================================ */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+.nav-toggle .hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #1a1a1a;
+  margin: 5px 0;
+  transition: all 250ms ease;
+  border-radius: 3px;
+}
+.nav-toggle.active .hamburger:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+.nav-toggle.active .hamburger:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active .hamburger:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ============================================ */
+/* 14. Media Queries (Responsive) */
+/* ============================================ */
+@media screen and (max-width: 45rem) {
+  header li {
+    display: inline;
+    margin-right: 1rem;
+    font-size: 110%;
+  }
+  header ul {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+  }
+  footer {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .nav-toggle {
+    display: block !important;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+  }
+  nav ul {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background: #fefefe;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 4rem 2rem 2rem;
+    border-right: none !important;
+    border-left: 1px solid #eee !important;
+    border-bottom: none !important;
+    z-index: 999;
+    list-style: none;
+  }
+  nav ul.nav-open {
+    display: block !important;
+    animation: slideIn 250ms ease;
+  }
+  nav ul li {
+    display: block !important;
+    text-align: left !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
+    padding: 0.5rem 0;
+    font-size: 1.1rem !important;
+  }
+  nav ul br {
+    display: none;
+  }
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+/* ============================================ */
+/* 15. Digest & Content Enhancements */
+/* ============================================ */
+/* Improve readability of body text */
+.digest-post-content {
+  line-height: 1.65;
+  font-size: 1.05em; /* Slightly larger text */
+  /* Ensure a clear separation between content and footer/metadata */
+  margin-bottom: 2em;
+}
+
+/* Ensure all block elements (like lists and paragraphs) have bottom margin */
+.digest-post-content p,
+.digest-post-content ul,
+.digest-post-content ol {
+  margin-bottom: 1em;
+}
+
+/* Ensure strong headings within the post have space below them */
+.digest-post-content h2,
+.digest-post-content h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #2f4f4f; /* Use a secondary color for internal headings */
+}
+
+/* Consistent link styling within content */
+.digest-post-content a {
+  color: #cc0000;
+  text-decoration: none;
+}
+.digest-post-content a:hover {
+  color: #990000;
+  border-bottom: none;
+}
+
+/* Tooltip from https://www.w3schools.com/css/css_tooltip.asp */
+.jekyll-glossary {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px dotted #0074bd;
+  cursor: help;
+}
+
+.jekyll-glossary .jekyll-glossary-tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 5px;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  width: 160px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -80px; /* Use half of the width to center the tooltip */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.jekyll-glossary:hover .jekyll-glossary-tooltip {
+  visibility: visible;
+}
+
+/* Style the source link (if there is one provided in the glossary entry). */
+.jekyll-glossary-source-link:before {
+  content: "[source]";
+}
+
+/* Arrow created with borders. */
+.jekyll-glossary .jekyll-glossary-tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+/* Animation from invisible to visible on hover. */
+.jekyll-glossary .jekyll-glossary-tooltip {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.jekyll-glossary:hover .jekyll-glossary-tooltip {
+  opacity: 1;
+}
+
+/* HACK: hide surrounding parenthesis on definition. When Jekyll renders
+ * post.excerpt, all HTML and CSS is stripped. The effect is that the extra
+ * parenthesis that are added are hidden in the normal blog post with hoover, but
+ * hidden in the post.except when html and css is stripped. Ref:
+ * https://github.com/erikw/jekyll-glossary_tooltip/issues/7#issuecomment-2711471867 */
+.jekyll-glossary-tooltip-hidden {
+  display: none;
+}
+
+/* Print Stylesheet for Academic Articles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  header,
+  footer,
+  nav,
+  .skip-link {
+    display: none !important;
+  }
+  main {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: underline;
+  }
+  a[href^=http]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+  figure,
+  blockquote,
+  pre {
+    page-break-inside: avoid;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+  .toc-wrapper {
+    border: 1px solid #000;
+    background: transparent !important;
+  }
+}
+.toc-wrapper {
+  background-color: var(--color-highlight, #f8f8f8);
+  padding: var(--space-lg, 1rem) var(--space-xl, 1.5rem);
+  border-left: 3px solid var(--color-primary, #cc0000);
+  margin: var(--space-xl, 2rem) 0;
+  border-radius: var(--radius-lg, 8px);
+  font-size: clamp(0.875rem, 0.9vw + 0.5rem, 0.95rem);
+  line-height: 1.6;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.1));
+  transition: background-color var(--transition-base, 250ms ease);
+}
+.toc-wrapper h3,
+.toc-wrapper h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-sm, 0.5rem);
+  font-size: clamp(0.95rem, 1vw + 0.5rem, 1rem);
+  font-weight: 600;
+  color: var(--color-text, #333);
+}
+.toc-wrapper ul {
+  list-style: none;
+  padding-left: var(--space-lg, 1rem);
+  margin: 0;
+}
+.toc-wrapper li {
+  margin: var(--space-xs, 0.3rem) 0;
+  position: relative;
+}
+.toc-wrapper li::before {
+  content: "▸";
+  position: absolute;
+  left: -0.8rem;
+  color: var(--color-primary, #cc0000);
+  opacity: 0;
+  transition: opacity var(--transition-fast, 150ms ease);
+}
+.toc-wrapper li:hover::before {
+  opacity: 1;
+}
+.toc-wrapper a {
+  color: var(--color-text, #333);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast, 200ms ease), color var(--transition-fast, 200ms ease), padding-left var(--transition-fast, 200ms ease);
+  display: inline-block;
+}
+.toc-wrapper a:hover, .toc-wrapper a:focus {
+  color: var(--color-primary, #cc0000);
+  border-bottom-color: var(--color-primary, #cc0000);
+  padding-left: 0.25rem;
+  outline: none;
+}
+.toc-wrapper a:focus-visible {
+  outline: 2px solid var(--color-primary, #cc0000);
+  outline-offset: 2px;
+}
+
+.toc-wrapper ul ul {
+  margin-left: var(--space-lg, 1rem);
+  margin-top: var(--space-xs, 0.25rem);
+  border-left: 1px solid var(--color-border, #ddd);
+  padding-left: var(--space-md, 0.8rem);
+}
+.toc-wrapper ul ul a {
+  font-size: 0.9em;
+  color: var(--color-text-muted, #6a737d);
+}
+.toc-wrapper ul ul a:hover, .toc-wrapper ul ul a:focus {
+  color: var(--color-primary, #cc0000);
+}
+
+.toc-wrapper ul ul ul {
+  font-size: 0.85em;
+  border-left-color: var(--color-border-dark, #ccc);
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+    .toc-wrapper {
+        background-color: var(--color-highlight, #2a2a2a);
+        border-left-color: var(--color-primary, #cc0000);
+
+        h3,
+        h2 {
+            color: var(--color-text, #e0e0e0);
+        }
+
+        ul ul {
+            border-left-color: var(--color-border, #444);
+        }
+    }
+}
+*/
+@media screen and (max-width: 768px) {
+  .toc-wrapper {
+    padding: var(--space-md, 0.75rem) var(--space-lg, 1rem);
+    font-size: 0.875rem;
+  }
+  .toc-wrapper ul {
+    padding-left: var(--space-md, 0.75rem);
+  }
+  .toc-wrapper ul ul {
+    margin-left: var(--space-sm, 0.5rem);
+    padding-left: var(--space-sm, 0.5rem);
+  }
+}
+@media print {
+  .toc-wrapper {
+    background-color: transparent;
+    border: 1px solid #000;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+  .toc-wrapper a {
+    color: #000;
+    border-bottom: none;
+  }
+  .toc-wrapper a::after {
+    content: " (page " target-counter(attr(href), page) ")";
+    font-size: 0.8em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

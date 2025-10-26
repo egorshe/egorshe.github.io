@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en" name="top">
+    {% include head.html %}
+    <body>
+        <main>
+            <header>{% include nav.html %}</header>
+            <section>{{ content }}</section>
+            {% include footer.html %}
+        </main>
+        <!-- defer so script doesn't block rendering -->
+        <script src="{{ site.baseurl }}/assets/js/nav.js" defer></script>
+    </body>
+</html>

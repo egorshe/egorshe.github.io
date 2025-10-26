@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Mato Baltica</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2025-10-26T17:16:32-04:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>egorshe</name>
+   <email>matobaltica@tuta.io</email>
+ </author>
+
+ 
+ <entry>
+   <title>This is Draft</title>
+   <link href="http://localhost:4000/2025/10/16/this-is-draft"/>
+   <updated>2025-10-16T14:15:06-04:00</updated>
+   <id>http://localhost:4000/2025/10/16/this-is-draft</id>
+   <content type="html">&lt;p&gt;This is a draft post.&lt;/p&gt;
+
+&lt;p&gt;It shouldn’t be processed and published by Jekyll.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Pinky</title>
+   <link href="http://localhost:4000/2025/10/16/pinky"/>
+   <updated>2025-10-16T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2025/10/16/Pinky</id>
+   <content type="html">&lt;p&gt;Here is some text for the Pinky post.
+&lt;a class=&quot;internal-link&quot; href=&quot;/2025/10/15/brain&quot;&gt;Brain&lt;/a&gt;
+&lt;a class=&quot;internal-link&quot; href=&quot;/projects/Baltic-Cinemas-Research-Resources/&quot;&gt;Baltic Cinemas Research Resources&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;internal-link&quot; href=&quot;/2021/05/01/test-post-2&quot;&gt;customtext&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;add something to see if it triggers regeneration&lt;/p&gt;
+
+&lt;p&gt;According to Mazierska, Baltic cinema represents…&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>title of the post</title>
+   <link href="http://localhost:4000/2025/10/16/blog-name-without-date-and-dashes-md-md"/>
+   <updated>2025-10-16T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2025/10/16/Blog-name-without-date-and-dashes.md.md</id>
+   <content type="html">&lt;h1 id=&quot;тестирование-автоматической-публикации-и-ссылок&quot;&gt;Тестирование Автоматической Публикации и Ссылок&lt;/h1&gt;
+
+&lt;p&gt;Этот пост создан специально для того, чтобы проверить, как работает наш автоматизированный рабочий процесс публикации. Мы хотим убедиться, что &lt;strong&gt;плагин Templater&lt;/strong&gt; правильно переименует файл, обновит дату и удалит поле &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;draft: true&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;цели-тестирования&quot;&gt;Цели Тестирования&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Проверка Переименования Файла:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Исходное имя: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Test-Draft-Jekyll.md&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Ожидаемое имя после применения шаблона: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-Test-Draft-Jekyll.md&lt;/code&gt; (где YYYY-MM-DD — это текущая дата).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Проверка Обновления Frontmatter:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Поле &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;draft: true&lt;/code&gt; должно быть полностью удалено.&lt;/li&gt;
+      &lt;li&gt;Поле &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date&lt;/code&gt; должно быть обновлено до текущих даты и времени.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Проверка Двунаправленных Ссылок:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Пост должен правильно ссылаться на другие страницы.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;проверка-двунаправленных-ссылок&quot;&gt;Проверка Двунаправленных Ссылок&lt;/h2&gt;
+
+&lt;p&gt;В этом черновике мы используем несколько wiki-ссылок, чтобы проверить работу нашего плагина &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BidirectionalLinksGenerator&lt;/code&gt;. Эти ссылки должны быть преобразованы в валидные HTML-теги &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt; при сборке Jekyll.&lt;/p&gt;
+
+&lt;p&gt;Например, мы ссылаемся на наши две тестовые страницы: &lt;a class=&quot;internal-link&quot; href=&quot;/2025/10/15/brain&quot;&gt;Brain&lt;/a&gt; и &lt;a class=&quot;internal-link&quot; href=&quot;/2025/10/16/pinky&quot;&gt;Pinky&lt;/a&gt;. Если эти страницы существуют, ссылки должны работать. Если страницы не существуют, они должны быть отмечены как “invalid-link” в соответствии с логикой плагина.&lt;/p&gt;
+
+&lt;p&gt;Предположим, что у нас также есть страница с названием &lt;a class=&quot;internal-link&quot; href=&quot;/projects/Baltic-Cinemas-Research-Resources/&quot;&gt;Baltic Cinemas Research Resources&lt;/a&gt;. Мы хотим, чтобы наш пост появился в списке обратных ссылок (“What links here”) на этой странице. Это будет означать, что функция &lt;strong&gt;Backlinks Generation&lt;/strong&gt; работает корректно.&lt;/p&gt;
+
+&lt;h2 id=&quot;выводы-о-рабочем-процессе&quot;&gt;Выводы о Рабочем Процессе&lt;/h2&gt;
+
+&lt;p&gt;Использование плагина &lt;strong&gt;Templater&lt;/strong&gt; для управления процессом публикации значительно снижает ручные ошибки. Ручное переименование файла с добавлением даты, а также удаление флага &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;draft: true&lt;/code&gt;, являются простыми, но критичными шагами, которые легко забыть.&lt;/p&gt;
+
+&lt;p&gt;Благодаря автоматизации, мы можем быть уверены, что пост будет опубликован с правильным форматом файла и без лишнего флага, который мог бы его скрыть на рабочем сайте.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(~250 слов, но достаточно для полного тестирования всего функционала)&lt;/em&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Brain</title>
+   <link href="http://localhost:4000/2025/10/15/brain"/>
+   <updated>2025-10-15T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2025/10/15/Brain</id>
+   <content type="html">&lt;p&gt;Here is some text for the Brain post.
+&lt;a class=&quot;internal-link&quot; href=&quot;/2025/10/16/pinky&quot;&gt;Pinky&lt;/a&gt;
+&lt;a class=&quot;internal-link&quot; href=&quot;/projects/Baltic-Cinemas-Research-Resources/&quot;&gt;Baltic Cinemas Research Resources&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>This is a test post</title>
+   <link href="http://localhost:4000/2025/10/14/new-test-post"/>
+   <updated>2025-10-14T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2025/10/14/new-test-post</id>
+   <content type="html">&lt;p&gt;The post has been created to test the functionality of the Jekyll Academic theme. It includes a title, a date, and a body with some sample text. The post also includes a table of contents, a list of tags, and a list of categories. And a word &lt;span class=&quot;jekyll-glossary&quot;&gt;  Lithuania  &lt;span class=&quot;jekyll-glossary-tooltip&quot;&gt;    &lt;span class=&quot;jekyll-glossary-tooltip-hidden&quot;&gt;(&lt;/span&gt;A country in Eastern Europe. Not part of the European Union. Not to be confused with Latvia. the main speaking languages are Lithuanian and Russian.&lt;span class=&quot;jekyll-glossary-tooltip-hidden&quot;&gt;)&lt;/span&gt;  &lt;/span&gt;&lt;/span&gt; that should have a definition when hovering over it.&lt;/p&gt;
+
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#body&quot;&gt;Body&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This is the introduction section of the post.&lt;/p&gt;
+
+&lt;h2 id=&quot;body&quot;&gt;Body&lt;/h2&gt;
+
+&lt;p&gt;This is the body section of the post.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;This is the conclusion section of the post.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Welcome to Jekyll!</title>
+   <link href="http://localhost:4000/2025/10/13/table-of-contents"/>
+   <updated>2025-10-13T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2025/10/13/Table-of-contents</id>
+   <content type="html">&lt;h1 id=&quot;the-importance-of-digital-archiving&quot;&gt;The Importance of Digital Archiving&lt;/h1&gt;
+
+&lt;p&gt;The digital age has brought an unprecedented acceleration in content creation, posing significant challenges for long-term preservation. Unlike physical documents, which degrade slowly, digital assets face threats from rapid technological obsolescence and data decay. Establishing robust digital archiving strategies is no longer optional but essential for preserving cultural, academic, and organizational memory.&lt;/p&gt;
+
+&lt;h2 id=&quot;technological-challenges&quot;&gt;Technological Challenges&lt;/h2&gt;
+
+&lt;p&gt;Digital content is inherently fragile due to its dependence on specific hardware and software environments. A primary hurdle is &lt;strong&gt;bit rot&lt;/strong&gt;, the slow, silent degradation of data over time, often caused by natural fluctuations in storage media. Even more pressing is the issue of &lt;strong&gt;format obsolescence&lt;/strong&gt;, where proprietary file types become unreadable as the programs designed to interpret them disappear.&lt;/p&gt;
+
+&lt;h3 id=&quot;mitigating-risk-with-migration&quot;&gt;Mitigating Risk with Migration&lt;/h3&gt;
+
+&lt;p&gt;To counter these threats, archivists must adopt continuous migration strategies. This involves periodically transferring content to newer, more stable storage media and converting files into open, standardized formats like PDF/A or TIFF.&lt;/p&gt;
+
+&lt;h2 id=&quot;strategic-selection-and-curation&quot;&gt;Strategic Selection and Curation&lt;/h2&gt;
+
+&lt;p&gt;Not all digital data can be saved indefinitely. Effective archiving requires a proactive curation process that begins at the point of creation. Clear policies must define what content holds enduring value and who is responsible for its long-term stewardship.&lt;/p&gt;
+
+&lt;h3 id=&quot;defining-enduring-value&quot;&gt;Defining Enduring Value&lt;/h3&gt;
+
+&lt;p&gt;Criteria for selecting content often include historical significance, uniqueness, and legal requirements. By being highly selective, organizations can focus their limited resources on ensuring the long-term accessibility and integrity of the most valuable digital assets. This ensures that future generations can access and interpret our digital past.&lt;/p&gt;
+
+&lt;h1 id=&quot;first-level-heading&quot;&gt;First level Heading&lt;/h1&gt;
+&lt;h2 id=&quot;second-level-heading&quot;&gt;Second level Heading&lt;/h2&gt;
+&lt;h3 id=&quot;third-level-heading&quot;&gt;Third level Heading&lt;/h3&gt;
+
+&lt;h1 id=&quot;first-level-h-again&quot;&gt;First Level h again&lt;/h1&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Test post with responsive images</title>
+   <link href="http://localhost:4000/2021/05/01/test-post-2"/>
+   <updated>2021-05-01T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2021/05/01/test-post-2</id>
+   <content type="html">&lt;p&gt;&lt;img style=&quot;display: block;&quot; class=&quot;img-fluid&quot; src=&quot;https://live.staticflickr.com/65535/48993906211_1534a8f85d_b.jpg&quot; alt=&quot;Toronto skyline.&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;small&quot;&gt;&quot;Toronto skyline.&quot; by Bernard Spragg is marked under CC0 1.0.&lt;/p&gt;
+
+&lt;p&gt;The code for this page is:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: post
+usehighlight: true
+tags: [Images, Jekyll-blog]
+title: Test post with responsive images
+---
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;display: block;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;img-fluid&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://live.staticflickr.com/65535/48993906211_1534a8f85d_b.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Toronto skyline.&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;small&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&quot;Toronto skyline.&quot; by Bernard Spragg is marked under CC0 1.0.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To make images responsive in any post, use the HTML image element and add a class attribute of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;img-fluid&lt;/code&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>First post with code snippets</title>
+   <link href="http://localhost:4000/2021/04/30/test-post-1-renamed-in-obsidian"/>
+   <updated>2021-04-30T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2021/04/30/test-post-1 (renamed in obsidian)</id>
+   <content type="html">&lt;p&gt;This post was posted on May 1&lt;sup&gt;st&lt;/sup&gt; 2021.&lt;/p&gt;
+
+&lt;p&gt;Want to add code snippets? &lt;a class=&quot;internal-link&quot; href=&quot;/projects/Baltic-Cinemas-Research-Resources/&quot;&gt;Baltic Cinemas Research Resources&lt;/a&gt;
+and also &lt;a class=&quot;internal-link&quot; href=&quot;/2021/05/01/test-post-2&quot;&gt;2021-05-01-test-post-2&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Well now you can!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here’s the frontmatter for this page:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;usehighlight&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;First post&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;First post with code snippets&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
+
+</feed>

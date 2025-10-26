@@ -1,0 +1,17 @@
+{% assign license_map = "MIT:https://opensource.org/licenses/MIT,Commons Clause:http://commonsclause.com,CC BY 4.0:http://creativecommons.org/licenses/by/4.0/,CC BY-NC 4.0:http://creativecommons.org/licenses/by-nc/4.0/,CC BY-ND 4.0:http://creativecommons.org/licenses/by-nd/4.0/,CC BY-NC-ND 4.0:http://creativecommons.org/licenses/by-nc-nd/4.0/,CC BY-NC-SA 4.0:http://creativecommons.org/licenses/by-nc-sa/4.0/,CC BY-SA 4.0:http://creativecommons.org/licenses/by-sa/4.0/" | split: "," %}
+
+{% for pair in license_map %}
+  {% assign parts = pair | split: ":" %}
+  {% assign license_name = parts[0] %}
+  {% assign license_url = parts[1] | append: ":" | append: parts[2] %}
+  
+  {% if site.jekyllacademic.contentlicense == license_name %}
+    <a href="{{ license_url }}" 
+       target="_blank" 
+       rel="license noopener noreferrer" 
+       style="display:inline-block;">
+      {{ license_name }}
+    </a>
+    {% break %}
+  {% endif %}
+{% endfor %}

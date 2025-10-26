@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<article
+    class="digest-post"
+    itemscope
+    itemtype="http://schema.org/ScholarlyArticle"
+>
+    <header>
+        <h1 class="page-title" itemprop="headline">{{ page.title }}</h1>
+
+        {% if page.tags %}
+        <span>
+            <i class="fa-solid fa-tags"></i>&nbsp; {% for tag in page.tags %}
+            <a href="/tag/{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {%
+            endunless %} {% endfor %}
+        </span>
+        {% endif %} {% if page.digest_type or page.open_access %}
+        <div class="digest-post-meta">
+            {% if page.digest_type %}
+            <span class="digest-badge digest-badge-{{ page.digest_type }}">
+                {{ page.digest_type | replace: '_', ' ' | capitalize }}
+            </span>
+            {% endif %} {% if page.open_access %}
+            <span class="oa-badge-large">Open Access</span>
+            {% endif %}
+        </div>
+        {% endif %} {% if page.authors %}
+        <p class="digest-authors-large" itemprop="author">
+            <strong>Authors:</strong> {{ page.authors | join: ', ' }}
+        </p>
+        {% endif %} {% if page.publication %}
+        <p class="digest-publication" itemprop="isPartOf">
+            <strong>Published in:</strong> <em>{{ page.publication }}</em>
+            {% if page.year %} ({{ page.year }}){% endif %}
+        </p>
+        {% endif %}
+    </header>
+
+    {% if page.toc %}
+    <div class="toc-wrapper">
+        <h3>Table of Contents</h3>
+        {% toc %}
+    </div>
+    <br />
+    {% endif %}
+
+    <div class="digest-post-content" itemprop="articleBody">{{ content }}</div>
+
+    <p style="text-align: left">
+        <a href="{{ site.baseurl }}/digest/">Back to list</a>
+    </p>
+</article>

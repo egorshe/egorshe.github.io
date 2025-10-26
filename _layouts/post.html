@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<article itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <header>
+        <h1 class="page-title" itemprop="headline">{{ page.title }}</h1>
+        <span>
+            <i class="fa-solid fa-tags"></i>&nbsp;{% for tag in page.tags %}
+            <a href="/tag/{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {%
+            endunless %} {% endfor %}
+        </span>
+    </header>
+
+    {% if page.toc %}
+    <div class="toc-wrapper">
+        <h3>Table of Contents</h3>
+        {% toc %}
+    </div>
+    <br />
+    {% endif %}
+
+    <div itemprop="articleBody">{{ content }}</div>
+
+    <p class="byline" style="text-align: right">
+        <time
+            itemprop="datePublished"
+            datetime="{{ page.date | date_to_xmlschema }}"
+        >
+            {{ page.date | date: "%B %d, %Y" }}
+        </time>
+    </p>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 2em">
+        {% assign prev_post = nil %} {% assign current_found = false %} {% for
+        post in site.posts reversed %} {% if current_found and post.draft !=
+        true %} {% assign prev_post = post %} {% break %} {% endif %} {% if
+        post.url == page.url %} {% assign current_found = true %} {% endif %} {%
+        endfor %} {% if prev_post %}
+        <a href="{{ prev_post.url }}">← {{ prev_post.title }}</a>
+        {% else %}
+        <span></span>
+        {% endif %} {% assign next_post = nil %} {% assign current_found = false
+        %} {% for post in site.posts %} {% if current_found and post.draft !=
+        true %} {% assign next_post = post %} {% break %} {% endif %} {% if
+        post.url == page.url %} {% assign current_found = true %} {% endif %} {%
+        endfor %} {% if next_post %}
+        <a href="{{ next_post.url }}">{{ next_post.title }} →</a>
+        {% else %}
+        <span></span>
+        {% endif %}
+    </div>
+</article>

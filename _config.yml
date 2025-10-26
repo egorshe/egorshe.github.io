@@ -1,0 +1,82 @@
+title: Mato Baltica
+navbar_title: Mato Baltica
+
+author:
+  name: egorshe # Your name
+  email: matobaltica@tuta.io
+
+description: nexus for the critical study of Baltic cinemas and broader regional culture # description of your site
+
+url: "https://egorshe.github.io" # The base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # The subpath of your site, e.g. /blog
+
+jekyllacademic:
+  homepage_title: "Why the Baltics?" # Your homepage title
+  footer: egorshe
+  contentlicense: "MIT" # Choose either one of these to put: MIT, Commons Clause, CC BY 4.0, CC BY-NC 4.0, CC BY-ND 4.0, CC BY-NC-ND 4.0, CC BY-NC-SA 4.0, CC BY-NC-SA 4.0, CC BY-SA 4.0
+  socials:
+    twitter: matobaltica 
+    instagram: matobaltica 
+    telegram: "https://t.me/BalticResearch" 
+
+# No need to edit this part, however if you want to, that's fine as well
+
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: false
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug
+  projects:
+    output: true
+    permalink: /:collection/:title/
+  digest:
+    output: true
+    permalink: /digest/:title/
+
+# include:
+# - _pages
+
+exclude:
+  - 00_meta/
+  - .obsidian/
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-toc
+  - jekyll-glossary_tooltip
+  - jekyll-target-blank
+
+toc:
+  min_level: 1
+  max_level: 6
+  no_toc_section_class: no_toc_section
+  list_class: section-nav
+  sublist_class: ""
+  item_class: toc-entry
+  item_prefix: toc-
+
+feed:
+  collections:
+    posts:
+      path: "/feed.xml" # Main feed for blog posts
+    projects:
+      path: "/projects-feed.xml" # Optional: Separate feed for projects
+    digest:
+      path: "/digest-feed.xml" # Optional: Separate feed for digest
+
+glossary_tooltip:
+  lookup_file: "glossary"
+  # class_name: 'custom-tooltip' # Optional: Add custom CSS class here
+  jekyll-target-blank:
+    external_only: true

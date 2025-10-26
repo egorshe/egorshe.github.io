@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<section class="posts">
+    <h1 class="page-title">Field Notes</h1>
+
+    <div id="search-container">
+        <input
+            type="text"
+            id="search-input"
+            placeholder="Search for a tag or post..."
+        />
+        <ol id="results-container"></ol>
+    </div>
+
+    <h2 class="page-title-h2">Posts</h2>
+    <ul>
+        {% for post in site.posts %} {% if post.draft != true %}
+        <li>
+            <a style="color: black" href="{{ site.baseurl }}{{ post.url }}"
+                >{{ post.title }}</a
+            >
+            <time datetime="{{ post.date | date_to_xmlschema }}"
+                >{{ post.date | date: "%m-%d-%Y" }}</time
+            >
+        </li>
+        {% endif %} {% endfor %}
+    </ul>
+
+    <h2 class="page-title-h2">Tags</h2>
+
+    {% comment %} Get sorted tag names from normalized_tags {% endcomment %}
+
+    <p>
+        {% assign sorted_tags = site.data.sorted_tag_names %} {% for tag_name in
+        sorted_tags %} {% assign tag_posts = site.data.normalized_tags[tag_name]
+        %}
+        <a href="{{ site.baseurl }}/tag/{{ tag_name | slugify }}">
+            {{ tag_name }} ({{ tag_posts | size }})
+        </a>
+        {% unless forloop.last %}, {% endunless %} {% endfor %}
+    </p>
+
+    <h2 class="page-title-h2">Feed</h2>
+    <a href="{{ site.baseurl }}/atom.xml" class="rss"
+        >RSS <span class="fa fa-rss" style="color: #ee802f"></span
+    ></a>
+    <a href="{{ site.baseurl }}/feed.json" class="rss"
+        >JSON <span class="fa fa-rss" style="color: #ee802f"></span
+    ></a>
+</section>
+
+<script src="/search.js" type="text/javascript"></script>
+<script type="text/javascript">
+    SimpleJekyllSearch({
+        searchInput: document.getElementById("search-input"),
+        resultsContainer: document.getElementById("results-container"),
+        json: "/search.json",
+        searchResultTemplate:
+            '<li><a href="{url}" style="color: #000;" title="{desc}">{title}</a></li>',
+        noResultsText: "No results found",
+        limit: 10,
+        fuzzy: false,
+        exclude: ["Welcome"],
+    });
+</script>

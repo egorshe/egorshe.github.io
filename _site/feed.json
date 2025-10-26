@@ -1,0 +1,212 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Mato Baltica",
+    "home_page_url": "http://localhost:4000/",
+    "feed_url": "http://localhost:4000/feed.json",
+    "description": "nexus for the critical study of Baltic cinemas and broader regional culture",
+    "icon": "http://localhost:4000/apple-touch-icon.png",
+    "favicon": "http://localhost:4000/favicon.ico",
+    "expired": false,
+    
+    "author":  {
+        "name": "egorshe",
+        "url": null,
+        "avatar": null
+    },
+    
+"items": [
+    
+        {
+            "id": "http://localhost:4000/2025/10/16/this-is-draft",
+            "title": "This is Draft",
+            "summary": null,
+            "content_text": "This is a draft post.It shouldn’t be processed and published by Jekyll.",
+            "content_html": "<p>This is a draft post.</p><p>It shouldn’t be processed and published by Jekyll.</p>",
+            "url": "http://localhost:4000/2025/10/16/this-is-draft",
+            
+            
+            
+            
+            
+            "date_published": "2025-10-16T14:15:06-04:00",
+            "date_modified": "2025-10-16T14:15:06-04:00",
+            
+                "author":  {
+                "name": "egorshe",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
+            "id": "http://localhost:4000/2025/10/16/pinky",
+            "title": "Pinky",
+            "summary": null,
+            "content_text": "Here is some text for the Pinky post.BrainBaltic Cinemas Research Resourcescustomtextadd something to see if it triggers regenerationAccording to Mazierska, Baltic cinema represents…References",
+            "content_html": "<p>Here is some text for the Pinky post.<a class=\"internal-link\" href=\"/2025/10/15/brain\">Brain</a><a class=\"internal-link\" href=\"/projects/Baltic-Cinemas-Research-Resources/\">Baltic Cinemas Research Resources</a></p><p><a class=\"internal-link\" href=\"/2021/05/01/test-post-2\">customtext</a></p><p>add something to see if it triggers regeneration</p><p>According to Mazierska, Baltic cinema represents…</p><h2 id=\"references\">References</h2>",
+            "url": "http://localhost:4000/2025/10/16/pinky",
+            
+            
+            
+            
+            
+            "date_published": "2025-10-16T00:00:00-04:00",
+            "date_modified": "2025-10-16T00:00:00-04:00",
+            
+                "author":  {
+                "name": "egorshe",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
+            "id": "http://localhost:4000/2025/10/16/blog-name-without-date-and-dashes-md-md",
+            "title": "title of the post",
+            "summary": null,
+            "content_text": "Тестирование Автоматической Публикации и СсылокЭтот пост создан специально для того, чтобы проверить, как работает наш автоматизированный рабочий процесс публикации. Мы хотим убедиться, что плагин Templater правильно переименует файл, обновит дату и удалит поле draft: true.Цели Тестирования  Проверка Переименования Файла:          Исходное имя: Test-Draft-Jekyll.md      Ожидаемое имя после применения шаблона: YYYY-MM-DD-Test-Draft-Jekyll.md (где YYYY-MM-DD — это текущая дата).        Проверка Обновления Frontmatter:          Поле draft: true должно быть полностью удалено.      Поле date должно быть обновлено до текущих даты и времени.        Проверка Двунаправленных Ссылок:          Пост должен правильно ссылаться на другие страницы.      Проверка Двунаправленных СсылокВ этом черновике мы используем несколько wiki-ссылок, чтобы проверить работу нашего плагина BidirectionalLinksGenerator. Эти ссылки должны быть преобразованы в валидные HTML-теги &lt;a&gt; при сборке Jekyll.Например, мы ссылаемся на наши две тестовые страницы: Brain и Pinky. Если эти страницы существуют, ссылки должны работать. Если страницы не существуют, они должны быть отмечены как “invalid-link” в соответствии с логикой плагина.Предположим, что у нас также есть страница с названием Baltic Cinemas Research Resources. Мы хотим, чтобы наш пост появился в списке обратных ссылок (“What links here”) на этой странице. Это будет означать, что функция Backlinks Generation работает корректно.Выводы о Рабочем ПроцессеИспользование плагина Templater для управления процессом публикации значительно снижает ручные ошибки. Ручное переименование файла с добавлением даты, а также удаление флага draft: true, являются простыми, но критичными шагами, которые легко забыть.Благодаря автоматизации, мы можем быть уверены, что пост будет опубликован с правильным форматом файла и без лишнего флага, который мог бы его скрыть на рабочем сайте.(~250 слов, но достаточно для полного тестирования всего функционала)",
+            "content_html": "<h1 id=\"тестирование-автоматической-публикации-и-ссылок\">Тестирование Автоматической Публикации и Ссылок</h1><p>Этот пост создан специально для того, чтобы проверить, как работает наш автоматизированный рабочий процесс публикации. Мы хотим убедиться, что <strong>плагин Templater</strong> правильно переименует файл, обновит дату и удалит поле <code class=\"language-plaintext highlighter-rouge\">draft: true</code>.</p><h2 id=\"цели-тестирования\">Цели Тестирования</h2><ol>  <li><strong>Проверка Переименования Файла:</strong>    <ul>      <li>Исходное имя: <code class=\"language-plaintext highlighter-rouge\">Test-Draft-Jekyll.md</code></li>      <li>Ожидаемое имя после применения шаблона: <code class=\"language-plaintext highlighter-rouge\">YYYY-MM-DD-Test-Draft-Jekyll.md</code> (где YYYY-MM-DD — это текущая дата).</li>    </ul>  </li>  <li><strong>Проверка Обновления Frontmatter:</strong>    <ul>      <li>Поле <code class=\"language-plaintext highlighter-rouge\">draft: true</code> должно быть полностью удалено.</li>      <li>Поле <code class=\"language-plaintext highlighter-rouge\">date</code> должно быть обновлено до текущих даты и времени.</li>    </ul>  </li>  <li><strong>Проверка Двунаправленных Ссылок:</strong>    <ul>      <li>Пост должен правильно ссылаться на другие страницы.</li>    </ul>  </li></ol><hr /><h2 id=\"проверка-двунаправленных-ссылок\">Проверка Двунаправленных Ссылок</h2><p>В этом черновике мы используем несколько wiki-ссылок, чтобы проверить работу нашего плагина <code class=\"language-plaintext highlighter-rouge\">BidirectionalLinksGenerator</code>. Эти ссылки должны быть преобразованы в валидные HTML-теги <code class=\"language-plaintext highlighter-rouge\">&lt;a&gt;</code> при сборке Jekyll.</p><p>Например, мы ссылаемся на наши две тестовые страницы: <a class=\"internal-link\" href=\"/2025/10/15/brain\">Brain</a> и <a class=\"internal-link\" href=\"/2025/10/16/pinky\">Pinky</a>. Если эти страницы существуют, ссылки должны работать. Если страницы не существуют, они должны быть отмечены как “invalid-link” в соответствии с логикой плагина.</p><p>Предположим, что у нас также есть страница с названием <a class=\"internal-link\" href=\"/projects/Baltic-Cinemas-Research-Resources/\">Baltic Cinemas Research Resources</a>. Мы хотим, чтобы наш пост появился в списке обратных ссылок (“What links here”) на этой странице. Это будет означать, что функция <strong>Backlinks Generation</strong> работает корректно.</p><h2 id=\"выводы-о-рабочем-процессе\">Выводы о Рабочем Процессе</h2><p>Использование плагина <strong>Templater</strong> для управления процессом публикации значительно снижает ручные ошибки. Ручное переименование файла с добавлением даты, а также удаление флага <code class=\"language-plaintext highlighter-rouge\">draft: true</code>, являются простыми, но критичными шагами, которые легко забыть.</p><p>Благодаря автоматизации, мы можем быть уверены, что пост будет опубликован с правильным форматом файла и без лишнего флага, который мог бы его скрыть на рабочем сайте.</p><p><em>(~250 слов, но достаточно для полного тестирования всего функционала)</em></p>",
+            "url": "http://localhost:4000/2025/10/16/blog-name-without-date-and-dashes-md-md",
+            
+            
+            
+            "tags": ["tag one","tag3","super long and wordy tag"],
+            
+            "date_published": "2025-10-16T00:00:00-04:00",
+            "date_modified": "2025-10-16T00:00:00-04:00",
+            
+                "author":  {
+                "name": "egorshe",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
+            "id": "http://localhost:4000/2025/10/15/brain",
+            "title": "Brain",
+            "summary": null,
+            "content_text": "Here is some text for the Brain post.PinkyBaltic Cinemas Research Resources",
+            "content_html": "<p>Here is some text for the Brain post.<a class=\"internal-link\" href=\"/2025/10/16/pinky\">Pinky</a><a class=\"internal-link\" href=\"/projects/Baltic-Cinemas-Research-Resources/\">Baltic Cinemas Research Resources</a></p>",
+            "url": "http://localhost:4000/2025/10/15/brain",
+            
+            
+            
+            
+            
+            "date_published": "2025-10-15T00:00:00-04:00",
+            "date_modified": "2025-10-15T00:00:00-04:00",
+            
+                "author":  {
+                "name": "egorshe",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
+            "id": "http://localhost:4000/2025/10/14/new-test-post",
+            "title": "This is a test post",
+            "summary": null,
+            "content_text": "The post has been created to test the functionality of the Jekyll Academic theme. It includes a title, a date, and a body with some sample text. The post also includes a table of contents, a list of tags, and a list of categories. And a word   Lithuania      (A country in Eastern Europe. Not part of the European Union. Not to be confused with Latvia. the main speaking languages are Lithuanian and Russian.)   that should have a definition when hovering over it.Table of Contents  Table of Contents  Introduction  Body  ConclusionIntroductionThis is the introduction section of the post.BodyThis is the body section of the post.ConclusionThis is the conclusion section of the post.",
+            "content_html": "<p>The post has been created to test the functionality of the Jekyll Academic theme. It includes a title, a date, and a body with some sample text. The post also includes a table of contents, a list of tags, and a list of categories. And a word <span class=\"jekyll-glossary\">  Lithuania  <span class=\"jekyll-glossary-tooltip\">    <span class=\"jekyll-glossary-tooltip-hidden\">(</span>A country in Eastern Europe. Not part of the European Union. Not to be confused with Latvia. the main speaking languages are Lithuanian and Russian.<span class=\"jekyll-glossary-tooltip-hidden\">)</span>  </span></span> that should have a definition when hovering over it.</p><h2 id=\"table-of-contents\">Table of Contents</h2><ul>  <li><a href=\"#table-of-contents\">Table of Contents</a></li>  <li><a href=\"#introduction\">Introduction</a></li>  <li><a href=\"#body\">Body</a></li>  <li><a href=\"#conclusion\">Conclusion</a></li></ul><h2 id=\"introduction\">Introduction</h2><p>This is the introduction section of the post.</p><h2 id=\"body\">Body</h2><p>This is the body section of the post.</p><h2 id=\"conclusion\">Conclusion</h2><p>This is the conclusion section of the post.</p>",
+            "url": "http://localhost:4000/2025/10/14/new-test-post",
+            
+            
+            
+            "tags": ["test","hover","definition"],
+            
+            "date_published": "2025-10-14T00:00:00-04:00",
+            "date_modified": "2025-10-14T00:00:00-04:00",
+            
+                "author":  {
+                "name": "egorshe",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
+            "id": "http://localhost:4000/2025/10/13/table-of-contents",
+            "title": "Welcome to Jekyll!",
+            "summary": null,
+            "content_text": "The Importance of Digital ArchivingThe digital age has brought an unprecedented acceleration in content creation, posing significant challenges for long-term preservation. Unlike physical documents, which degrade slowly, digital assets face threats from rapid technological obsolescence and data decay. Establishing robust digital archiving strategies is no longer optional but essential for preserving cultural, academic, and organizational memory.Technological ChallengesDigital content is inherently fragile due to its dependence on specific hardware and software environments. A primary hurdle is bit rot, the slow, silent degradation of data over time, often caused by natural fluctuations in storage media. Even more pressing is the issue of format obsolescence, where proprietary file types become unreadable as the programs designed to interpret them disappear.Mitigating Risk with MigrationTo counter these threats, archivists must adopt continuous migration strategies. This involves periodically transferring content to newer, more stable storage media and converting files into open, standardized formats like PDF/A or TIFF.Strategic Selection and CurationNot all digital data can be saved indefinitely. Effective archiving requires a proactive curation process that begins at the point of creation. Clear policies must define what content holds enduring value and who is responsible for its long-term stewardship.Defining Enduring ValueCriteria for selecting content often include historical significance, uniqueness, and legal requirements. By being highly selective, organizations can focus their limited resources on ensuring the long-term accessibility and integrity of the most valuable digital assets. This ensures that future generations can access and interpret our digital past.First level HeadingSecond level HeadingThird level HeadingFirst Level h again",
+            "content_html": "<h1 id=\"the-importance-of-digital-archiving\">The Importance of Digital Archiving</h1><p>The digital age has brought an unprecedented acceleration in content creation, posing significant challenges for long-term preservation. Unlike physical documents, which degrade slowly, digital assets face threats from rapid technological obsolescence and data decay. Establishing robust digital archiving strategies is no longer optional but essential for preserving cultural, academic, and organizational memory.</p><h2 id=\"technological-challenges\">Technological Challenges</h2><p>Digital content is inherently fragile due to its dependence on specific hardware and software environments. A primary hurdle is <strong>bit rot</strong>, the slow, silent degradation of data over time, often caused by natural fluctuations in storage media. Even more pressing is the issue of <strong>format obsolescence</strong>, where proprietary file types become unreadable as the programs designed to interpret them disappear.</p><h3 id=\"mitigating-risk-with-migration\">Mitigating Risk with Migration</h3><p>To counter these threats, archivists must adopt continuous migration strategies. This involves periodically transferring content to newer, more stable storage media and converting files into open, standardized formats like PDF/A or TIFF.</p><h2 id=\"strategic-selection-and-curation\">Strategic Selection and Curation</h2><p>Not all digital data can be saved indefinitely. Effective archiving requires a proactive curation process that begins at the point of creation. Clear policies must define what content holds enduring value and who is responsible for its long-term stewardship.</p><h3 id=\"defining-enduring-value\">Defining Enduring Value</h3><p>Criteria for selecting content often include historical significance, uniqueness, and legal requirements. By being highly selective, organizations can focus their limited resources on ensuring the long-term accessibility and integrity of the most valuable digital assets. This ensures that future generations can access and interpret our digital past.</p><h1 id=\"first-level-heading\">First level Heading</h1><h2 id=\"second-level-heading\">Second level Heading</h2><h3 id=\"third-level-heading\">Third level Heading</h3><h1 id=\"first-level-h-again\">First Level h again</h1>",
+            "url": "http://localhost:4000/2025/10/13/table-of-contents",
+            
+            
+            
+            
+            
+            "date_published": "2025-10-13T00:00:00-04:00",
+            "date_modified": "2025-10-13T00:00:00-04:00",
+            
+                "author":  {
+                "name": "egorshe",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
+            "id": "http://localhost:4000/2021/05/01/test-post-2",
+            "title": "Test post with responsive images",
+            "summary": null,
+            "content_text": "\"Toronto skyline.\" by Bernard Spragg is marked under CC0 1.0.The code for this page is:---layout: postusehighlight: truetags: [Images, Jekyll-blog]title: Test post with responsive images---&lt;img style=\"display: block;\" class=\"img-fluid\" src=\"https://live.staticflickr.com/65535/48993906211_1534a8f85d_b.jpg\" alt=\"Toronto skyline.\"&gt;&lt;p class=\"small\"&gt;\"Toronto skyline.\" by Bernard Spragg is marked under CC0 1.0.&lt;/p&gt;To make images responsive in any post, use the HTML image element and add a class attribute of img-fluid.",
+            "content_html": "<p><img style=\"display: block;\" class=\"img-fluid\" src=\"https://live.staticflickr.com/65535/48993906211_1534a8f85d_b.jpg\" alt=\"Toronto skyline.\" /></p><p class=\"small\">\"Toronto skyline.\" by Bernard Spragg is marked under CC0 1.0.</p><p>The code for this page is:</p><div class=\"language-html highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>---layout: postusehighlight: truetags: [Images, Jekyll-blog]title: Test post with responsive images---<span class=\"nt\">&lt;img</span> <span class=\"na\">style=</span><span class=\"s\">\"display: block;\"</span> <span class=\"na\">class=</span><span class=\"s\">\"img-fluid\"</span> <span class=\"na\">src=</span><span class=\"s\">\"https://live.staticflickr.com/65535/48993906211_1534a8f85d_b.jpg\"</span> <span class=\"na\">alt=</span><span class=\"s\">\"Toronto skyline.\"</span><span class=\"nt\">&gt;</span><span class=\"nt\">&lt;p</span> <span class=\"na\">class=</span><span class=\"s\">\"small\"</span><span class=\"nt\">&gt;</span>\"Toronto skyline.\" by Bernard Spragg is marked under CC0 1.0.<span class=\"nt\">&lt;/p&gt;</span></code></pre></div></div><p>To make images responsive in any post, use the HTML image element and add a class attribute of <code class=\"language-plaintext highlighter-rouge\">img-fluid</code>.</p>",
+            "url": "http://localhost:4000/2021/05/01/test-post-2",
+            
+            
+            
+            "tags": ["Images","Jekyll-blog"],
+            
+            "date_published": "2021-05-01T00:00:00-04:00",
+            "date_modified": "2021-05-01T00:00:00-04:00",
+            
+                "author":  {
+                "name": "egorshe",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
+            "id": "http://localhost:4000/2021/04/30/test-post-1-renamed-in-obsidian",
+            "title": "First post with code snippets",
+            "summary": null,
+            "content_text": "This post was posted on May 1st 2021.Want to add code snippets? Baltic Cinemas Research Resourcesand also 2021-05-01-test-post-2#include &lt;iostream&gt;int main(){  std::cout&lt;&lt;\"Well now you can!\"&lt;&lt;std::endl;}Here’s the frontmatter for this page:---layout: postusehighlight: truetags: [First post, Test]title: First post with code snippets---",
+            "content_html": "<p>This post was posted on May 1<sup>st</sup> 2021.</p><p>Want to add code snippets? <a class=\"internal-link\" href=\"/projects/Baltic-Cinemas-Research-Resources/\">Baltic Cinemas Research Resources</a>and also <a class=\"internal-link\" href=\"/2021/05/01/test-post-2\">2021-05-01-test-post-2</a></p><div class=\"language-c++ highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"cp\">#include</span> <span class=\"cpf\">&lt;iostream&gt;</span><span class=\"cp\"></span><span class=\"kt\">int</span> <span class=\"nf\">main</span><span class=\"p\">()</span><span class=\"p\">{</span>  <span class=\"n\">std</span><span class=\"o\">::</span><span class=\"n\">cout</span><span class=\"o\">&lt;&lt;</span><span class=\"s\">\"Well now you can!\"</span><span class=\"o\">&lt;&lt;</span><span class=\"n\">std</span><span class=\"o\">::</span><span class=\"n\">endl</span><span class=\"p\">;</span><span class=\"p\">}</span></code></pre></div></div><p>Here’s the frontmatter for this page:</p><div class=\"language-yaml highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code><span class=\"nn\">---</span><span class=\"na\">layout</span><span class=\"pi\">:</span> <span class=\"s\">post</span><span class=\"na\">usehighlight</span><span class=\"pi\">:</span> <span class=\"kc\">true</span><span class=\"na\">tags</span><span class=\"pi\">:</span> <span class=\"pi\">[</span><span class=\"nv\">First post</span><span class=\"pi\">,</span> <span class=\"nv\">Test</span><span class=\"pi\">]</span><span class=\"na\">title</span><span class=\"pi\">:</span> <span class=\"s\">First post with code snippets</span><span class=\"nn\">---</span></code></pre></div></div>",
+            "url": "http://localhost:4000/2021/04/30/test-post-1-renamed-in-obsidian",
+            
+            
+            
+            "tags": ["First post","Test"],
+            
+            "date_published": "2021-04-30T00:00:00-04:00",
+            "date_modified": "2021-04-30T00:00:00-04:00",
+            
+                "author":  {
+                "name": "egorshe",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        }
+    
+    ]
+}
