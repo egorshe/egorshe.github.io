@@ -4,7 +4,7 @@ title: "Sample project number 2"
 stack: "HTML, SCSS, YAML, Liquid tags,"
 pinned: false
 githublink: https://github.com/yak-fumblepack/jekyll-academic
-order: 2
+order: 3
 usehighlight: true
 ---
 
