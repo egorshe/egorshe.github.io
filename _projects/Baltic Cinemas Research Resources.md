@@ -2,6 +2,7 @@
 layout: default
 title: "Baltic Cinemas Research Resources"
 stack: "Primary sources and digital archives"
+category: research-resources
 pinned: true
 order: 1
 ---

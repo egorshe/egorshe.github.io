@@ -2,8 +2,9 @@
 layout: default
 title: "Essential Humanities Journals and Periodicals"
 stack: "Secondary Sources"
+category: research-resources
 pinned: false
 order: 2
 ---
 
-<h1 class="page-title">Essential Humanities Journals: and Periodicals</h1>
+<h1 class="page-title">Essential Humanities Journals and Periodicals</h1>
