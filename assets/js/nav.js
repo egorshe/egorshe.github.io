@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.querySelector("nav ul");
+  const MOBILE_BREAKPOINT = 720; // Соответствует 45rem в style.scss
 
   if (!toggle || !menu) {
     console.error("Nav toggle or menu not found");
     return;
   }
+
+  // Вспомогательная функция для определения, является ли устройство мобильным
+  const isMobileView = () => window.innerWidth <= MOBILE_BREAKPOINT;
 
   // Mobile hamburger menu toggle
   toggle.addEventListener("click", function (e) {
@@ -32,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const links = menu.querySelectorAll("a:not(.submenu-toggle a)");
   links.forEach((link) => {
     link.addEventListener("click", function () {
-      if (window.innerWidth <= 720) {
+      if (isMobileView()) {
         menu.classList.remove("nav-open");
         toggle.classList.remove("active");
         toggle.setAttribute("aria-expanded", "false");
@@ -59,9 +63,18 @@ document.addEventListener("DOMContentLoaded", function () {
       const isOpen = submenu.classList.toggle("submenu-open");
       toggle.setAttribute("aria-expanded", isOpen);
 
+      // --- МЕСТО ВСТАВКИ ВАШЕГО БЛОКА ---
       if (arrow) {
-        arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
+        // Устанавливаем поворот в зависимости от режима просмотра
+        if (isMobileView()) {
+          // МОБИЛЬНАЯ ЛОГИКА: Закрыто (←) = 180deg, Открыто (↓) = 90deg
+          arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(180deg)";
+        } else {
+          // ДЕСКТОПНАЯ ЛОГИКА: Закрыто (→) = 0deg, Открыто (↓) = 90deg
+          arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
+        }
       }
+      // --- КОНЕЦ МЕСТА ВСТАВКИ ---
 
       console.log("Submenu toggled:", isOpen, submenu);
     });
@@ -79,12 +92,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const arrow = toggle.querySelector(".submenu-arrow");
       if (arrow) {
+        // При авто-открытии всегда направляем вниз (90deg), независимо от режима
         arrow.style.transform = "rotate(90deg)";
       }
 
       console.log("Submenu auto-expanded for active subpage");
     }
   }
+
+  // ИНИЦИАЛИЗАЦИЯ: Установим правильное начальное положение стрелок при загрузке
+  // (только если они не открыты автоматически)
+  submenuToggles.forEach(function (toggle) {
+    const arrow = toggle.querySelector(".submenu-arrow");
+    const submenu = toggle.nextElementSibling;
+
+    // Применяем начальный поворот, только если субменю не открыто
+    if (arrow && submenu && !submenu.classList.contains("submenu-open")) {
+      if (isMobileView()) {
+        arrow.style.transform = "rotate(180deg)"; // Закрыто, мобильный (←)
+      } else {
+        arrow.style.transform = "rotate(0deg)"; // Закрыто, десктоп (→)
+      }
+    }
+  });
 
   console.log("Nav script loaded successfully");
   console.log("Found submenu toggles:", submenuToggles.length);

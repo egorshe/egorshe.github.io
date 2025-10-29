@@ -668,7 +668,7 @@ nav .has-submenu {
             display: block !important;
             text-align: left !important;
             margin-right: 0 !important;
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.25rem !important;
             padding: 0.5rem 0;
             font-size: 1.1rem !important;
         }
@@ -698,6 +698,7 @@ nav .has-submenu {
             order: 1;
             margin-left: auto;
             padding-left: 1rem;
+            font-size: 1.1em;
         }
 
         .submenu-title {
@@ -724,6 +725,7 @@ nav .has-submenu {
             margin-right: 0 !important;
             padding-left: 1rem !important;
             font-size: 1rem !important;
+            margin-bottom: 0.25rem !important;
 
             a {
                 font-size: 1em !important;
