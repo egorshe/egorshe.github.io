@@ -676,6 +676,11 @@ nav .has-submenu {
         br {
             display: none;
         }
+        main,
+        .digest-post-content {
+            font-size: 1.34rem;
+            line-height: 1.65;
+        }
     }
 
     @keyframes slideIn {
