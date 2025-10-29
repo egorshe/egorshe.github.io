@@ -2,7 +2,16 @@ links:
   - title: overview
     url: /overview
   - title: projects
-    url: /projects
+    url: "#"
+    submenu:
+      - title: Research Resources
+        url: /research-resources
+      - title: People
+        url: /people
+      - title: Postpoetic Documentary
+        url: /postpoetic-documentary
+      - title: Postcommunist Material Legacy
+        url: /postcommunist-material-legacy
   - title: digest
     url: /digest
   - title: field notes

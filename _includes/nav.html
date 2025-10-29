@@ -19,15 +19,36 @@
         </li>
         <br />
         {% for item in site.data.nav.links %}
-        <li>
+        <li{% if item.submenu %} class="has-submenu"{% endif %}>
+            {% if item.submenu %}
+            <button
+                class="submenu-toggle"
+                aria-expanded="false"
+                aria-label="Toggle {{ item.title }} submenu"
+            >
+                <span class="submenu-arrow">▸</span>
+                <span class="submenu-title">{{ item.title }}</span>
+            </button>
+            <ul class="submenu">
+                {% for subitem in item.submenu %}
+                <li>
+                    <a
+                        href="{{ subitem.url }}"
+                        {% if subitem.url == page.url %}class="active"{% endif %}
+                    >
+                        {{ subitem.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
             <a
                 href="{{ item.url }}"
-                {% if item.url == page.url %}
-                class="active"
-                {% endif %}
+                {% if item.url == page.url %}class="active"{% endif %}
             >
                 {{ item.title }}
             </a>
+            {% endif %}
         </li>
         {% endfor %}
     </ul>
