@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<h1 class="page-title">{{ page.title }}</h1>
+
+{{ content }} {% assign category_projects = site.projects | where: "category",
+page.category | sort: "order" %} {% for project in category_projects %}
+<div class="row py-2">
+    <div class="col">
+        <a href="{{ site.baseurl }}{{ project.url }}" class="card-link">
+            <div
+                class="card project-card{% if project.banner_image %} side-image-layout{% endif %}"
+            >
+                <div class="card-body card-text-area">
+                    <h1 class="card-title pb-2">{{ project.title }}</h1>
+                    {% if project.stack %}
+                    <h6 class="text-muted mb-2 card-subtitle">
+                        {{ project.stack }}
+                    </h6>
+                    {% endif %} {% if project.snippet %}
+                    <p class="card-text">{{ project.snippet }}</p>
+                    {% endif %} {% if project.status %}
+                    <span class="project-status">{{ project.status }}</span>
+                    {% endif %}
+                </div>
+                {% if project.banner_image %}
+                <div class="card-image-area">
+                    <img
+                        class="card-img-side"
+                        src="{{ project.banner_image }}"
+                        alt="{{ project.title | escape }}"
+                        loading="lazy"
+                    />
+                </div>
+                {% endif %}
+            </div>
+        </a>
+    </div>
+</div>
+{% endfor %}

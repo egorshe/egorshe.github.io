@@ -277,15 +277,89 @@ table {
     color: $primaryRed;
 }
 
+/* Project Status Badge */
+.project-status {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 3px;
+    margin-top: 0.75rem;
+    background-color: #f0f0f0;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
 /* Project Cards */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+    &:hover {
+        border-bottom: none;
+    }
+}
+
 .project-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #fff;
+    transition: all $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+
+    /* Side Image Layout - only when image exists */
+    &.side-image-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .card-text-area {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .card-image-area {
+        flex-shrink: 0;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        padding-left: 0;
+    }
+
+    .card-img-side {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 3px;
+        display: block;
+    }
+
     .card-title {
         color: #333;
         font-size: 120%;
+        margin-top: 0;
     }
 
     .card-subtitle {
         font-size: 110%;
+    }
+
+    .card-text {
+        margin: 0.75rem 0 0 0;
+        color: #666;
+        line-height: 1.4;
     }
 
     .github-link {
@@ -296,6 +370,56 @@ table {
             border-bottom: none;
         }
     }
+}
+
+.card {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.card-body {
+    padding: 1rem 1.25rem;
+}
+
+.row {
+    margin: 0 -0.5rem;
+}
+
+.col {
+    padding: 0 0.5rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.pb-2 {
+    padding-bottom: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.p-3 {
+    padding: 1rem;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.border {
+    border: 1px solid #dee2e6 !important;
+}
+
+.border-4 {
+    border-width: 4px !important;
+}
+
+.rounded {
+    border-radius: 0.25rem;
 }
 
 /* Search */
@@ -408,7 +532,88 @@ figure {
 }
 
 /* ============================================ */
-/* 14. Media Queries (Responsive) */
+/* 14. Submenu Styles */
+/* ============================================ */
+
+/* Submenu toggle button */
+.submenu-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    text-align: right;
+    font-family: inherit;
+    font-size: inherit;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+
+    .submenu-title {
+        color: $bodyColor;
+
+        &:hover {
+            border-bottom: 1px gray dotted;
+        }
+    }
+
+    .submenu-arrow {
+        font-size: 0.8em;
+        transition: transform $transition-base;
+        display: inline-block;
+        color: $primaryRed;
+        order: -1;
+    }
+}
+
+/* Submenu container */
+.submenu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-base ease-out;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &.submenu-open {
+        max-height: 500px;
+        transition: max-height $transition-base ease-in;
+        margin-bottom: 0.3rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+        text-align: right;
+        margin-right: 2rem;
+        padding-left: 0;
+
+        a {
+            color: $bodyColor;
+            font-size: 0.95em;
+
+            &:hover {
+                color: $bodyColor;
+                border-bottom: 1px gray dotted;
+            }
+
+            &.active {
+                color: $primaryRed;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+/* Remove any special positioning */
+nav .has-submenu {
+    margin-bottom: 0.2rem;
+}
+
+/* ============================================ */
+/* 15. Media Queries (Responsive) */
 /* ============================================ */
 
 @media screen and (max-width: 45rem) {
@@ -483,34 +688,92 @@ figure {
             opacity: 1;
         }
     }
+
+    /* Mobile-specific submenu styles */
+    .submenu-toggle {
+        justify-content: space-between;
+        padding: 0.5rem 0;
+
+        .submenu-arrow {
+            order: 1;
+            margin-left: auto;
+            padding-left: 1rem;
+        }
+
+        .submenu-title {
+            order: 0;
+        }
+    }
+
+    .submenu {
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 0 0 1rem !important;
+        border: none !important;
+
+        &.submenu-open {
+            max-height: 500px !important;
+        }
+
+        li {
+            text-align: left !important;
+            margin-right: 0 !important;
+            padding-left: 1rem !important;
+            font-size: 1rem !important;
+
+            a {
+                font-size: 1em !important;
+            }
+        }
+    }
+
+    /* Keep side image layout on mobile - just make it smaller */
+    .project-card.side-image-layout {
+        /* Keep flex-direction: row - don't change to column! */
+
+        .card-image-area {
+            width: 80px; /* Smaller on mobile */
+            padding: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .card-img-side {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px; /* Keep rectangular, not circular */
+        }
+    }
 }
 
 /* ============================================ */
-/* 15. Digest & Content Enhancements */
+/* 16. Digest & Content Enhancements */
 /* ============================================ */
 
 /* Improve readability of body text */
 .digest-post-content {
     line-height: 1.65;
-    font-size: 1.05em; /* Slightly larger text */
-
-    /* Ensure a clear separation between content and footer/metadata */
+    font-size: 1.05em;
     margin-bottom: 2em;
 }
 
-/* Ensure all block elements (like lists and paragraphs) have bottom margin */
+/* Ensure all block elements have bottom margin */
 .digest-post-content p,
 .digest-post-content ul,
 .digest-post-content ol {
     margin-bottom: 1em;
 }
 
-/* Ensure strong headings within the post have space below them */
+/* Strong headings within posts */
 .digest-post-content h2,
 .digest-post-content h3 {
     margin-top: 2em;
     margin-bottom: 0.5em;
-    color: $accentGray; /* Use a secondary color for internal headings */
+    color: $accentGray;
 }
 
 /* Consistent link styling within content */
