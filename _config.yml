@@ -37,7 +37,7 @@ collections:
     permalink: /:year/:month/:day/:slug
   projects:
     output: true
-    permalink: /projects/:title/
+    permalink: /:collection/:title/
   digest:
     output: true
     permalink: /digest/:title/
