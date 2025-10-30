@@ -1,0 +1,117 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#cc0000" />
+
+    <!-- Preconnect to CDNs for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
+
+    <!-- Favicon - SVG with automatic light/dark mode switching -->
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="{{ site.baseurl }}/favicon.svg"
+    />
+    <!-- Fallback for browsers that don't support SVG favicons -->
+    <link
+        rel="alternate icon"
+        type="image/png"
+        href="{{ site.baseurl }}/assets/img/favicon-light.png"
+    />
+
+    <!-- Bootstrap CSS (Updated to latest stable) -->
+    <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+        crossorigin="anonymous"
+    />
+
+
+    <!-- Bootstrap Bundle with Popper (Updated) -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"
+        defer
+    ></script>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+    />
+
+    <!-- FontAwesome Icons -->
+    <script
+        src="https://kit.fontawesome.com/22ab6dd597.js"
+        crossorigin="anonymous"
+        defer
+    ></script>
+
+    <!-- Highlight JS (Conditionally loaded) -->
+    {% if page.usehighlight %}
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.min.css"
+    />
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
+        defer
+    ></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll();
+        });
+    </script>
+    {% endif %}
+
+    <!-- ChartJS (Conditionally loaded) -->
+    {% if page.usechartjs %}
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+        defer
+    ></script>
+    {% endif %}
+
+    <!-- MathJax support (Updated CDN) -->
+    {% if page.usemathjax %}
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ["$", "$"],
+                    ["\\(", "\\)"],
+                ],
+                displayMath: [
+                    ["$$", "$$"],
+                    ["\\[", "\\]"],
+                ],
+                tags: "ams",
+            },
+        };
+    </script>
+    <script
+        type="text/javascript"
+        id="MathJax-script"
+        async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    {% endif %}
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+
+    <!-- SEO -->
+    <title>
+        {% if page.title %} {{ page.title }} {% else %} {{ site.title }} {%
+        endif %}
+    </title>
+    <link
+        rel="sitemap"
+        type="application/xml"
+        title="sitemap"
+        href="{{ site.baseurl }}/sitemap.xml"
+    />
+    {% seo title=false %} {% include structured-data.html %}
+</head>
