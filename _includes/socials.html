@@ -2,9 +2,9 @@
 <a
     href="https://twitter.com/{{ socials.twitter | cgi_escape | escape }}"
     target="_blank"
-    style="color: #1da1f2"
+    style="color: #010101"
 >
-    <span class="bi bi-twitter"></span>
+    <span class="fa-brands fa-x-twitter"></span>
 </a>
 {% endif %} {% if socials.github %}
 <a
@@ -20,14 +20,14 @@
     target="_blank"
     style="color: #E4405F"
 >
-    <span class="bi bi-instagram"></span>
+    <span class="fa-brands fa-instagram"></span>
 </a>
 {% endif %} {% if site.author.email %}
 <a href="mailto:{{ site.author.email }}" target="_blank" style="color: #666">
-    <span class="bi bi-envelope-open-fill"></span>
+    <span class="fa-solid fa-envelope"></span>
 </a>
 {% endif %} {% if socials.telegram %}
 <a href="{{ socials.telegram }}" target="_blank" style="color: #24a1de">
-    <span class="bi bi-telegram"></span>
+    <span class="fa-brands fa-telegram"></span>
 </a>
 {% endif %}
