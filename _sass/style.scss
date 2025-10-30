@@ -178,12 +178,12 @@ a {
     display: inline;
     margin-right: 1rem;
 
-  span {
-    color: #ee802f; // orange RSS icon color
-    margin-left: 0.2em;
-  }
+    span {
+        color: #ee802f; // orange RSS icon color
+        margin-left: 0.2em;
+    }
 
-  &:hover {
+    &:hover {
         text-decoration: none;
         text-decoration-style: none;
         text-decoration-color: color.adjust($primaryRed, $lightness: -10%);
@@ -191,9 +191,9 @@ a {
         border-bottom: none;
 
         span {
-           color: #ee802f; // Keep icon orange on hover
+            color: #ee802f; // Keep icon orange on hover
         }
-  }
+    }
 }
 
 /* ============================================ */
