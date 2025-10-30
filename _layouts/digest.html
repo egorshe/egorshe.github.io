@@ -13,10 +13,10 @@ layout: default
     {% endif %} {% endfor %}
 </ul>
 
-<h2 class="page-title-h2">Feed</h2>
-<a href="{{ site.baseurl }}/digest-feed.xml" class="rss">
-    RSS <span class="fa fa-rss" style="color: #ee802f"></span>
-</a>
-<a href="{{ site.baseurl }}/feed.json" class="rss">
-    JSON <span class="fa fa-rss" style="color: #ee802f"></span>
-</a>
+ <!--class="page-title-h2">Feed</h2>-->
+    <a href="{{ site.baseurl }}/atom.xml" class="rss"
+        >RSS <span class="fa-solid fa-rss"></span
+    ></a>
+    <a href="{{ site.baseurl }}/feed.json" class="rss"
+        >JSON <span class="fa-solid fa-rss"></span
+    ></a>

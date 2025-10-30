@@ -14,7 +14,7 @@ layout: default
         <ol id="results-container"></ol>
     </div>
 
-    <h2 class="page-title-h2">Posts</h2>
+    <!--class="page-title-h2">Posts</h2>-->
     <ul>
         {% for post in site.posts %} {% if post.draft != true %}
         <li>
@@ -42,12 +42,11 @@ layout: default
         {% unless forloop.last %}, {% endunless %} {% endfor %}
     </p>
 
-    <h2 class="page-title-h2">Feed</h2>
     <a href="{{ site.baseurl }}/atom.xml" class="rss"
-        >RSS <span class="fa fa-rss" style="color: #ee802f"></span
+        >RSS <span class="fa-solid fa-rss"></span
     ></a>
     <a href="{{ site.baseurl }}/feed.json" class="rss"
-        >JSON <span class="fa fa-rss" style="color: #ee802f"></span
+        >JSON <span class="fa-solid fa-rss"></span
     ></a>
 </section>
 
