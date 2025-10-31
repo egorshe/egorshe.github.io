@@ -2,19 +2,20 @@
 .jekyll-glossary {
     position: relative;
     display: inline-block;
-    border-bottom: 2px dotted #0074bd;
+    border-bottom: 2px dotted var(--accent-blue);
     cursor: help;
 }
 
 .jekyll-glossary .jekyll-glossary-tooltip {
     visibility: hidden;
     width: 120px;
-    background-color: black;
-    color: #fff;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
     text-align: center;
     font-size: 0.8em;
     padding: 5px;
     border-radius: 6px;
+    border: 1px solid var(--border-medium);
 
     /* Position the tooltip text - see examples below! */
     position: absolute;
@@ -45,13 +46,13 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: black transparent transparent transparent;
+    border-color: var(--bg-tertiary) transparent transparent transparent;
 }
 
 /* Animation from invisible to visible on hover. */
 .jekyll-glossary .jekyll-glossary-tooltip {
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
 }
 .jekyll-glossary:hover .jekyll-glossary-tooltip {
     opacity: 1;

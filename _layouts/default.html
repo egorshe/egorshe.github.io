@@ -5,10 +5,83 @@
         <main>
             <header>{% include nav.html %}</header>
             <section>{{ content }}</section>
-            
         </main>
         {% include footer.html %}
-        <!-- defer so script doesn't block rendering -->
+
+        <!-- Navigation script -->
         <script src="{{ site.baseurl }}/assets/js/nav.js" defer></script>
+
+        <!-- Theme Toggle Script -->
+        <script>
+            // Theme Toggle Script - Light/Dark only (no auto)
+            (function () {
+                "use strict";
+
+                // Get theme from localStorage or default to light
+                function getCurrentTheme() {
+                    return localStorage.getItem("theme") || "light";
+                }
+
+                // Apply theme to document
+                function applyTheme(theme) {
+                    if (theme === "dark") {
+                        document.documentElement.setAttribute(
+                            "data-theme",
+                            "dark",
+                        );
+                    } else {
+                        document.documentElement.removeAttribute("data-theme");
+                    }
+                }
+
+                // Update button icon
+                function updateButton(button, theme) {
+                    const icons = {
+                        light: '<i class="fas fa-sun"></i>',
+                        dark: '<i class="fas fa-moon"></i>',
+                    };
+
+                    button.innerHTML = `<span class="theme-icon">${icons[theme]}</span>`;
+                }
+
+                // Toggle between light and dark
+                function toggleTheme(currentTheme) {
+                    return currentTheme === "light" ? "dark" : "light";
+                }
+
+                // Set up toggle button when DOM is ready
+                document.addEventListener("DOMContentLoaded", function () {
+                    const toggleButton =
+                        document.querySelector(".theme-toggle");
+
+                    if (!toggleButton) {
+                        return;
+                    }
+
+                    // Get current theme
+                    let currentTheme = getCurrentTheme();
+
+                    // Update button to show current theme
+                    updateButton(toggleButton, currentTheme);
+
+                    // Add click handler
+                    toggleButton.addEventListener("click", function () {
+                        const newTheme = toggleTheme(currentTheme);
+
+                        // Save to localStorage
+                        localStorage.setItem("theme", newTheme);
+
+                        // Apply theme
+                        applyTheme(newTheme);
+
+                        // Update button
+                        updateButton(toggleButton, newTheme);
+
+                        // Update current theme
+                        currentTheme = newTheme;
+                    });
+                });
+            })();
+        </script>
     </body>
 </html>

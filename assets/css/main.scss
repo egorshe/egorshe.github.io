@@ -10,46 +10,46 @@
 
 // ============================================
 // Table of Contents (jekyll-toc)
-// Улучшенная версия с CSS variables
+// CSS variables for theme support
 // ============================================
 .toc-wrapper {
-    background-color: var(--color-highlight, #f8f8f8);
-    padding: var(--space-lg, 1rem) var(--space-xl, 1.5rem);
-    border-left: 3px solid var(--color-primary, #cc0000);
-    margin: var(--space-xl, 2rem) 0;
-    border-radius: var(--radius-lg, 8px);
+    background-color: var(--bg-secondary);
+    padding: 1rem 1.5rem;
+    border-left: 3px solid var(--accent-red);
+    margin: 2rem 0;
+    border-radius: 8px;
     font-size: clamp(0.875rem, 0.9vw + 0.5rem, 0.95rem);
     line-height: 1.6;
-    box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.1));
-    transition: background-color var(--transition-base, 250ms ease);
+    box-shadow: 0 1px 2px var(--shadow-light);
+    transition: background-color 250ms ease;
 
     h3,
     h2 {
         margin-top: 0;
-        margin-bottom: var(--space-sm, 0.5rem);
+        margin-bottom: 0.5rem;
         font-size: clamp(0.95rem, 1vw + 0.5rem, 1rem);
         font-weight: 600;
-        color: var(--color-text, #333);
+        color: var(--text-primary);
     }
 
     ul {
         list-style: none;
-        padding-left: var(--space-lg, 1rem);
+        padding-left: 1rem;
         margin: 0;
     }
 
     li {
-        margin: var(--space-xs, 0.3rem) 0;
+        margin: 0.3rem 0;
         position: relative;
 
-        // Добавляем bullet point для лучшей навигации
+        // Add bullet point for better navigation
         &::before {
             content: "▸";
             position: absolute;
             left: -0.8rem;
-            color: var(--color-primary, #cc0000);
+            color: var(--accent-red);
             opacity: 0;
-            transition: opacity var(--transition-fast, 150ms ease);
+            transition: opacity 150ms ease;
         }
 
         &:hover::before {
@@ -58,25 +58,25 @@
     }
 
     a {
-        color: var(--color-text, #333);
+        color: var(--accent-blue);
         text-decoration: none;
         border-bottom: 1px solid transparent;
         transition:
-            border-color var(--transition-fast, 200ms ease),
-            color var(--transition-fast, 200ms ease),
-            padding-left var(--transition-fast, 200ms ease);
+            border-color 200ms ease,
+            color 200ms ease,
+            padding-left 200ms ease;
         display: inline-block;
 
         &:hover,
         &:focus {
-            color: var(--color-primary, #cc0000);
-            border-bottom-color: var(--color-primary, #cc0000);
+            color: var(--accent-blue-dark);
+            border-bottom-color: var(--accent-blue-dark);
             padding-left: 0.25rem;
             outline: none;
         }
 
         &:focus-visible {
-            outline: 2px solid var(--color-primary, #cc0000);
+            outline: 2px solid var(--accent-blue);
             outline-offset: 2px;
         }
     }
@@ -84,19 +84,19 @@
 
 // Nested levels with proper indentation
 .toc-wrapper ul ul {
-    margin-left: var(--space-lg, 1rem);
-    margin-top: var(--space-xs, 0.25rem);
-    border-left: 1px solid var(--color-border, #ddd);
-    padding-left: var(--space-md, 0.8rem);
+    margin-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid var(--border-medium);
+    padding-left: 0.8rem;
 
     // Lighter color for nested items
     a {
         font-size: 0.9em;
-        color: var(--color-text-muted, #6a737d);
+        color: var(--text-secondary);
 
         &:hover,
         &:focus {
-            color: var(--color-primary, #cc0000);
+            color: var(--accent-blue-dark);
         }
     }
 }
@@ -104,41 +104,22 @@
 // Third level nesting
 .toc-wrapper ul ul ul {
     font-size: 0.85em;
-    border-left-color: var(--color-border-dark, #ccc);
+    border-left-color: var(--border-gray);
 }
-
-// Dark mode adjustments - DISABLED
-/*
-@media (prefers-color-scheme: dark) {
-    .toc-wrapper {
-        background-color: var(--color-highlight, #2a2a2a);
-        border-left-color: var(--color-primary, #cc0000);
-
-        h3,
-        h2 {
-            color: var(--color-text, #e0e0e0);
-        }
-
-        ul ul {
-            border-left-color: var(--color-border, #444);
-        }
-    }
-}
-*/
 
 // Responsive adjustments
 @media screen and (max-width: 768px) {
     .toc-wrapper {
-        padding: var(--space-md, 0.75rem) var(--space-lg, 1rem);
+        padding: 0.75rem 1rem;
         font-size: 0.875rem;
 
         ul {
-            padding-left: var(--space-md, 0.75rem);
+            padding-left: 0.75rem;
         }
 
         ul ul {
-            margin-left: var(--space-sm, 0.5rem);
-            padding-left: var(--space-sm, 0.5rem);
+            margin-left: 0.5rem;
+            padding-left: 0.5rem;
         }
     }
 }

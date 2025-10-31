@@ -18,6 +18,7 @@
             </a>
         </li>
         <br />
+
         {% for item in site.data.nav.links %}
         <li{% if item.submenu %} class="has-submenu"{% endif %}>
             {% if item.submenu %}
@@ -51,5 +52,13 @@
             {% endif %}
         </li>
         {% endfor %}
+
+        <!-- Theme Toggle Button - At the end -->
+        <br />
+        <li>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon"><i class="fas fa-sun"></i></span>
+            </button>
+        </li>
     </ul>
 </nav>

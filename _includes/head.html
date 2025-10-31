@@ -48,6 +48,18 @@
         defer
     ></script>
 
+    <!-- Theme Toggle Script - Load early to prevent flash -->
+    <script>
+        // Apply saved theme immediately (before page renders) - defaults to light
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+            // Default is light mode (no attribute needed)
+        })();
+    </script>
+
     <!-- Highlight JS (Conditionally loaded) -->
     {% if page.usehighlight %}
     <link

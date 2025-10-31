@@ -16,6 +16,81 @@ $border-light: 1px solid #eee;
 $border-gray: 1px solid #ccc;
 
 /* ============================================ */
+/* 1b. CSS Custom Properties for Theme Support */
+/* ============================================ */
+:root {
+    /* Light mode (default) */
+    --bg-primary: #fefefe;
+    --bg-secondary: #f9f9f9;
+    --bg-tertiary: #ffffff;
+    --bg-card: #fff;
+    --bg-table: #eeeee1;
+    --bg-badge: #f0f0f0;
+
+    --text-primary: #1a1a1a;
+    --text-secondary: #666;
+    --text-muted: #6c757d;
+    --text-table: #333;
+    --text-quote: #6a737d;
+
+    --border-light: #eee;
+    --border-medium: #e0e0e0;
+    --border-gray: #ccc;
+    --border-dark: #aaa;
+    --border-table: #ccc;
+    --border-quote: #dfe2e5;
+    --border-badge: #ddd;
+
+    --accent-red: #cc0000;
+    --accent-red-dark: #b30000;
+    --accent-blue: #4a90d9;
+    --accent-blue-dark: #5a96d0;
+    --accent-gray: #2f4f4f;
+    --accent-orange: #ee802f;
+
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-code: #eee;
+    --shadow-nav: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode - manual override only */
+:root[data-theme="dark"] {
+    --bg-primary: #2d2d2d;
+    --bg-secondary: #363636;
+    --bg-tertiary: #3d3d3d;
+    --bg-card: #333333;
+    --bg-table: #3a3a3a;
+    --bg-badge: #404040;
+
+    --text-primary: #ffffff;
+    --text-secondary: #b8b8b8;
+    --text-muted: #999;
+    --text-table: #e0e0e0;
+    --text-quote: #a0a0a0;
+
+    --border-light: #444;
+    --border-medium: #4a4a4a;
+    --border-gray: #555;
+    --border-dark: #666;
+    --border-table: #555;
+    --border-quote: #555;
+    --border-badge: #555;
+
+    --accent-red: #ff6b6b;
+    --accent-red-dark: #ff5252;
+    --accent-blue: #8bbfef;
+    --accent-blue-dark: #75ade8;
+    --accent-gray: #5a8a8a;
+    --accent-orange: #ff9d5c;
+
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.4);
+    --shadow-code: #1a1a1a;
+    --shadow-nav: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================ */
 /* 2. Sticky Footer & Base Layout */
 /* ============================================ */
 
@@ -25,8 +100,8 @@ html {
 }
 
 body {
-    background: $backgroundColor;
-    color: $bodyColor;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     font-family: $bodyFont;
     font-size: 14px;
     min-height: 100%;
@@ -127,12 +202,12 @@ header {
     }
 
     a {
-        color: $bodyColor;
+        color: var(--text-primary);
         text-decoration: none;
 
         &:hover {
-            color: $bodyColor;
-            border-bottom: 1px gray dotted;
+            color: var(--text-primary);
+            border-bottom: 1px var(--border-gray) dotted;
         }
     }
 
@@ -157,7 +232,7 @@ section {
 }
 
 nav ul {
-    border-right: $border-light;
+    border-right: 1px solid var(--border-light);
 }
 
 /* ============================================ */
@@ -166,32 +241,34 @@ nav ul {
 
 a {
     text-decoration: none;
+    color: var(--accent-blue);
 
     &:hover {
-        border-bottom: 1px gray dotted;
+        color: var(--accent-blue-dark);
+        border-bottom: 1px var(--border-gray) dotted;
     }
 }
 
 .rss {
-    color: $primaryRed;
+    color: var(--accent-red);
     text-decoration: none;
     display: inline;
     margin-right: 1rem;
 
     span {
-        color: #ee802f; // orange RSS icon color
+        color: var(--accent-orange);
         margin-left: 0.2em;
     }
 
     &:hover {
         text-decoration: none;
         text-decoration-style: none;
-        text-decoration-color: color.adjust($primaryRed, $lightness: -10%);
-        color: color.adjust($primaryRed, $lightness: -10%);
+        text-decoration-color: var(--accent-red-dark);
+        color: var(--accent-red-dark);
         border-bottom: none;
 
         span {
-            color: #ee802f; // Keep icon orange on hover
+            color: var(--accent-orange);
         }
     }
 }
@@ -215,13 +292,26 @@ a {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: $bodyColor;
+            color: var(--text-primary);
+
+            &:hover {
+                color: var(--accent-blue);
+            }
         }
 
         time {
             padding-left: 1rem;
             white-space: nowrap;
             font-variant-numeric: tabular-nums;
+        }
+    }
+
+    /* Tags - keep blue */
+    p a {
+        color: var(--accent-blue);
+
+        &:hover {
+            color: var(--accent-blue-dark);
         }
     }
 }
@@ -236,7 +326,7 @@ code {
 
 pre {
     border-radius: 5px;
-    box-shadow: 2px 2px 2px #eee;
+    box-shadow: 2px 2px 2px var(--shadow-code);
 
     code {
         border-radius: 5px;
@@ -245,8 +335,8 @@ pre {
 }
 
 blockquote {
-    border-left: 0.25em solid #dfe2e5;
-    color: #6a737d;
+    border-left: 0.25em solid var(--border-quote);
+    color: var(--text-quote);
     padding: 0 1em;
 }
 
@@ -256,20 +346,20 @@ blockquote {
 
 table {
     tr th {
-        background: #eeeee1;
-        color: #333;
+        background: var(--bg-table);
+        color: var(--text-table);
         padding: 0;
-        border: #aaa solid 1px;
+        border: 1px solid var(--border-dark);
         text-align: center;
         font-weight: bold;
     }
 
     tr td {
-        border: $border-gray;
+        border: 1px solid var(--border-table);
         padding: 5px;
 
         &.rightright {
-            background: #eeeee1;
+            background: var(--bg-table);
         }
 
         h4 {
@@ -285,11 +375,33 @@ table {
 /* ============================================ */
 
 .page-title {
-    color: $primaryRed;
+    color: var(--accent-red);
 }
 
 .page-title-h2 {
-    color: $primaryRed;
+    color: var(--accent-red);
+}
+
+/* Social Links - ensure they adapt to theme */
+footer a,
+.socials a {
+    color: #000;
+
+    &:hover {
+        color: var(--accent-red);
+    }
+}
+
+/* Dark mode social links */
+:root[data-theme="dark"] {
+    footer a,
+    .socials a {
+        color: #fff;
+
+        &:hover {
+            color: var(--accent-red);
+        }
+    }
 }
 
 /* Project Status Badge */
@@ -303,9 +415,9 @@ table {
     white-space: nowrap;
     border-radius: 3px;
     margin-top: 0.75rem;
-    background-color: #f0f0f0;
-    color: #666;
-    border: 1px solid #ddd;
+    background-color: var(--bg-badge);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-badge);
 }
 
 /* Project Cards */
@@ -320,14 +432,14 @@ table {
 }
 
 .project-card {
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-medium);
     border-radius: 4px;
-    background: #fff;
+    background: var(--bg-card);
     transition: all $transition-fast;
     cursor: pointer;
 
     &:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px var(--shadow-medium);
         transform: translateY(-2px);
     }
 
@@ -362,7 +474,7 @@ table {
     }
 
     .card-title {
-        color: #333;
+        color: var(--text-table);
         font-size: 120%;
         margin-top: 0;
     }
@@ -373,15 +485,15 @@ table {
 
     .card-text {
         margin: 0.75rem 0 0 0;
-        color: #666;
+        color: var(--text-secondary);
         line-height: 1.4;
     }
 
     .github-link {
-        color: #000;
+        color: var(--text-primary);
 
         &:hover {
-            color: #333;
+            color: var(--text-table);
             border-bottom: none;
         }
     }
@@ -422,11 +534,11 @@ table {
 }
 
 .text-muted {
-    color: #6c757d;
+    color: var(--text-muted) !important;
 }
 
 .border {
-    border: 1px solid #dee2e6 !important;
+    border: 1px solid var(--border-medium) !important;
 }
 
 .border-4 {
@@ -452,12 +564,14 @@ input[type="text"] {
     font-family: inherit;
     font-size: 100%;
     border: none;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--border-gray);
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 #results-container {
     margin: 1rem 0;
-    background-color: #f9f9f9;
+    background-color: var(--bg-secondary);
 }
 
 /* ============================================ */
@@ -470,14 +584,14 @@ figure {
     img {
         width: 100%;
         height: auto;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border-medium);
+        box-shadow: 0 4px 12px var(--shadow-light);
     }
 
     figcaption {
         font-size: 0.9em;
         font-style: italic;
-        color: #666;
+        color: var(--text-secondary);
         margin-top: 0.75rem;
         text-align: center;
     }
@@ -515,6 +629,34 @@ figure {
 /* 13. Mobile Navigation */
 /* ============================================ */
 
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all $transition-fast;
+    display: inline-flex;
+    align-items: center;
+    text-align: right;
+
+    &:hover {
+        color: var(--accent-red);
+    }
+
+    .theme-icon {
+        font-size: 1em;
+        display: inline-block;
+    }
+
+    span:not(.theme-icon) {
+        display: none;
+    }
+}
+
 .nav-toggle {
     display: none;
     background: none;
@@ -527,7 +669,7 @@ figure {
         display: block;
         width: 25px;
         height: 3px;
-        background: $bodyColor;
+        background: var(--text-primary);
         margin: 5px 0;
         transition: all $transition-base;
         border-radius: 3px;
@@ -569,10 +711,10 @@ figure {
     margin-bottom: 0.2rem;
 
     .submenu-title {
-        color: $bodyColor;
+        color: var(--text-primary);
 
         &:hover {
-            border-bottom: 1px gray dotted;
+            border-bottom: 1px var(--border-gray) dotted;
         }
     }
 
@@ -580,7 +722,7 @@ figure {
         font-size: 0.8em;
         transition: transform $transition-base;
         display: inline-block;
-        color: $primaryRed;
+        color: var(--accent-red);
         order: -1;
     }
 }
@@ -608,16 +750,16 @@ figure {
         padding-left: 0;
 
         a {
-            color: $bodyColor;
+            color: var(--text-primary);
             font-size: 0.95em;
 
             &:hover {
-                color: $bodyColor;
-                border-bottom: 1px gray dotted;
+                color: var(--text-primary);
+                border-bottom: 1px var(--border-gray) dotted;
             }
 
             &.active {
-                color: $primaryRed;
+                color: var(--accent-red);
                 font-weight: 600;
             }
         }
@@ -642,7 +784,7 @@ nav .has-submenu {
         }
 
         ul {
-            border-bottom: $border-light;
+            border-bottom: 1px solid var(--border-light);
             padding-bottom: 2rem;
         }
     }
@@ -667,11 +809,11 @@ nav .has-submenu {
         right: 0;
         width: 250px;
         height: 100vh;
-        background: $backgroundColor;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        background: var(--bg-primary);
+        box-shadow: -2px 0 10px var(--shadow-nav);
         padding: 4rem 2rem 2rem;
         border-right: none !important;
-        border-left: $border-light !important;
+        border-left: 1px solid var(--border-light) !important;
         border-bottom: none !important;
         z-index: 999;
         list-style: none;
@@ -797,16 +939,16 @@ nav .has-submenu {
 .digest-post-content h3 {
     margin-top: 2em;
     margin-bottom: 0.5em;
-    color: $accentGray;
+    color: var(--accent-gray);
 }
 
 /* Consistent link styling within content */
 .digest-post-content a {
-    color: $primaryRed;
+    color: var(--accent-blue);
     text-decoration: none;
 
     &:hover {
-        color: color.adjust($primaryRed, $lightness: -10%);
+        color: var(--accent-blue-dark);
         border-bottom: none;
     }
 }

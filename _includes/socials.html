@@ -2,32 +2,26 @@
 <a
     href="https://twitter.com/{{ socials.twitter | cgi_escape | escape }}"
     target="_blank"
-    style="color: #1a1a1a"
 >
     <span class="fa-brands fa-x-twitter"></span>
 </a>
 {% endif %} {% if socials.github %}
-<a
-    href="https://github.com/{{ socials.github }}"
-    target="_blank"
-    style="color: #000"
->
+<a href="https://github.com/{{ socials.github }}" target="_blank">
     <span class="bi bi-github"></span>
 </a>
 {% endif %} {% if socials.instagram %}
 <a
     href="https://www.instagram.com/{{ socials.instagram | cgi_escape | escape }}"
     target="_blank"
-    style="color: #1a1a1a"
 >
     <span class="fa-brands fa-instagram"></span>
 </a>
 {% endif %} {% if site.author.email %}
-<a href="mailto:{{ site.author.email }}" target="_blank" style="color: #1a1a1a">
+<a href="mailto:{{ site.author.email }}" target="_blank">
     <span class="fa-regular fa-envelope"></span>
 </a>
 {% endif %} {% if socials.telegram %}
-<a href="{{ socials.telegram }}" target="_blank" style="color: #1a1a1a">
+<a href="{{ socials.telegram }}" target="_blank">
     <span class="fa-brands fa-telegram fa-regular"></span>
 </a>
 {% endif %}
