@@ -231,4 +231,4 @@ order: 1
 - [Journal of Baltic Studies](https://www.tandfonline.com/toc/rbal20/current)
 - [KinoKultura](https://mail.kinokultura.com/) -- publishes articles and reviews on the cinemas of regions and nations, including special issues on Estonia, Latvia, and others.
 - [Tuna journal](https://tuna.ra.ee/en/) -- issued by the National Archives of Estonia
-- [East European Film Bulletin](https://eefb.org))
+- [East European Film Bulletin](https://eefb.org)
