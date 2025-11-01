@@ -1,0 +1,49 @@
+# ============================================
+# Historical & Thematic Maps Gallery
+# ============================================
+# Add your maps here. Each entry will automatically appear on the maps page.
+#
+# Fields:
+#   title: Name of the map
+#   image: Path to image file (recommended: /assets/images/maps/filename.jpg)
+#   description: Brief description of the map's significance
+#   source: Where the map comes from
+#   link: (optional) URL to full resolution or more information
+#
+# Image recommendations:
+#   - Size: 800x400px (2:1 ratio) for consistency
+#   - Format: JPG for scanned maps, PNG for diagrams
+#   - File size: Keep under 300KB (use TinyPNG to compress)
+# ============================================
+
+- title: "Literary Landscapes of the Baltics"
+  image: "/assets/images/maps/literary-map.jpg"
+  description: "A collaborative project mapping locations from famous Baltic literature, showing how authors have imagined and represented their homelands."
+  source: "Baltic Literary Archive"
+  link: ""
+
+- title: "Baltic States 1918-1940"
+  image: "/assets/images/maps/interwar-period.jpg"
+  description: "Political boundaries and major cultural centers during the interwar period of independence."
+  source: "Historical Archive of Estonia"
+  link: ""
+
+- title: "Baltic Film Production Sites"
+  image: "/assets/images/maps/film-studios.jpg"
+  description: "Major film studios, production centers, and iconic filming locations across Estonia, Latvia, and Lithuania."
+  source: "Baltic Film Archive"
+  link: ""
+# ============================================
+# To add a new map:
+# ============================================
+# 1. Save your map image to /assets/images/maps/
+# 2. Copy the template below and add it to this file
+# 3. Fill in the details
+# 4. Save and rebuild Jekyll
+#
+# Template:
+# - title: "Your Map Title"
+#   image: "/assets/images/maps/your-file.jpg"
+#   description: "Description of the map and its significance."
+#   source: "Where you found it"
+#   link: "https://optional-link.com"
