@@ -1156,20 +1156,21 @@ nav .has-submenu {
 }
 
 .popup-link {
-    display: inline-block;
-    padding: 0.3rem 0.65rem;
-    background: var(--accent-red);
-    color: white;
+    display: inline;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+
+    color: var(--accent-blue);
     text-decoration: none;
-    border-radius: 3px;
-    font-size: 0.75rem;
-    transition: background 0.2s;
+    font-size: 0.8rem;
     font-weight: 600;
+    transition: color 0.2s;
 
     &:hover {
-        background: var(--accent-red-dark);
+        background: none;
         border-bottom: none;
-        color: white;
+        color: var(--accent-blue-dark);
     }
 }
 
