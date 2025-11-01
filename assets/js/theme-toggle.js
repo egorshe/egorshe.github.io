@@ -1,20 +1,14 @@
-// Theme Toggle Script
+// Theme Toggle Script - Always defaults to LIGHT mode
 (function () {
   "use strict";
 
-  // Get theme from localStorage or system preference
+  // Get theme from localStorage - ALWAYS default to light (no system preference check)
   function getInitialTheme() {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       return savedTheme;
     }
-    // Check system preference
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      return "dark";
-    }
+    // Always default to light mode
     return "light";
   }
 
@@ -22,36 +16,25 @@
   function applyTheme(theme) {
     if (theme === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
-    } else if (theme === "light") {
-      document.documentElement.setAttribute("data-theme", "light");
     } else {
-      // 'auto' mode - remove attribute to use system preference
+      // Light mode - remove the attribute (uses :root default)
       document.documentElement.removeAttribute("data-theme");
     }
   }
 
-  // Update button text and icon
+  // Update button icon
   function updateButton(button, theme) {
-    const icons = {
-      light: '<i class="fas fa-sun"></i>',
-      dark: '<i class="fas fa-moon"></i>',
-      auto: '<i class="fas fa-circle-half-stroke"></i>',
-    };
-    const labels = {
-      light: "Light",
-      dark: "Dark",
-      auto: "Auto",
-    };
+    const icon =
+      theme === "dark"
+        ? '<i class="fas fa-moon"></i>'
+        : '<i class="fas fa-sun"></i>';
 
-    button.innerHTML = `<span class="theme-icon">${icons[theme]}</span><span>${labels[theme]}</span>`;
+    button.innerHTML = `<span class="theme-icon">${icon}</span>`;
   }
 
-  // Cycle through themes: light -> dark -> auto -> light
-  function cycleTheme(currentTheme) {
-    const cycle = ["light", "dark", "auto"];
-    const currentIndex = cycle.indexOf(currentTheme);
-    const nextIndex = (currentIndex + 1) % cycle.length;
-    return cycle[nextIndex];
+  // Toggle between light and dark
+  function toggleTheme(currentTheme) {
+    return currentTheme === "dark" ? "light" : "dark";
   }
 
   // Initialize theme on page load (run immediately, before DOM loads)
@@ -67,15 +50,15 @@
       return;
     }
 
-    // Get current theme (check both localStorage and data attribute)
-    let currentTheme = localStorage.getItem("theme") || "auto";
+    // Get current theme
+    let currentTheme = localStorage.getItem("theme") || "light";
 
     // Update button to show current theme
     updateButton(toggleButton, currentTheme);
 
     // Add click handler
     toggleButton.addEventListener("click", function () {
-      const newTheme = cycleTheme(currentTheme);
+      const newTheme = toggleTheme(currentTheme);
 
       // Save to localStorage
       localStorage.setItem("theme", newTheme);
@@ -90,17 +73,4 @@
       currentTheme = newTheme;
     });
   });
-
-  // Listen for system theme changes (when in auto mode)
-  if (window.matchMedia) {
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", function (e) {
-        const currentTheme = localStorage.getItem("theme");
-        // Only react if we're in auto mode (no saved preference)
-        if (!currentTheme || currentTheme === "auto") {
-          applyTheme("auto");
-        }
-      });
-  }
 })();
