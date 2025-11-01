@@ -16,23 +16,11 @@
 #   - File size: Keep under 300KB (use TinyPNG to compress)
 # ============================================
 
-- title: "Literary Landscapes of the Baltics"
-  image: "/assets/images/maps/literary-map.jpg"
-  description: "A collaborative project mapping locations from famous Baltic literature, showing how authors have imagined and represented their homelands."
-  source: "Baltic Literary Archive"
-  link: ""
-
-- title: "Baltic States 1918-1940"
-  image: "/assets/images/maps/interwar-period.jpg"
-  description: "Political boundaries and major cultural centers during the interwar period of independence."
-  source: "Historical Archive of Estonia"
-  link: ""
-
-- title: "Baltic Film Production Sites"
-  image: "/assets/images/maps/film-studios.jpg"
-  description: "Major film studios, production centers, and iconic filming locations across Estonia, Latvia, and Lithuania."
-  source: "Baltic Film Archive"
-  link: ""
+- title: "Mapping Vilnius Literature"
+  image: "/assets/img/maps/Kuncinas_Glisono.jpg"
+  description: "The literature of Vilnius is extremely diffused, both linguistically and spatially, which creates a fractured and fragmented sense of the place. This narrative segmentation echoes the geo-cultural dispersal and national divisions of the city, making reading (and writing) Vilnius a perpetual act of translation. Putting Vilnius literature on the map is another form of translation; but while linguistic translations require breaking cultural codes and crossing boundaries, mapping, potentially, makes entering into separate and unique narrative worlds an experiment in building a cohesive yet kaleidoscopic picture-world of the place."
+  source: "Vilnius literature"
+  link: "http://www.vilniusliterature.flf.vu.lt/en/"
 # ============================================
 # To add a new map:
 # ============================================
