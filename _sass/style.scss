@@ -1032,7 +1032,7 @@ nav .has-submenu {
     }
 
     &.active::after {
-        transform: translateY(-50%) rotate(180deg); /* Triangle pointing up */
+        transform: translateY(-50%) scaleY(-1); /* Triangle pointing up */
     }
 }
 
