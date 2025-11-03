@@ -3,6 +3,23 @@ layout: digest-entry
 title: "October 2025 — New Baltic Film Research"
 date: 2025-10-01
 tags: [film, memory, history]
+locations:
+  - city: "Riga"
+    venue: "Riga Film Museum"
+    lat: 56.9496
+    lng: 24.1052
+    country: "latvia"
+    date: "October 15-17, 2024"
+    description: "Opening keynote: 'Post-Soviet Documentary Aesthetics' and main panel discussions on archival practices."
+
+  - city: "Tallinn"
+    venue: "Estonian Film Institute"
+    lat: 59.4370
+    lng: 24.7536
+    country: "estonia"
+    date: "October 20, 2024"
+    description: "Hands-on workshop on digital preservation techniques for film archives."
+
 ---
 
 [Short introductory text about the month's highlights.]
