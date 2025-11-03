@@ -6,3 +6,4 @@ _site/
 Gemfile.lock
 .obsidian/
 tasks.md
+00_meta/

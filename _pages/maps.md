@@ -59,7 +59,7 @@ permalink: /maps/
                 <div class="gallery-source">Source: {{ map.source }}</div>
                 {% if map.link %}
                 <a href="{{ map.link }}" class="gallery-link" target="_blank">
-                    View full resolution →
+                    {{ map.link_text | default: "View full resolution" }} →
                 </a>
                 {% endif %}
             </div>
@@ -75,25 +75,68 @@ permalink: /maps/
 // ============================================
 // Map Initialization
 // ============================================
-const map = L.map('map').setView([57.5, 25.0], 6);
+const map = L.map('map', {
+    zoomControl: false  // Disable default zoom control
+}).setView([57.5, 25.0], 6);
+
+// Add zoom control to right side (will be centered with CSS)
+L.control.zoom({
+    position: 'bottomright'
+}).addTo(map);
 
 // CartoDB Positron - Clean, minimal style perfect for academic use
 // Theme switching handled automatically by CSS
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© OpenStreetMap contributors © CARTO',
     maxZoom: 19
 }).addTo(map);
 
 // ============================================
 // Generate locations from Jekyll posts
+// Supports both old (lat/lng) and new (coords) formats
+// Supports single location and multiple locations per post
 // ============================================
+
+// Helper function to parse coordinates
+function parseCoords(loc) {
+    // New format: coords string "56.9496, 24.1052" or array [56.9496, 24.1052]
+    if (loc.coords) {
+        if (typeof loc.coords === 'string') {
+            const parts = loc.coords.split(',').map(s => parseFloat(s.trim()));
+            return { lat: parts[0], lng: parts[1] };
+        } else if (Array.isArray(loc.coords)) {
+            return { lat: loc.coords[0], lng: loc.coords[1] };
+        }
+    }
+    // Old format: separate lat/lng
+    return { lat: loc.lat, lng: loc.lng };
+}
+
 const locations = [
+    // Posts with multiple locations (conferences, events spanning cities)
     {% for post in site.posts %}
-    {% if post.location %}
+    {% if post.locations %}
+        {% for loc in post.locations %}
+        {
+            title: {{ post.title | jsonify }},
+            subtitle: {{ loc.venue | default: loc.city | jsonify }},
+            lat: {{ loc.coords[0] | default: loc.lat }},
+            lng: {{ loc.coords[1] | default: loc.lng }},
+            coords: {{ loc.coords | jsonify }},
+            country: {{ loc.country | jsonify }},
+            type: "posts",
+            date: {{ loc.date | default: post.date | date: "%B %d, %Y" | jsonify }},
+            description: {{ loc.description | default: post.excerpt | strip_html | truncatewords: 15 | jsonify }},
+            url: {{ post.url | jsonify }}
+        },
+        {% endfor %}
+    {% elsif post.location %}
+    // Posts with single location (backward compatibility)
     {
         title: {{ post.title | jsonify }},
-        lat: {{ post.location.lat }},
-        lng: {{ post.location.lng }},
+        lat: {{ post.location.coords[0] | default: post.location.lat }},
+        lng: {{ post.location.coords[1] | default: post.location.lng }},
+        coords: {{ post.location.coords | jsonify }},
         country: {{ post.location.country | jsonify }},
         type: "posts",
         excerpt: {{ post.excerpt | strip_html | truncatewords: 20 | jsonify }},
@@ -102,12 +145,14 @@ const locations = [
     {% endif %}
     {% endfor %}
 
+    // Projects (typically single location)
     {% for project in site.projects %}
     {% if project.location %}
     {
         title: {{ project.title | jsonify }},
-        lat: {{ project.location.lat }},
-        lng: {{ project.location.lng }},
+        lat: {{ project.location.coords[0] | default: project.location.lat }},
+        lng: {{ project.location.coords[1] | default: project.location.lng }},
+        coords: {{ project.location.coords | jsonify }},
         country: {{ project.location.country | jsonify }},
         type: "projects",
         excerpt: {{ project.excerpt | strip_html | truncatewords: 20 | jsonify }},
@@ -116,12 +161,30 @@ const locations = [
     {% endif %}
     {% endfor %}
 
+    // Digest with multiple locations (conferences, festivals)
     {% for item in site.digest %}
-    {% if item.location %}
+    {% if item.locations %}
+        {% for loc in item.locations %}
+        {
+            title: {{ item.title | jsonify }},
+            subtitle: {{ loc.venue | default: loc.city | jsonify }},
+            lat: {{ loc.coords[0] | default: loc.lat }},
+            lng: {{ loc.coords[1] | default: loc.lng }},
+            coords: {{ loc.coords | jsonify }},
+            country: {{ loc.country | jsonify }},
+            type: "digest",
+            date: {{ loc.date | default: item.date | date: "%B %d, %Y" | jsonify }},
+            description: {{ loc.description | default: item.excerpt | strip_html | truncatewords: 15 | jsonify }},
+            url: {{ item.url | jsonify }}
+        },
+        {% endfor %}
+    {% elsif item.location %}
+    // Digest with single location (backward compatibility)
     {
         title: {{ item.title | jsonify }},
-        lat: {{ item.location.lat }},
-        lng: {{ item.location.lng }},
+        lat: {{ item.location.coords[0] | default: item.location.lat }},
+        lng: {{ item.location.coords[1] | default: item.location.lng }},
+        coords: {{ item.location.coords | jsonify }},
         country: {{ item.location.country | jsonify }},
         type: "digest",
         excerpt: {{ item.excerpt | strip_html | truncatewords: 20 | jsonify }},
@@ -130,6 +193,15 @@ const locations = [
     {% endif %}
     {% endfor %}
 ].filter(loc => loc.title); // Remove empty entries
+
+// Parse coordinates from either format
+locations.forEach(location => {
+    if (location.coords && !location.lat) {
+        const parsed = parseCoords(location);
+        location.lat = parsed.lat;
+        location.lng = parsed.lng;
+    }
+});
 
 // ============================================
 // Marker Creation
@@ -165,16 +237,26 @@ locations.forEach(location => {
     const typeLabel = location.type === 'posts' ? 'Field Notes' :
                      location.type.charAt(0).toUpperCase() + location.type.slice(1);
 
-    const popupContent = `
-        <div class="marker-popup">
-            <div class="popup-title">${location.title}</div>
-            <div class="popup-meta">${typeLabel} • ${location.country.charAt(0).toUpperCase() + location.country.slice(1)}</div>
-            <div class="popup-excerpt">${location.excerpt}</div>
-            <a href="${location.url}" class="popup-link">Read more →</a>
-        </div>
-    `;
+    // Build popup content with support for multiple location fields
+    let popupHTML = '<div class="marker-popup">';
+    popupHTML += `<div class="popup-title">${location.title}</div>`;
 
-    marker.bindPopup(popupContent);
+    // Show venue/city if available (for multi-location posts)
+    if (location.subtitle) {
+        popupHTML += `<div class="popup-venue">${location.subtitle}</div>`;
+    }
+
+    // Show date if available (for events/conferences)
+    if (location.date) {
+        popupHTML += `<div class="popup-date">${location.date}</div>`;
+    }
+
+    popupHTML += `<div class="popup-meta">${typeLabel} • ${location.country.charAt(0).toUpperCase() + location.country.slice(1)}</div>`;
+    popupHTML += `<div class="popup-excerpt">${location.description || location.excerpt}</div>`;
+    popupHTML += `<a href="${location.url}" class="popup-link">Read more →</a>`;
+    popupHTML += '</div>';
+
+    marker.bindPopup(popupHTML);
     markers.push(marker);
 });
 

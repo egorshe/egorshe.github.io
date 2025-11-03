@@ -1032,7 +1032,7 @@ nav .has-submenu {
     }
 
     &.active::after {
-        transform: translateY(-50%) scaleY(-1); /* Triangle pointing up */
+        transform: translateY(-50%) rotate(180deg); /* Triangle pointing up */
     }
 }
 
@@ -1141,6 +1141,20 @@ nav .has-submenu {
     line-height: 1.3;
 }
 
+.popup-venue {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-gray);
+    margin-bottom: 0.2rem;
+}
+
+.popup-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+    font-style: italic;
+}
+
 .popup-meta {
     font-size: 0.7rem;
     color: var(--text-muted);
@@ -1156,21 +1170,17 @@ nav .has-submenu {
 }
 
 .popup-link {
-    display: inline;
-    padding: 0;
-    background: none;
-    border-radius: 0;
-
     color: var(--accent-blue);
     text-decoration: none;
     font-size: 0.8rem;
-    font-weight: 600;
-    transition: color 0.2s;
+    font-weight: 500;
+    background: none;
+    padding: 0;
+    border: none;
 
     &:hover {
-        background: none;
-        border-bottom: none;
         color: var(--accent-blue-dark);
+        text-decoration: none;
     }
 }
 
@@ -1248,7 +1258,29 @@ nav .has-submenu {
     }
 }
 
-/* Mobile Responsive for Maps */
+/* Minimize Leaflet attribution */
+.leaflet-control-attribution {
+    font-size: 0.6rem !important;
+    opacity: 0.6;
+    padding: 2px 5px !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/* Or hide it completely (not recommended, but possible) */
+/* .leaflet-control-attribution { display: none !important; } */
+
+:root[data-theme="dark"] .leaflet-control-attribution {
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: #ccc !important;
+
+    a {
+        color: #8bbfef !important;
+    }
+}
 @media (max-width: 768px) {
     #map {
         height: 400px;
