@@ -951,7 +951,7 @@ figure {
 }
 
 /* ============================================ */
-/* 17. Maps Page Styles */
+/* 17. Maps Page Styles                         */
 /* ============================================ */
 
 .page-intro {
@@ -1377,5 +1377,21 @@ figure {
 
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+    
+    /* Fix extra spacing around submenu items in mobile nav */
+    nav ul li {
+        margin-bottom: 0.25rem !important;
+        padding: 0.25rem 0 !important;
+    }
+    
+    .submenu-toggle {
+        padding: 0.25rem 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .submenu li {
+        padding: 0.25rem 0 !important;
+        margin-bottom: 0.25rem !important;
     }
 }
