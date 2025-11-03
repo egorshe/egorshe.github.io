@@ -41,7 +41,9 @@ permalink: /maps/
     to { transform: rotate(360deg); }
 }
 
-.marker-count {
+/* Remove marker-count since not needed */
+
+/* .marker-count {
     font-size: 0.85rem;
     color: var(--text-secondary);
     padding: 0.5rem;
@@ -54,25 +56,10 @@ permalink: /maps/
     font-weight: 600;
     color: var(--accent-red);
     margin: 0 0.25rem;
-}
+} */
 
 .reset-view-btn {
-    padding: 0.45rem 0.85rem;
-    background: var(--bg-primary);
-    border: 1px solid var(--border-light);
-    border-radius: 3px;
-    font-family: inherit;
-    font-size: 0.85rem;
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.15s ease;
-    white-space: nowrap;
-}
-
-.reset-view-btn:hover {
-    border-color: var(--accent-red);
-    color: var(--accent-red);
-    background: var(--bg-secondary);
+    display: none; /* Hide reset button */
 }
 
 /* Marker Cluster Styles */
@@ -155,22 +142,47 @@ permalink: /maps/
     filter: none !important;
 }
 
+/* Upcoming events toggle styling */
+.upcoming-checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: 1rem;
+    font-size: 0.93rem;
+    user-select: none;
+}
+
+.upcoming-checkbox {
+    accent-color: var(--accent-red);
+    margin-right: 0.25rem;
+}
+.upcoming-checkbox-label {
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
     .map-controls {
         gap: 0.5rem;
+        flex-wrap: wrap;
     }
-    
-    .marker-count {
+
+    /* Remove mobile styling for .marker-count */
+    /* .marker-count {
         width: 100%;
         justify-content: center;
         order: -1;
         padding: 0.25rem 0.5rem;
         border-bottom: 1px solid var(--border-light);
-    }
-    
+    } */
     .reset-view-btn {
+        display: none;
+    }
+    .upcoming-checkbox-container {
+        margin: 0.5rem 0 0.5rem 0;
         width: 100%;
+        justify-content: flex-start;
     }
 }
 </style>
@@ -181,11 +193,7 @@ permalink: /maps/
 </p>
 
 <div class="map-container">
-    <div class="map-controls">
-        <div class="marker-count">
-            Showing <span id="markerCount">0</span> locations
-        </div>
-
+    <div class="map-controls" style="display: flex; gap: 1rem; align-items: center;">
         <div class="filter-dropdown">
             <label>Type</label>
             <button class="dropdown-toggle" id="typeDropdown" aria-haspopup="true" aria-expanded="false">
@@ -213,20 +221,10 @@ permalink: /maps/
             </div>
         </div>
 
-        <div class="filter-dropdown">
-            <label>Time</label>
-            <button class="dropdown-toggle" id="timeDropdown" aria-haspopup="true" aria-expanded="false">
-                All Events
-            </button>
-            <div class="dropdown-menu" id="timeMenu">
-                <button class="dropdown-item active" data-time="all">All Events</button>
-                <button class="dropdown-item" data-time="upcoming">Upcoming Only</button>
-            </div>
+        <div class="upcoming-checkbox-container">
+            <input type="checkbox" id="upcomingOnly" class="upcoming-checkbox" />
+            <label for="upcomingOnly" class="upcoming-checkbox-label">Upcoming events</label>
         </div>
-
-        <button class="reset-view-btn" id="resetView" title="Reset map to default view">
-            ⌂ Reset View
-        </button>
     </div>
 
     <div id="map">
@@ -431,7 +429,7 @@ const markerClusters = L.markerClusterGroup({
         let size = 'small';
         if (count > 10) size = 'large';
         else if (count > 5) size = 'medium';
-        
+
         return L.divIcon({
             html: `<div><span>${count}</span></div>`,
             className: `marker-cluster marker-cluster-${size}`,
@@ -498,7 +496,7 @@ locations.forEach(location => {
     });
 
     marker.bindPopup(createPopupContent(location));
-    
+
     markerClusters.addLayer(marker);
     markers.push(marker);
 });
@@ -538,7 +536,7 @@ function setupDropdown(toggleId, menuId) {
 
 setupDropdown('typeDropdown', 'typeMenu');
 setupDropdown('locationDropdown', 'locationMenu');
-setupDropdown('timeDropdown', 'timeMenu');
+//setupDropdown('timeDropdown', 'timeMenu');  // removed time dropdown
 
 document.addEventListener('click', () => {
     document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
@@ -550,25 +548,20 @@ document.addEventListener('click', () => {
 // ============================================
 let activeType = 'all';
 let activeCountry = 'all';
-let activeTime = 'all';
+let showUpcomingOnly = false; // replaces time filter
 
 function updateMarkers() {
     markerClusters.clearLayers();
-    
-    let visibleCount = 0;
+
     markers.forEach(marker => {
         const matchesType = activeType === 'all' || marker.options.type === activeType;
         const matchesCountry = activeCountry === 'all' || marker.options.country === activeCountry;
-        const matchesTime = activeTime === 'all' || 
-                          (activeTime === 'upcoming' && marker.options.rawDate && !isPastDate(marker.options.rawDate));
+        const matchesUpcoming = !showUpcomingOnly || (marker.options.rawDate && !isPastDate(marker.options.rawDate));
 
-        if (matchesType && matchesCountry && matchesTime) {
+        if (matchesType && matchesCountry && matchesUpcoming) {
             markerClusters.addLayer(marker);
-            visibleCount++;
         }
     });
-
-    document.getElementById('markerCount').textContent = visibleCount;
 }
 
 document.querySelectorAll('[data-filter]').forEach(btn => {
@@ -585,22 +578,16 @@ document.querySelectorAll('[data-country]').forEach(btn => {
     });
 });
 
-document.querySelectorAll('[data-time]').forEach(btn => {
-    btn.addEventListener('click', function() {
-        activeTime = this.dataset.time;
+const upcomingCheckbox = document.getElementById('upcomingOnly');
+if (upcomingCheckbox) {
+    upcomingCheckbox.addEventListener('change', function() {
+        showUpcomingOnly = this.checked;
         updateMarkers();
     });
-});
+}
 
 // ============================================
-// Reset View Button
-// ============================================
-document.getElementById('resetView').addEventListener('click', () => {
-    map.setView(defaultView, defaultZoom);
-});
-
-// ============================================
-// Initial marker count
+// Initial marker state
 // ============================================
 updateMarkers();
 </script>

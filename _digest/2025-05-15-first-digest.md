@@ -10,7 +10,7 @@ locations:
     lat: 56.9496
     lng: 24.1052
     country: "latvia"
-    date: "October 15, 2024"
+    date: "October 15, 2026"
     description: "Opening keynote: 'Post-Soviet Documentary Aesthetics' and main panel discussions on archival practices."
 
   - city: "Tallinn"
