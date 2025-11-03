@@ -6,6 +6,174 @@ permalink: /maps/
 
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<!-- Leaflet MarkerCluster CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css" />
+
+<style>
+/* Additional map-specific styles */
+.map-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.map-loading .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-light);
+    border-top-color: var(--accent-red);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+.map-loading p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.marker-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.marker-count span {
+    font-weight: 600;
+    color: var(--accent-red);
+    margin: 0 0.25rem;
+}
+
+.reset-view-btn {
+    padding: 0.45rem 0.85rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.reset-view-btn:hover {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+    background: var(--bg-secondary);
+}
+
+/* Marker Cluster Styles */
+.marker-cluster-small {
+    background-color: rgba(181, 226, 140, 0.6);
+}
+
+.marker-cluster-small div {
+    background-color: rgba(110, 204, 57, 0.6);
+}
+
+.marker-cluster-medium {
+    background-color: rgba(241, 211, 87, 0.6);
+}
+
+.marker-cluster-medium div {
+    background-color: rgba(240, 194, 12, 0.6);
+}
+
+.marker-cluster-large {
+    background-color: rgba(253, 156, 115, 0.6);
+}
+
+.marker-cluster-large div {
+    background-color: rgba(241, 128, 23, 0.6);
+}
+
+.marker-cluster {
+    border-radius: 50%;
+}
+
+.marker-cluster div {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.marker-cluster span {
+    line-height: 30px;
+    color: #333;
+}
+
+/* Dark mode cluster styles */
+:root[data-theme="dark"] .marker-cluster-small {
+    background-color: rgba(110, 204, 57, 0.4);
+}
+
+:root[data-theme="dark"] .marker-cluster-small div {
+    background-color: rgba(110, 204, 57, 0.6);
+}
+
+:root[data-theme="dark"] .marker-cluster-medium {
+    background-color: rgba(240, 194, 12, 0.4);
+}
+
+:root[data-theme="dark"] .marker-cluster-medium div {
+    background-color: rgba(240, 194, 12, 0.6);
+}
+
+:root[data-theme="dark"] .marker-cluster-large {
+    background-color: rgba(241, 128, 23, 0.4);
+}
+
+:root[data-theme="dark"] .marker-cluster-large div {
+    background-color: rgba(241, 128, 23, 0.6);
+}
+
+:root[data-theme="dark"] .marker-cluster span {
+    color: #fff;
+}
+
+/* Prevent cluster icons from being inverted */
+:root[data-theme="dark"] .marker-cluster,
+:root[data-theme="dark"] .marker-cluster div {
+    filter: none !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .map-controls {
+        gap: 0.5rem;
+    }
+    
+    .marker-count {
+        width: 100%;
+        justify-content: center;
+        order: -1;
+        padding: 0.25rem 0.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+    
+    .reset-view-btn {
+        width: 100%;
+    }
+}
+</style>
 
 <h1 class="page-title">Maps</h1>
 <p class="page-intro">
@@ -14,6 +182,10 @@ permalink: /maps/
 
 <div class="map-container">
     <div class="map-controls">
+        <div class="marker-count">
+            Showing <span id="markerCount">0</span> locations
+        </div>
+
         <div class="filter-dropdown">
             <label>Type</label>
             <button class="dropdown-toggle" id="typeDropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,9 +212,29 @@ permalink: /maps/
                 <button class="dropdown-item" data-country="abroad">Abroad</button>
             </div>
         </div>
+
+        <div class="filter-dropdown">
+            <label>Time</label>
+            <button class="dropdown-toggle" id="timeDropdown" aria-haspopup="true" aria-expanded="false">
+                All Events
+            </button>
+            <div class="dropdown-menu" id="timeMenu">
+                <button class="dropdown-item active" data-time="all">All Events</button>
+                <button class="dropdown-item" data-time="upcoming">Upcoming Only</button>
+            </div>
+        </div>
+
+        <button class="reset-view-btn" id="resetView" title="Reset map to default view">
+            ⌂ Reset View
+        </button>
     </div>
 
-    <div id="map"></div>
+    <div id="map">
+        <div class="map-loading">
+            <div class="spinner"></div>
+            <p>Loading map...</p>
+        </div>
+    </div>
 </div>
 
 <div class="map-gallery">
@@ -70,36 +262,44 @@ permalink: /maps/
 
 <!-- Leaflet JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<!-- Leaflet MarkerCluster JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
 
 <script>
 // ============================================
 // Map Initialization
 // ============================================
-const map = L.map('map', {
-    zoomControl: false  // Disable default zoom control
-}).setView([57.5, 25.0], 6);
+const defaultView = [57.5, 25.0];
+const defaultZoom = 6;
 
-// Add zoom control to right side (will be centered with CSS)
+const map = L.map('map', {
+    zoomControl: false
+}).setView(defaultView, defaultZoom);
+
+// Add zoom control to right side
 L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
 
-// CartoDB Positron - Clean, minimal style perfect for academic use
-// Theme switching handled automatically by CSS
+// CartoDB Positron - Clean, minimal style
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© OpenStreetMap contributors © CARTO',
     maxZoom: 19
 }).addTo(map);
 
-// ============================================
-// Generate locations from Jekyll posts
-// Supports both old (lat/lng) and new (coords) formats
-// Supports single location and multiple locations per post
-// ============================================
+// Hide loading state when map is ready
+map.whenReady(function() {
+    const loading = document.querySelector('.map-loading');
+    if (loading) {
+        loading.style.opacity = '0';
+        setTimeout(() => loading.remove(), 300);
+    }
+});
 
-// Helper function to parse coordinates
+// ============================================
+// Utility Functions
+// ============================================
 function parseCoords(loc) {
-    // New format: coords string "56.9496, 24.1052" or array [56.9496, 24.1052]
     if (loc.coords) {
         if (typeof loc.coords === 'string') {
             const parts = loc.coords.split(',').map(s => parseFloat(s.trim()));
@@ -108,12 +308,22 @@ function parseCoords(loc) {
             return { lat: loc.coords[0], lng: loc.coords[1] };
         }
     }
-    // Old format: separate lat/lng
     return { lat: loc.lat, lng: loc.lng };
 }
 
+function isPastDate(dateString) {
+    if (!dateString) return false;
+    const eventDate = new Date(dateString);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return eventDate < today;
+}
+
+// ============================================
+// Generate locations from Jekyll posts
+// ============================================
 const locations = [
-    // Posts with multiple locations (conferences, events spanning cities)
+    // Posts with multiple locations
     {% for post in site.posts %}
     {% if post.locations %}
         {% for loc in post.locations %}
@@ -126,12 +336,12 @@ const locations = [
             country: {{ loc.country | jsonify }},
             type: "posts",
             date: {{ loc.date | default: post.date | date: "%B %d, %Y" | jsonify }},
+            rawDate: {{ loc.date | default: post.date | date: "%Y-%m-%d" | jsonify }},
             description: {{ loc.description | default: post.excerpt | strip_html | truncatewords: 15 | jsonify }},
             url: {{ post.url | jsonify }}
         },
         {% endfor %}
     {% elsif post.location %}
-    // Posts with single location (backward compatibility)
     {
         title: {{ post.title | jsonify }},
         lat: {{ post.location.coords[0] | default: post.location.lat }},
@@ -139,13 +349,15 @@ const locations = [
         coords: {{ post.location.coords | jsonify }},
         country: {{ post.location.country | jsonify }},
         type: "posts",
+        date: {{ post.date | date: "%B %d, %Y" | jsonify }},
+        rawDate: {{ post.date | date: "%Y-%m-%d" | jsonify }},
         excerpt: {{ post.excerpt | strip_html | truncatewords: 20 | jsonify }},
         url: {{ post.url | jsonify }}
     },
     {% endif %}
     {% endfor %}
 
-    // Projects (typically single location)
+    // Projects
     {% for project in site.projects %}
     {% if project.location %}
     {
@@ -161,12 +373,12 @@ const locations = [
     {% endif %}
     {% endfor %}
 
-    // Digest with multiple locations (conferences, festivals)
+    // Digest with multiple locations
     {% for item in site.digest %}
     {% if item.locations %}
         {% for loc in item.locations %}
         {
-            title: {{ item.title | jsonify }},
+            title: {{ loc.title | default: item.title | jsonify }},
             subtitle: {{ loc.venue | default: loc.city | jsonify }},
             lat: {{ loc.coords[0] | default: loc.lat }},
             lng: {{ loc.coords[1] | default: loc.lng }},
@@ -174,12 +386,12 @@ const locations = [
             country: {{ loc.country | jsonify }},
             type: "digest",
             date: {{ loc.date | default: item.date | date: "%B %d, %Y" | jsonify }},
+            rawDate: {{ loc.date | default: item.date | date: "%Y-%m-%d" | jsonify }},
             description: {{ loc.description | default: item.excerpt | strip_html | truncatewords: 15 | jsonify }},
             url: {{ item.url | jsonify }}
         },
         {% endfor %}
     {% elsif item.location %}
-    // Digest with single location (backward compatibility)
     {
         title: {{ item.title | jsonify }},
         lat: {{ item.location.coords[0] | default: item.location.lat }},
@@ -187,14 +399,16 @@ const locations = [
         coords: {{ item.location.coords | jsonify }},
         country: {{ item.location.country | jsonify }},
         type: "digest",
+        date: {{ item.date | date: "%B %d, %Y" | jsonify }},
+        rawDate: {{ item.date | date: "%Y-%m-%d" | jsonify }},
         excerpt: {{ item.excerpt | strip_html | truncatewords: 20 | jsonify }},
         url: {{ item.url | jsonify }}
     },
     {% endif %}
     {% endfor %}
-].filter(loc => loc.title); // Remove empty entries
+].filter(loc => loc.title && loc.lat && loc.lng);
 
-// Parse coordinates from either format
+// Parse coordinates
 locations.forEach(location => {
     if (location.coords && !location.lat) {
         const parsed = parseCoords(location);
@@ -202,6 +416,31 @@ locations.forEach(location => {
         location.lng = parsed.lng;
     }
 });
+
+// ============================================
+// Marker Cluster Setup
+// ============================================
+const markerClusters = L.markerClusterGroup({
+    maxClusterRadius: 50,
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+    zoomToBoundsOnClick: true,
+    spiderfyDistanceMultiplier: 1.5,
+    iconCreateFunction: function(cluster) {
+        const count = cluster.getChildCount();
+        let size = 'small';
+        if (count > 10) size = 'large';
+        else if (count > 5) size = 'medium';
+        
+        return L.divIcon({
+            html: `<div><span>${count}</span></div>`,
+            className: `marker-cluster marker-cluster-${size}`,
+            iconSize: L.point(40, 40)
+        });
+    }
+});
+
+map.addLayer(markerClusters);
 
 // ============================================
 // Marker Creation
@@ -212,7 +451,7 @@ function getMarkerColor(type) {
     const colors = {
         posts: '#cc0000',
         projects: '#75ade8',
-        digest: '#ee802f'
+        digest: '#046A38'
     };
     return colors[type] || '#cc0000';
 }
@@ -227,36 +466,40 @@ function createCustomIcon(type) {
     });
 }
 
+function createPopupContent(location) {
+    const typeLabel = location.type === 'posts' ? 'Field Notes' :
+                     location.type.charAt(0).toUpperCase() + location.type.slice(1);
+
+    let html = '<div class="marker-popup">';
+    html += `<div class="popup-title">${location.title}</div>`;
+
+    if (location.subtitle) {
+        html += `<div class="popup-venue">${location.subtitle}</div>`;
+    }
+
+    if (location.date) {
+        html += `<div class="popup-date">${location.date}</div>`;
+    }
+
+    html += `<div class="popup-meta">${typeLabel} • ${location.country.charAt(0).toUpperCase() + location.country.slice(1)}</div>`;
+    html += `<div class="popup-excerpt">${location.description || location.excerpt}</div>`;
+    html += `<a href="${location.url}" class="popup-link">Read more →</a>`;
+    html += '</div>';
+
+    return html;
+}
+
 locations.forEach(location => {
     const marker = L.marker([location.lat, location.lng], {
         icon: createCustomIcon(location.type),
         country: location.country,
-        type: location.type
-    }).addTo(map);
+        type: location.type,
+        rawDate: location.rawDate
+    });
 
-    const typeLabel = location.type === 'posts' ? 'Field Notes' :
-                     location.type.charAt(0).toUpperCase() + location.type.slice(1);
-
-    // Build popup content with support for multiple location fields
-    let popupHTML = '<div class="marker-popup">';
-    popupHTML += `<div class="popup-title">${location.title}</div>`;
-
-    // Show venue/city if available (for multi-location posts)
-    if (location.subtitle) {
-        popupHTML += `<div class="popup-venue">${location.subtitle}</div>`;
-    }
-
-    // Show date if available (for events/conferences)
-    if (location.date) {
-        popupHTML += `<div class="popup-date">${location.date}</div>`;
-    }
-
-    popupHTML += `<div class="popup-meta">${typeLabel} • ${location.country.charAt(0).toUpperCase() + location.country.slice(1)}</div>`;
-    popupHTML += `<div class="popup-excerpt">${location.description || location.excerpt}</div>`;
-    popupHTML += `<a href="${location.url}" class="popup-link">Read more →</a>`;
-    popupHTML += '</div>';
-
-    marker.bindPopup(popupHTML);
+    marker.bindPopup(createPopupContent(location));
+    
+    markerClusters.addLayer(marker);
     markers.push(marker);
 });
 
@@ -272,11 +515,9 @@ function setupDropdown(toggleId, menuId) {
         e.stopPropagation();
         const isOpen = menu.classList.contains('show');
 
-        // Close all dropdowns
         document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
         document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('active'));
 
-        // Toggle current dropdown
         if (!isOpen) {
             menu.classList.add('show');
             toggle.classList.add('active');
@@ -286,15 +527,9 @@ function setupDropdown(toggleId, menuId) {
     items.forEach(item => {
         item.addEventListener('click', (e) => {
             e.stopPropagation();
-
-            // Update active state
             items.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
-
-            // Update button text
             toggle.textContent = item.textContent;
-
-            // Close dropdown
             menu.classList.remove('show');
             toggle.classList.remove('active');
         });
@@ -303,8 +538,8 @@ function setupDropdown(toggleId, menuId) {
 
 setupDropdown('typeDropdown', 'typeMenu');
 setupDropdown('locationDropdown', 'locationMenu');
+setupDropdown('timeDropdown', 'timeMenu');
 
-// Close dropdowns when clicking outside
 document.addEventListener('click', () => {
     document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
     document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('active'));
@@ -315,18 +550,25 @@ document.addEventListener('click', () => {
 // ============================================
 let activeType = 'all';
 let activeCountry = 'all';
+let activeTime = 'all';
 
 function updateMarkers() {
+    markerClusters.clearLayers();
+    
+    let visibleCount = 0;
     markers.forEach(marker => {
         const matchesType = activeType === 'all' || marker.options.type === activeType;
         const matchesCountry = activeCountry === 'all' || marker.options.country === activeCountry;
+        const matchesTime = activeTime === 'all' || 
+                          (activeTime === 'upcoming' && marker.options.rawDate && !isPastDate(marker.options.rawDate));
 
-        if (matchesType && matchesCountry) {
-            marker.addTo(map);
-        } else {
-            map.removeLayer(marker);
+        if (matchesType && matchesCountry && matchesTime) {
+            markerClusters.addLayer(marker);
+            visibleCount++;
         }
     });
+
+    document.getElementById('markerCount').textContent = visibleCount;
 }
 
 document.querySelectorAll('[data-filter]').forEach(btn => {
@@ -342,4 +584,23 @@ document.querySelectorAll('[data-country]').forEach(btn => {
         updateMarkers();
     });
 });
+
+document.querySelectorAll('[data-time]').forEach(btn => {
+    btn.addEventListener('click', function() {
+        activeTime = this.dataset.time;
+        updateMarkers();
+    });
+});
+
+// ============================================
+// Reset View Button
+// ============================================
+document.getElementById('resetView').addEventListener('click', () => {
+    map.setView(defaultView, defaultZoom);
+});
+
+// ============================================
+// Initial marker count
+// ============================================
+updateMarkers();
 </script>
