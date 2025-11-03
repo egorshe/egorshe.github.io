@@ -766,10 +766,7 @@ figure {
     }
 }
 
-/* Remove any special positioning */
-nav .has-submenu {
-    margin-bottom: 0.2rem;
-}
+
 
 /* ============================================ */
 /* 15. Media Queries (Responsive) */
@@ -977,9 +974,9 @@ nav .has-submenu {
     border-bottom: 1px solid var(--border-light);
     display: flex;
     gap: 1rem;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: flex-end; /* Align dropdowns to the right */
+    justify-content: flex-end;
 }
 
 .filter-dropdown {
@@ -1001,7 +998,7 @@ nav .has-submenu {
     width: 100%;
     padding: 0.45rem 1.75rem 0.45rem 0.65rem;
     background: var(--bg-primary);
-    border: 1px solid var(--border-light); /* Lighter border */
+    border: 1px solid var(--border-light);
     border-radius: 3px;
     font-family: inherit;
     font-size: 0.85rem;
@@ -1012,11 +1009,10 @@ nav .has-submenu {
     transition: all 0.15s ease;
 
     &:hover {
-        border-color: var(--border-gray); /* Subtle hover */
+        border-color: var(--border-gray);
         background: var(--bg-secondary);
     }
 
-    /* Triangle arrow instead of ▾ */
     &::after {
         content: "";
         position: absolute;
@@ -1027,12 +1023,12 @@ nav .has-submenu {
         height: 0;
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
-        border-top: 5px solid var(--accent-red); /* Triangle pointing down */
+        border-top: 5px solid var(--accent-red);
         transition: transform 0.2s;
     }
 
     &.active::after {
-        transform: translateY(-50%) rotate(180deg); /* Triangle pointing up */
+        transform: translateY(-50%) rotate(180deg);
     }
 }
 
@@ -1041,10 +1037,10 @@ nav .has-submenu {
     top: calc(100% + 0.25rem);
     left: 0;
     right: 0;
-    background: var(--bg-primary); /* Lighter background */
-    border: 1px solid var(--border-light); /* Lighter border */
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
     border-radius: 3px;
-    box-shadow: 0 2px 8px var(--shadow-light); /* Softer shadow */
+    box-shadow: 0 2px 8px var(--shadow-light);
     z-index: 1000;
     max-height: 0;
     overflow: hidden;
@@ -1070,11 +1066,11 @@ nav .has-submenu {
     font-family: inherit;
 
     &:hover {
-        background: var(--bg-tertiary); /* Very light hover */
+        background: var(--bg-tertiary);
     }
 
     &.active {
-        background: var(--bg-secondary); /* Subtle active state */
+        background: var(--bg-secondary);
         color: var(--accent-red);
         font-weight: 600;
     }
@@ -1086,6 +1082,90 @@ nav .has-submenu {
     &:last-child {
         border-radius: 0 0 3px 3px;
     }
+}
+
+/* Upcoming events checkbox - styled like dropdown */
+.upcoming-checkbox-container {
+    position: relative;
+    min-width: 130px;
+}
+
+.upcoming-checkbox-container label.filter-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.upcoming-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.65rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.upcoming-checkbox-wrapper:hover {
+    border-color: var(--border-gray);
+    background: var(--bg-secondary);
+}
+
+.upcoming-checkbox-label {
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    flex: 1;
+}
+
+.upcoming-checkbox {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid var(--border-gray);
+    background-color: var(--bg-primary);
+    border-radius: 3px;
+    position: relative;
+    transition: all 0.15s ease;
+}
+
+.upcoming-checkbox:checked {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+}
+
+.upcoming-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Dark mode checkbox - colored when unchecked */
+:root[data-theme="dark"] .upcoming-checkbox {
+    border-color: var(--border-medium);
+    background-color: var(--bg-secondary);
+}
+
+:root[data-theme="dark"] .upcoming-checkbox:checked {
+    background-color: #ff6666;
+    border-color: #ff6666;
 }
 
 #map {
@@ -1270,9 +1350,6 @@ nav .has-submenu {
     }
 }
 
-/* Or hide it completely (not recommended, but possible) */
-/* .leaflet-control-attribution { display: none !important; } */
-
 :root[data-theme="dark"] .leaflet-control-attribution {
     background: rgba(0, 0, 0, 0.5) !important;
     color: #ccc !important;
@@ -1281,6 +1358,7 @@ nav .has-submenu {
         color: #8bbfef !important;
     }
 }
+
 @media (max-width: 768px) {
     #map {
         height: 400px;
@@ -1288,9 +1366,11 @@ nav .has-submenu {
 
     .map-controls {
         gap: 0.75rem;
+        align-items: center;
     }
 
-    .filter-dropdown {
+    .filter-dropdown,
+    .upcoming-checkbox-container {
         min-width: 120px;
         flex: 1 1 auto;
     }

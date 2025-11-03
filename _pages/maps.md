@@ -41,25 +41,8 @@ permalink: /maps/
     to { transform: rotate(360deg); }
 }
 
-/* Remove marker-count since not needed */
-
-/* .marker-count {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.marker-count span {
-    font-weight: 600;
-    color: var(--accent-red);
-    margin: 0 0.25rem;
-} */
-
 .reset-view-btn {
-    display: none; /* Hide reset button */
+    display: none;
 }
 
 /* Marker Cluster Styles */
@@ -144,21 +127,108 @@ permalink: /maps/
 
 /* Upcoming events toggle styling */
 .upcoming-checkbox-container {
+    position: relative;
+    min-width: 130px;
+}
+
+.upcoming-checkbox-container label.filter-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.upcoming-checkbox-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
-    margin-left: 1rem;
-    font-size: 0.93rem;
+    gap: 0.5rem;
+    padding: 0.45rem 0.65rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s ease;
     user-select: none;
+}
+
+.upcoming-checkbox-wrapper:hover {
+    border-color: var(--border-gray);
+    background: var(--bg-secondary);
+}
+
+.upcoming-checkbox-label {
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    flex: 1;
 }
 
 .upcoming-checkbox {
     accent-color: var(--accent-red);
-    margin-right: 0.25rem;
-}
-.upcoming-checkbox-label {
     cursor: pointer;
-    color: var(--text-primary);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+/* Dark mode checkbox - styled to match theme */
+:root[data-theme="dark"] .upcoming-checkbox {
+    accent-color: #ff6666;
+    /* Custom styling for unchecked state */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid var(--border-gray);
+    background-color: var(--bg-secondary);
+    border-radius: 3px;
+    position: relative;
+}
+
+:root[data-theme="dark"] .upcoming-checkbox:checked {
+    background-color: #ff6666;
+    border-color: #ff6666;
+}
+
+:root[data-theme="dark"] .upcoming-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Light mode keeps native styling but with custom colors */
+.upcoming-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid var(--border-gray);
+    background-color: var(--bg-primary);
+    border-radius: 3px;
+    position: relative;
+}
+
+.upcoming-checkbox:checked {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+}
+
+.upcoming-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Mobile optimizations */
@@ -168,21 +238,12 @@ permalink: /maps/
         flex-wrap: wrap;
     }
 
-    /* Remove mobile styling for .marker-count */
-    /* .marker-count {
-        width: 100%;
-        justify-content: center;
-        order: -1;
-        padding: 0.25rem 0.5rem;
-        border-bottom: 1px solid var(--border-light);
-    } */
     .reset-view-btn {
         display: none;
     }
+    
     .upcoming-checkbox-container {
-        margin: 0.5rem 0 0.5rem 0;
         width: 100%;
-        justify-content: flex-start;
     }
 }
 </style>
@@ -203,7 +264,6 @@ permalink: /maps/
                 <button class="dropdown-item active" data-filter="all">All</button>
                 <button class="dropdown-item" data-filter="posts">Field Notes</button>
                 <button class="dropdown-item" data-filter="projects">Projects</button>
-                <button class="dropdown-item" data-filter="digest">Digest</button>
             </div>
         </div>
 
@@ -222,8 +282,11 @@ permalink: /maps/
         </div>
 
         <div class="upcoming-checkbox-container">
-            <input type="checkbox" id="upcomingOnly" class="upcoming-checkbox" />
-            <label for="upcomingOnly" class="upcoming-checkbox-label">Upcoming events</label>
+            <label class="filter-label">Events</label>
+            <div class="upcoming-checkbox-wrapper" onclick="document.getElementById('upcomingOnly').click(); event.stopPropagation();">
+                <span class="upcoming-checkbox-label">Upcoming only</span>
+                <input type="checkbox" id="upcomingOnly" class="upcoming-checkbox" onclick="event.stopPropagation();" />
+            </div>
         </div>
     </div>
 
@@ -309,12 +372,87 @@ function parseCoords(loc) {
     return { lat: loc.lat, lng: loc.lng };
 }
 
-function isPastDate(dateString) {
+function parseDate(dateString) {
+    if (!dateString) return null;
+    
+    // Handle various date range formats
+    // Format 1: "2025-11-01-2025-11-04"
+    const dashRangeMatch = dateString.match(/^(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})$/);
+    if (dashRangeMatch) {
+        return {
+            start: new Date(dashRangeMatch[1]),
+            end: new Date(dashRangeMatch[2]),
+            isRange: true
+        };
+    }
+    
+    // Format 2: "2025-10-15 to 2025-10-17"
+    const toRangeMatch = dateString.match(/(\d{4}-\d{2}-\d{2})\s+to\s+(\d{4}-\d{2}-\d{2})/);
+    if (toRangeMatch) {
+        return {
+            start: new Date(toRangeMatch[1]),
+            end: new Date(toRangeMatch[2]),
+            isRange: true
+        };
+    }
+    
+    // Format 3: Natural language date like "October 15, 2026"
+    // Try parsing as-is first
+    const parsedDate = new Date(dateString);
+    if (!isNaN(parsedDate.getTime())) {
+        return {
+            start: parsedDate,
+            end: parsedDate,
+            isRange: false
+        };
+    }
+    
+    return null;
+}
+
+function formatDateRange(dateString) {
+    const dateInfo = parseDate(dateString);
+    if (!dateInfo) return dateString; // Fallback to original
+    
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                    'July', 'August', 'September', 'October', 'November', 'December'];
+    
+    if (!dateInfo.isRange) {
+        // Single date: "October 15, 2026"
+        return `${months[dateInfo.start.getMonth()]} ${dateInfo.start.getDate()}, ${dateInfo.start.getFullYear()}`;
+    }
+    
+    const startMonth = dateInfo.start.getMonth();
+    const endMonth = dateInfo.end.getMonth();
+    const startDay = dateInfo.start.getDate();
+    const endDay = dateInfo.end.getDate();
+    const startYear = dateInfo.start.getFullYear();
+    const endYear = dateInfo.end.getFullYear();
+    
+    // Same month and year: "October 15–17, 2025"
+    if (startMonth === endMonth && startYear === endYear) {
+        return `${months[startMonth]} ${startDay}–${endDay}, ${startYear}`;
+    }
+    
+    // Different months, same year: "October 23–November 5, 2025"
+    if (startYear === endYear) {
+        return `${months[startMonth]} ${startDay}–${months[endMonth]} ${endDay}, ${startYear}`;
+    }
+    
+    // Different years: "December 28, 2025–January 3, 2026"
+    return `${months[startMonth]} ${startDay}, ${startYear}–${months[endMonth]} ${endDay}, ${endYear}`;
+}
+
+function isUpcomingEvent(dateString) {
     if (!dateString) return false;
-    const eventDate = new Date(dateString);
+    const dateInfo = parseDate(dateString);
+    if (!dateInfo) return false;
+    
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    return eventDate < today;
+    
+    // Event is upcoming if end date is today or in the future
+    return dateInfo.end >= today;
 }
 
 // ============================================
@@ -333,8 +471,8 @@ const locations = [
             coords: {{ loc.coords | jsonify }},
             country: {{ loc.country | jsonify }},
             type: "posts",
-            date: {{ loc.date | default: post.date | date: "%B %d, %Y" | jsonify }},
-            rawDate: {{ loc.date | default: post.date | date: "%Y-%m-%d" | jsonify }},
+            date: null, // Don't use formatted date for ranges
+            rawDate: {{ loc.date | default: post.date | jsonify }},
             description: {{ loc.description | default: post.excerpt | strip_html | truncatewords: 15 | jsonify }},
             url: {{ post.url | jsonify }}
         },
@@ -347,8 +485,8 @@ const locations = [
         coords: {{ post.location.coords | jsonify }},
         country: {{ post.location.country | jsonify }},
         type: "posts",
-        date: {{ post.date | date: "%B %d, %Y" | jsonify }},
-        rawDate: {{ post.date | date: "%Y-%m-%d" | jsonify }},
+        date: null, // Don't use formatted date for ranges
+        rawDate: {{ post.date | jsonify }},
         excerpt: {{ post.excerpt | strip_html | truncatewords: 20 | jsonify }},
         url: {{ post.url | jsonify }}
     },
@@ -383,8 +521,8 @@ const locations = [
             coords: {{ loc.coords | jsonify }},
             country: {{ loc.country | jsonify }},
             type: "digest",
-            date: {{ loc.date | default: item.date | date: "%B %d, %Y" | jsonify }},
-            rawDate: {{ loc.date | default: item.date | date: "%Y-%m-%d" | jsonify }},
+            date: null, // Don't use formatted date for ranges
+            rawDate: {{ loc.date | default: item.date | jsonify }},
             description: {{ loc.description | default: item.excerpt | strip_html | truncatewords: 15 | jsonify }},
             url: {{ item.url | jsonify }}
         },
@@ -397,14 +535,18 @@ const locations = [
         coords: {{ item.location.coords | jsonify }},
         country: {{ item.location.country | jsonify }},
         type: "digest",
-        date: {{ item.date | date: "%B %d, %Y" | jsonify }},
-        rawDate: {{ item.date | date: "%Y-%m-%d" | jsonify }},
+        date: null, // Don't use formatted date for ranges
+        rawDate: {{ item.date | jsonify }},
         excerpt: {{ item.excerpt | strip_html | truncatewords: 20 | jsonify }},
         url: {{ item.url | jsonify }}
     },
     {% endif %}
     {% endfor %}
 ].filter(loc => loc.title && loc.lat && loc.lng);
+
+// Debug: Log all locations to check data
+console.log('Total locations loaded:', locations.length);
+console.log('Sample location data:', locations[0]);
 
 // Parse coordinates
 locations.forEach(location => {
@@ -445,7 +587,14 @@ map.addLayer(markerClusters);
 // ============================================
 let markers = [];
 
-function getMarkerColor(type) {
+function getMarkerColor(type, isUpcoming) {
+    // If upcoming events filter is active and this is a digest event, use green
+    if (isUpcoming && type === 'digest') {
+        // Check current theme
+        const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+        return isDarkMode ? '#4ade80' : '#046A38'; // Brighter green in dark mode
+    }
+    
     const colors = {
         posts: '#cc0000',
         projects: '#75ade8',
@@ -454,8 +603,8 @@ function getMarkerColor(type) {
     return colors[type] || '#cc0000';
 }
 
-function createCustomIcon(type) {
-    const color = getMarkerColor(type);
+function createCustomIcon(type, isUpcoming) {
+    const color = getMarkerColor(type, isUpcoming);
     return L.divIcon({
         className: 'custom-marker',
         html: `<div style="background: ${color}; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>`,
@@ -475,7 +624,11 @@ function createPopupContent(location) {
         html += `<div class="popup-venue">${location.subtitle}</div>`;
     }
 
-    if (location.date) {
+    if (location.rawDate) {
+        // Use formatDateRange for proper date display
+        const formattedDate = formatDateRange(location.rawDate);
+        html += `<div class="popup-date">${formattedDate}</div>`;
+    } else if (location.date) {
         html += `<div class="popup-date">${location.date}</div>`;
     }
 
@@ -488,11 +641,24 @@ function createPopupContent(location) {
 }
 
 locations.forEach(location => {
+    const isUpcoming = location.type === 'digest' && isUpcomingEvent(location.rawDate);
+    
+    // Debug: Log digest items
+    if (location.type === 'digest') {
+        console.log('Digest item:', {
+            title: location.title,
+            rawDate: location.rawDate,
+            isUpcoming: isUpcoming,
+            parsed: parseDate(location.rawDate)
+        });
+    }
+    
     const marker = L.marker([location.lat, location.lng], {
-        icon: createCustomIcon(location.type),
+        icon: createCustomIcon(location.type, false),
         country: location.country,
         type: location.type,
-        rawDate: location.rawDate
+        rawDate: location.rawDate,
+        isUpcoming: isUpcoming
     });
 
     marker.bindPopup(createPopupContent(location));
@@ -536,7 +702,6 @@ function setupDropdown(toggleId, menuId) {
 
 setupDropdown('typeDropdown', 'typeMenu');
 setupDropdown('locationDropdown', 'locationMenu');
-//setupDropdown('timeDropdown', 'timeMenu');  // removed time dropdown
 
 document.addEventListener('click', () => {
     document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
@@ -548,7 +713,7 @@ document.addEventListener('click', () => {
 // ============================================
 let activeType = 'all';
 let activeCountry = 'all';
-let showUpcomingOnly = false; // replaces time filter
+let showUpcomingOnly = false;
 
 function updateMarkers() {
     markerClusters.clearLayers();
@@ -556,9 +721,18 @@ function updateMarkers() {
     markers.forEach(marker => {
         const matchesType = activeType === 'all' || marker.options.type === activeType;
         const matchesCountry = activeCountry === 'all' || marker.options.country === activeCountry;
-        const matchesUpcoming = !showUpcomingOnly || (marker.options.rawDate && !isPastDate(marker.options.rawDate));
+        
+        // When upcoming filter is active, show only digest items that are upcoming
+        const matchesUpcoming = !showUpcomingOnly || 
+            (marker.options.type === 'digest' && marker.options.isUpcoming);
 
         if (matchesType && matchesCountry && matchesUpcoming) {
+            // Update marker icon color when upcoming filter is active
+            if (showUpcomingOnly && marker.options.type === 'digest') {
+                marker.setIcon(createCustomIcon(marker.options.type, true));
+            } else {
+                marker.setIcon(createCustomIcon(marker.options.type, false));
+            }
             markerClusters.addLayer(marker);
         }
     });

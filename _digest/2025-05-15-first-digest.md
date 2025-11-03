@@ -13,12 +13,12 @@ locations:
     date: "October 15, 2026"
     description: "Opening keynote: 'Post-Soviet Documentary Aesthetics' and main panel discussions on archival practices."
 
-  - city: "Tallinn"
-    venue: "Estonian Film Institute"
-    lat: 59.4370
-    lng: 24.7536
+  - title: "Estonian Film History Conference"
+    city: "Tallinn"
+    venue: "Estonian Film Archive"
+    coords: [59.446695923269395, 24.71061990960473]
     country: "estonia"
-    date: "October 20, 2024"
+    date: "2025-11-01 to 2025-11-04"
     description: "Hands-on workshop on digital preservation techniques for film archives."
 
 ---
