@@ -2,14 +2,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.querySelector("nav ul");
   const MOBILE_BREAKPOINT = 720; // Соответствует 45rem в style.scss
+  const SCROLL_THRESHOLD = 100; // Pixels to scroll before transforming
 
   if (!toggle || !menu) {
     console.error("Nav toggle or menu not found");
     return;
   }
 
-  // Вспомогательная функция для определения, является ли устройство мобильным
   const isMobileView = () => window.innerWidth <= MOBILE_BREAKPOINT;
+
+  // Handle scroll transformation: hamburger → dots
+  function handleScrollTransform() {
+    if (!isMobileView()) return; // Only on mobile
+    
+    const isMenuOpen = menu.classList.contains("nav-open");
+    const isScrolled = window.scrollY > SCROLL_THRESHOLD;
+    
+    // Only transform to dots if menu is closed
+    if (!isMenuOpen) {
+      if (isScrolled) {
+        toggle.classList.add("scrolled");
+      } else {
+        toggle.classList.remove("scrolled");
+      }
+    }
+  }
+
+  // Listen for scroll events
+  window.addEventListener("scroll", handleScrollTransform, { passive: true });
+  
+  // Check initial state
+  handleScrollTransform();
 
   // Mobile hamburger menu toggle
   toggle.addEventListener("click", function (e) {
@@ -19,6 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const isOpen = menu.classList.toggle("nav-open");
     toggle.setAttribute("aria-expanded", isOpen);
     toggle.classList.toggle("active");
+    
+    // Remove scrolled class when opening menu (show X, not dots)
+    if (isOpen) {
+      toggle.classList.remove("scrolled");
+    } else {
+      // Re-check scroll position when closing menu
+      handleScrollTransform();
+    }
 
     console.log("Menu toggled:", isOpen);
   });
@@ -29,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.remove("nav-open");
       toggle.classList.remove("active");
       toggle.setAttribute("aria-expanded", "false");
+      
+      // Re-check scroll position when closing menu
+      handleScrollTransform();
     }
   });
 
@@ -40,6 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.classList.remove("nav-open");
         toggle.classList.remove("active");
         toggle.setAttribute("aria-expanded", "false");
+        
+        // Re-check scroll position when closing menu
+        handleScrollTransform();
       }
     });
   });
@@ -63,18 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const isOpen = submenu.classList.toggle("submenu-open");
       toggle.setAttribute("aria-expanded", isOpen);
 
-      // --- МЕСТО ВСТАВКИ ВАШЕГО БЛОКА ---
       if (arrow) {
-        // Устанавливаем поворот в зависимости от режима просмотра
         if (isMobileView()) {
-          // МОБИЛЬНАЯ ЛОГИКА: Закрыто (←) = 180deg, Открыто (↓) = 90deg
           arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(180deg)";
         } else {
-          // ДЕСКТОПНАЯ ЛОГИКА: Закрыто (→) = 0deg, Открыто (↓) = 90deg
           arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
         }
       }
-      // --- КОНЕЦ МЕСТА ВСТАВКИ ---
 
       console.log("Submenu toggled:", isOpen, submenu);
     });
@@ -92,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const arrow = toggle.querySelector(".submenu-arrow");
       if (arrow) {
-        // При авто-открытии всегда направляем вниз (90deg), независимо от режима
         arrow.style.transform = "rotate(90deg)";
       }
 
@@ -100,13 +131,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ИНИЦИАЛИЗАЦИЯ: Установим правильное начальное положение стрелок при загрузке
-  // (только если они не открыты автоматически)
   submenuToggles.forEach(function (toggle) {
     const arrow = toggle.querySelector(".submenu-arrow");
     const submenu = toggle.nextElementSibling;
 
-    // Применяем начальный поворот, только если субменю не открыто
     if (arrow && submenu && !submenu.classList.contains("submenu-open")) {
       if (isMobileView()) {
         arrow.style.transform = "rotate(180deg)"; // Закрыто, мобильный (←)
