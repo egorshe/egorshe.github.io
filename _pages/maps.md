@@ -82,7 +82,7 @@ permalink: /maps/
     text-align: center;
     border-radius: 50%;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .marker-cluster span {
@@ -241,7 +241,7 @@ permalink: /maps/
     .reset-view-btn {
         display: none;
     }
-    
+
     .upcoming-checkbox-container {
         width: 100%;
     }
@@ -374,7 +374,7 @@ function parseCoords(loc) {
 
 function parseDate(dateString) {
     if (!dateString) return null;
-    
+
     // Handle various date range formats
     // Format 1: "2025-11-01-2025-11-04"
     const dashRangeMatch = dateString.match(/^(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})$/);
@@ -385,7 +385,7 @@ function parseDate(dateString) {
             isRange: true
         };
     }
-    
+
     // Format 2: "2025-10-15 to 2025-10-17"
     const toRangeMatch = dateString.match(/(\d{4}-\d{2}-\d{2})\s+to\s+(\d{4}-\d{2}-\d{2})/);
     if (toRangeMatch) {
@@ -395,7 +395,7 @@ function parseDate(dateString) {
             isRange: true
         };
     }
-    
+
     // Format 3: Natural language date like "October 15, 2026"
     // Try parsing as-is first
     const parsedDate = new Date(dateString);
@@ -406,39 +406,39 @@ function parseDate(dateString) {
             isRange: false
         };
     }
-    
+
     return null;
 }
 
 function formatDateRange(dateString) {
     const dateInfo = parseDate(dateString);
     if (!dateInfo) return dateString; // Fallback to original
-    
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+
+    const months = ['January', 'February', 'March', 'April', 'May', 'June',
                     'July', 'August', 'September', 'October', 'November', 'December'];
-    
+
     if (!dateInfo.isRange) {
         // Single date: "October 15, 2026"
         return `${months[dateInfo.start.getMonth()]} ${dateInfo.start.getDate()}, ${dateInfo.start.getFullYear()}`;
     }
-    
+
     const startMonth = dateInfo.start.getMonth();
     const endMonth = dateInfo.end.getMonth();
     const startDay = dateInfo.start.getDate();
     const endDay = dateInfo.end.getDate();
     const startYear = dateInfo.start.getFullYear();
     const endYear = dateInfo.end.getFullYear();
-    
+
     // Same month and year: "October 15–17, 2025"
     if (startMonth === endMonth && startYear === endYear) {
         return `${months[startMonth]} ${startDay}–${endDay}, ${startYear}`;
     }
-    
+
     // Different months, same year: "October 23–November 5, 2025"
     if (startYear === endYear) {
         return `${months[startMonth]} ${startDay}–${months[endMonth]} ${endDay}, ${startYear}`;
     }
-    
+
     // Different years: "December 28, 2025–January 3, 2026"
     return `${months[startMonth]} ${startDay}, ${startYear}–${months[endMonth]} ${endDay}, ${endYear}`;
 }
@@ -447,10 +447,10 @@ function isUpcomingEvent(dateString) {
     if (!dateString) return false;
     const dateInfo = parseDate(dateString);
     if (!dateInfo) return false;
-    
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    
+
     // Event is upcoming if end date is today or in the future
     return dateInfo.end >= today;
 }
@@ -594,7 +594,7 @@ function getMarkerColor(type, isUpcoming) {
         const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
         return isDarkMode ? '#4ade80' : '#046A38'; // Brighter green in dark mode
     }
-    
+
     const colors = {
         posts: '#cc0000',
         projects: '#75ade8',
@@ -642,7 +642,7 @@ function createPopupContent(location) {
 
 locations.forEach(location => {
     const isUpcoming = location.type === 'digest' && isUpcomingEvent(location.rawDate);
-    
+
     // Debug: Log digest items
     if (location.type === 'digest') {
         console.log('Digest item:', {
@@ -652,7 +652,7 @@ locations.forEach(location => {
             parsed: parseDate(location.rawDate)
         });
     }
-    
+
     const marker = L.marker([location.lat, location.lng], {
         icon: createCustomIcon(location.type, false),
         country: location.country,
@@ -721,9 +721,9 @@ function updateMarkers() {
     markers.forEach(marker => {
         const matchesType = activeType === 'all' || marker.options.type === activeType;
         const matchesCountry = activeCountry === 'all' || marker.options.country === activeCountry;
-        
+
         // When upcoming filter is active, show only digest items that are upcoming
-        const matchesUpcoming = !showUpcomingOnly || 
+        const matchesUpcoming = !showUpcomingOnly ||
             (marker.options.type === 'digest' && marker.options.isUpcoming);
 
         if (matchesType && matchesCountry && matchesUpcoming) {
