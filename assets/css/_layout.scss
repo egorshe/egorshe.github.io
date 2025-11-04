@@ -1,0 +1,89 @@
+/* ============================================ */
+/* Layout & Structure                           */
+/* ============================================ */
+@use "variables" as *;
+main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 54rem;
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    flex: 1 0 auto;
+    box-sizing: border-box;
+}
+
+header {
+    flex-grow: 1;
+    flex-basis: 10rem;
+    position: relative;
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        color: var(--text-primary);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--text-primary);
+            border-bottom: 1px var(--border-gray) dotted;
+        }
+    }
+
+    li {
+        margin-bottom: 0.2rem;
+        text-align: right;
+        margin-right: 2rem;
+    }
+}
+
+section {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+section {
+    padding: 1rem;
+}
+
+nav ul {
+    border-right: 1px solid var(--border-light);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    max-width: 54rem;
+    width: 100%;
+    height: 50px;
+    padding-left: 10rem;
+    box-sizing: border-box;
+}
+
+/* Footer Links - Theme Aware */
+footer a,
+.socials a {
+    color: #000;
+
+    &:hover {
+        color: var(--accent-red);
+    }
+}
+
+:root[data-theme="dark"] {
+    footer a,
+    .socials a {
+        color: #fff;
+
+        &:hover {
+            color: var(--accent-red);
+        }
+    }
+}

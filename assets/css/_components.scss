@@ -1,0 +1,134 @@
+/* ============================================ */
+/* Reusable Components                          */
+/* ============================================ */
+@use "variables" as *;
+
+/* Project Status Badge */
+.project-status {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 3px;
+    margin-top: 0.75rem;
+    background-color: var(--bg-badge);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-badge);
+}
+
+/* Project Cards */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+    &:hover {
+        border-bottom: none;
+    }
+}
+
+.project-card {
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    background: var(--bg-card);
+    transition: all $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 4px 12px var(--shadow-medium);
+        transform: translateY(-2px);
+    }
+
+    /* Side Image Layout - only when image exists */
+    &.side-image-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .card-text-area {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .card-image-area {
+        flex-shrink: 0;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        padding-left: 0;
+    }
+
+    .card-img-side {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 3px;
+        display: block;
+    }
+
+    .card-title {
+        color: var(--text-table);
+        font-size: 120%;
+        margin-top: 0;
+    }
+
+    .card-subtitle {
+        font-size: 110%;
+    }
+
+    .card-text {
+        margin: 0.75rem 0 0 0;
+        color: var(--text-secondary);
+        line-height: 1.4;
+    }
+
+    .github-link {
+        color: var(--text-primary);
+
+        &:hover {
+            color: var(--text-table);
+            border-bottom: none;
+        }
+    }
+}
+
+.card {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.card-body {
+    padding: 1rem 1.25rem;
+}
+
+/* Forms & Inputs */
+input[type="text"] {
+    outline: none;
+    padding: 0.7rem;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: 100%;
+    border: none;
+    border-bottom: 1px solid var(--border-gray);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Search */
+#search-container {
+    max-width: 100%;
+}
+
+#results-container {
+    margin: 1rem 0;
+    background-color: var(--bg-secondary);
+}

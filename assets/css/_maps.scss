@@ -1,0 +1,413 @@
+/* ============================================ */
+/* Maps Page Styles                             */
+/* ============================================ */
+@use "variables" as *;
+.page-intro {
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.map-container {
+    margin: 2rem 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Map Controls */
+.map-controls {
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* Filter Dropdown */
+.filter-dropdown {
+    position: relative;
+    min-width: 130px;
+
+    label {
+        display: block;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-muted);
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+}
+
+.dropdown-toggle {
+    width: 100%;
+    padding: 0.45rem 1.75rem 0.45rem 0.65rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    transition: all 0.15s ease;
+
+    &:hover {
+        border-color: var(--border-gray);
+        background: var(--bg-secondary);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0.65rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid var(--accent-red);
+        transition: transform 0.2s;
+    }
+
+    &.active::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    right: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+
+    &.show {
+        max-height: 300px;
+        opacity: 1;
+    }
+}
+
+.dropdown-item {
+    padding: 0.45rem 0.65rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    transition: background 0.15s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+
+    &:hover {
+        background: var(--bg-tertiary);
+    }
+
+    &.active {
+        background: var(--bg-secondary);
+        color: var(--accent-red);
+        font-weight: 600;
+    }
+
+    &:first-child {
+        border-radius: 3px 3px 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 3px 3px;
+    }
+}
+
+/* Upcoming Events Checkbox */
+.upcoming-checkbox-container {
+    position: relative;
+    min-width: 130px;
+
+    label.filter-label {
+        display: block;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-muted);
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+}
+
+.upcoming-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.65rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+
+    &:hover {
+        border-color: var(--border-gray);
+        background: var(--bg-secondary);
+    }
+}
+
+.upcoming-checkbox-label {
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    flex: 1;
+}
+
+.upcoming-checkbox {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid var(--border-gray);
+    background-color: var(--bg-primary);
+    border-radius: 3px;
+    position: relative;
+    transition: all 0.15s ease;
+
+    &:checked {
+        background-color: var(--accent-red);
+        border-color: var(--accent-red);
+
+        &::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+/* Dark mode checkbox */
+:root[data-theme="dark"] .upcoming-checkbox {
+    border-color: var(--border-medium);
+    background-color: var(--bg-secondary);
+
+    &:checked {
+        background-color: #ff6666;
+        border-color: #ff6666;
+    }
+}
+
+/* Map Element */
+#map {
+    height: 600px;
+    width: 100%;
+    background: var(--bg-secondary);
+    transition: filter 0.3s ease;
+}
+
+/* Automatic theme switching for map tiles */
+:root[data-theme="dark"] #map {
+    filter: invert(0.9) hue-rotate(180deg) brightness(0.95);
+}
+
+/* Prevent markers and popups from being inverted in dark mode */
+:root[data-theme="dark"] {
+    .leaflet-marker-icon,
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip,
+    .custom-marker {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
+
+/* Leaflet Popup Styling */
+.leaflet-popup-content-wrapper {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-radius: 4px;
+    box-shadow: 0 3px 14px var(--shadow-medium) !important;
+}
+
+.leaflet-popup-tip {
+    background: var(--bg-card) !important;
+}
+
+.leaflet-popup-close-button {
+    color: var(--text-primary) !important;
+
+    &:hover {
+        color: var(--accent-red) !important;
+    }
+}
+
+.marker-popup {
+    max-width: 280px;
+    padding: 0.5rem;
+}
+
+.popup-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.popup-venue {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-gray);
+    margin-bottom: 0.2rem;
+}
+
+.popup-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+    font-style: italic;
+}
+
+.popup-meta {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.popup-excerpt {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.popup-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: none;
+    padding: 0;
+    border: none;
+
+    &:hover {
+        color: var(--accent-blue-dark);
+        text-decoration: none;
+    }
+}
+
+/* Map Gallery */
+.map-gallery {
+    margin-top: 4rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    color: var(--accent-gray);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--bg-card);
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px var(--shadow-medium);
+    }
+
+    img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.gallery-info {
+    padding: 1rem;
+}
+
+.gallery-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.gallery-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.gallery-source {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.gallery-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+
+    &:hover {
+        color: var(--accent-blue-dark);
+    }
+}
+
+/* Minimize Leaflet attribution */
+.leaflet-control-attribution {
+    font-size: 0.6rem !important;
+    opacity: 0.6;
+    padding: 2px 5px !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+:root[data-theme="dark"] .leaflet-control-attribution {
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: #ccc !important;
+
+    a {
+        color: #8bbfef !important;
+    }
+}

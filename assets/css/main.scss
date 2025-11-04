@@ -2,9 +2,22 @@
 ---
 
 // ============================================
-// Modern SCSS imports (use instead of @import)
+// Main SCSS - Modular Import Structure
 // ============================================
-@use "style";
+
+// Core Style Modules (replacing single style.scss)
+@use "variables";
+@use "base";
+@use "layout";
+@use "navigation";
+@use "components";
+@use "posts";
+@use "tables";
+@use "utilities";
+@use "maps";
+@use "responsive";
+
+// Additional Feature Modules
 @use "glossary";
 @use "print";
 

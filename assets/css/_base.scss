@@ -1,0 +1,139 @@
+/* ============================================ */
+/* Base Styles & Typography                     */
+/* ============================================ */
+@use "variables" as *;
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: $bodyFont;
+    font-size: 14px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1;
+    margin: 1rem 0;
+}
+
+section {
+    h1 {
+        font-size: 150%;
+    }
+    h2 {
+        font-size: 120%;
+    }
+    h3 {
+        font-size: 115%;
+    }
+    h4 {
+        font-size: 110%;
+    }
+    h5 {
+        font-size: 100%;
+    }
+}
+
+.posts {
+    h1 {
+        font-size: 150%;
+    }
+    h2 {
+        font-size: 130%;
+    }
+    h3 {
+        font-size: 120%;
+    }
+    h4 {
+        font-size: 110%;
+    }
+    h5 {
+        font-size: 100%;
+    }
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: var(--accent-blue);
+
+    &:hover {
+        color: var(--accent-blue-dark);
+        border-bottom: 1px var(--border-gray) dotted;
+    }
+}
+
+/* Code Blocks */
+code {
+    font-size: 100%;
+}
+
+pre {
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px var(--shadow-code);
+
+    code {
+        border-radius: 5px;
+        font-size: 125%;
+    }
+}
+
+blockquote {
+    border-left: 0.25em solid var(--border-quote);
+    color: var(--text-quote);
+    padding: 0 1em;
+}
+
+/* Images & Figures */
+figure {
+    margin: 2.5rem 0;
+
+    img {
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--border-medium);
+        box-shadow: 0 4px 12px var(--shadow-light);
+    }
+
+    figcaption {
+        font-size: 0.9em;
+        font-style: italic;
+        color: var(--text-secondary);
+        margin-top: 0.75rem;
+        text-align: center;
+    }
+}
+
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+
+    &:focus {
+        top: 0;
+    }
+}
+
+/* Performance Optimizations */
+.jekyll-glossary .jekyll-glossary-tooltip {
+    will-change: opacity;
+    transform: translateZ(0);
+}

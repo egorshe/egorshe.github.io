@@ -1,0 +1,29 @@
+/* ============================================ */
+/* Tables                                       */
+/* ============================================ */
+@use "variables" as *;
+table {
+    tr th {
+        background: var(--bg-table);
+        color: var(--text-table);
+        padding: 0;
+        border: 1px solid var(--border-dark);
+        text-align: center;
+        font-weight: bold;
+    }
+
+    tr td {
+        border: 1px solid var(--border-table);
+        padding: 5px;
+
+        &.rightright {
+            background: var(--bg-table);
+        }
+
+        h4 {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+    }
+}

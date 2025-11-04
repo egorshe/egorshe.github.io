@@ -1,0 +1,172 @@
+/* ============================================ */
+/* Responsive Styles & Media Queries            */
+/* ============================================ */
+@use "variables" as *;
+@media screen and (max-width: 45rem) {
+    /* Layout Adjustments */
+    header {
+        li {
+            display: inline;
+            margin-right: 1rem;
+            font-size: 110%;
+        }
+
+        ul {
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 2rem;
+        }
+    }
+
+    footer {
+        margin-bottom: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        left: 0;
+        transform: none;
+        width: 100%;
+    }
+
+    /* Mobile Navigation Toggle */
+    .nav-toggle {
+        display: block !important;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* Mobile Navigation Menu */
+    nav ul {
+        display: none !important;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background: var(--bg-primary);
+        box-shadow: -2px 0 10px var(--shadow-nav);
+        padding: 4rem 2rem 2rem;
+        border-right: none !important;
+        border-left: 1px solid var(--border-light) !important;
+        border-bottom: none !important;
+        z-index: 999;
+        list-style: none;
+
+        &.nav-open {
+            display: block !important;
+            animation: slideIn $transition-base;
+        }
+
+        li {
+            display: block !important;
+            text-align: left !important;
+            margin-right: 0 !important;
+            margin-bottom: 0.25rem !important;
+            padding: 0.25rem 0 !important;
+            font-size: 1.1rem !important;
+        }
+
+        br {
+            display: none;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* Mobile Submenu Styles */
+    .submenu-toggle {
+        justify-content: space-between;
+        padding: 0.25rem 0 !important;
+        margin-bottom: 0 !important;
+
+        .submenu-arrow {
+            order: 1;
+            margin-left: auto;
+            padding-left: 1rem;
+            font-size: 1.1em;
+        }
+
+        .submenu-title {
+            order: 0;
+        }
+    }
+
+    .submenu {
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 0 0 1rem !important;
+        border: none !important;
+
+        &.submenu-open {
+            max-height: 500px !important;
+        }
+
+        li {
+            text-align: left !important;
+            margin-right: 0 !important;
+            padding: 0.25rem 0 !important;
+            padding-left: 1rem !important;
+            font-size: 1rem !important;
+            margin-bottom: 0.25rem !important;
+
+            a {
+                font-size: 1em !important;
+            }
+        }
+    }
+
+    /* Mobile Content Typography */
+    main,
+    .digest-post-content {
+        font-size: 1.34rem;
+        line-height: 1.65;
+    }
+
+    /* Mobile Project Cards - Keep side layout, just smaller */
+    .project-card.side-image-layout {
+        .card-image-area {
+            width: 80px;
+            padding: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .card-img-side {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    }
+
+    /* Mobile Map Adjustments */
+    #map {
+        height: 400px;
+    }
+
+    .map-controls {
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .filter-dropdown,
+    .upcoming-checkbox-container {
+        min-width: 120px;
+        flex: 1 1 auto;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
