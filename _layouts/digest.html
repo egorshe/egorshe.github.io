@@ -6,7 +6,7 @@ layout: default
 
 <ul class="posts">
     {% assign digests = site.digest | sort: 'date' | reverse %} {% for digest in
-    digests %} {% if digest.date %}
+    digests %} {% if digest.date and digest.draft != true %}
     <li>
         <a href="{{ site.baseurl }}{{ digest.url }}">{{ digest.title }}</a>
     </li>
