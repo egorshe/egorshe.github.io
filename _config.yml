@@ -2,7 +2,7 @@ title: Mato Baltica
 navbar_title: Mato Baltica
 
 author:
-  name: egorshe # Your name
+  name: Egor Shmonin
   email: matobaltica@tuta.io
 
 description: nexus for the critical study of Baltic cinemas and broader regional culture # description of your site
@@ -11,14 +11,14 @@ url: "https://egorshe.github.io" # The base hostname & protocol for your site, e
 baseurl: "" # The subpath of your site, e.g. /blog
 
 jekyllacademic:
-  homepage_title: "Why the Baltics?" # Your homepage title
-  footer: egorshe
+  homepage_title: "Why the Baltics?"
+  footer: Egor Shmonin
   contentlicense: "MIT" # Choose either one of these to put: MIT, Commons Clause, CC BY 4.0, CC BY-NC 4.0, CC BY-ND 4.0, CC BY-NC-ND 4.0, CC BY-NC-SA 4.0, CC BY-NC-SA 4.0, CC BY-SA 4.0
   socials:
     twitter: matobaltica
     instagram: matobaltica
     telegram: "https://t.me/BalticResearch"
-    rss: "/feed.xml" # Добавили RSS
+    rss: "/feed.xml"
 
 # No need to edit this part, however if you want to, that's fine as well
 
