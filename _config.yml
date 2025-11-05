@@ -15,9 +15,10 @@ jekyllacademic:
   footer: egorshe
   contentlicense: "MIT" # Choose either one of these to put: MIT, Commons Clause, CC BY 4.0, CC BY-NC 4.0, CC BY-ND 4.0, CC BY-NC-ND 4.0, CC BY-NC-SA 4.0, CC BY-NC-SA 4.0, CC BY-SA 4.0
   socials:
-    twitter: matobaltica 
-    instagram: matobaltica 
-    telegram: "https://t.me/BalticResearch" 
+    twitter: matobaltica
+    instagram: matobaltica
+    telegram: "https://t.me/BalticResearch"
+    rss: "/feed.xml" # Добавили RSS
 
 # No need to edit this part, however if you want to, that's fine as well
 
@@ -68,12 +69,11 @@ toc:
 
 feed:
   collections:
-    posts:
-      path: "/feed.xml" # Main feed for blog posts
-    projects:
-      path: "/projects-feed.xml" # Optional: Separate feed for projects
-    digest:
-      path: "/digest-feed.xml" # Optional: Separate feed for digest
+    - posts
+    - digest
+  path: "/feed.xml"
+  projects:
+    path: "/projects-feed.xml"
 
 glossary_tooltip:
   lookup_file: "glossary"
