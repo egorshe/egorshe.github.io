@@ -16,6 +16,8 @@ Rimaitė-Beržiūnienė, Viktorija. “The Positive Dimension of De-Sovietizatio
 
 Bleiere, Daina. “The First Decade of Discotheques in Latvia (1973–1983).” Journal of Baltic Studies, Nov. 2025, pp. 1–24. DOI.org (Crossref), https://doi.org/10.1080/01629778.2025.2582654.
 
+Hackmann, Jörg. “North, East or Something Else? Locating the Baltic Sea Region on the Mental Maps of Europe.” _Nordiques_, vol. 47, 2025. _DOI.org (Crossref)_, [https://doi.org/10.4000/1432n](https://doi.org/10.4000/1432n).
+
 ## Research News: Major Conference Announcement 📢
 [Brief news item about a conference, call for papers, or funding opportunity.]
 
