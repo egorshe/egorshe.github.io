@@ -22,6 +22,13 @@
   source: "Vilnius literature"
   link: "http://www.vilniusliterature.flf.vu.lt/en/"
   link_text: "Vilnius Literature Project"
+
+- title: "Literary Tallinn"
+  image: "/assets/img/maps/Literary_Tallinn.webp"
+  description: "A website dedicated to gathering and celebrating the places in Tallinn depicted in works of fiction. It also maps the homes of writers and the locations of significant literary events. Each quotation on the map includes the author’s name and the work it comes from, and every excerpt is linked to a specific place in the urban landscape."
+  source: "Kirjanduslik Tallinn.ee"
+  link: "https://www.kirjandusliktallinn.ee/"
+  link_text: "To the website (in Estonian)"
 # ============================================
 # To add a new map:
 # ============================================
