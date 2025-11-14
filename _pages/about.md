@@ -14,4 +14,4 @@ layout: default
     
    </div>
    </div>
-   <p>Also, I take photographs for myself, design posters for others, and cook for whoever comes to my place, which I prefer to leave entirely undocumented. I'm generally grumpy toward the world and harshly sarcastic toward myself.</p>
+   <p>Besides, I take photographs for myself, design posters for others, and cook for whoever comes to my place, which I prefer to leave entirely undocumented. I'm generally grumpy toward the world and harshly sarcastic toward myself.</p>
