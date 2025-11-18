@@ -107,6 +107,89 @@
     padding: 1rem 1.25rem;
 }
 
+/* Collapsible Details Block (HTML <details> tag) */
+details {
+    margin: 0rem 0 0 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+summary {
+    cursor: pointer;
+    padding: 0rem 0;
+    color: var(--text-primary);
+
+    &:hover {
+        color: var(--text-table);
+    }
+}
+
+details > *:not(summary) {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin-top: 0.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Digest Entries */
+.digest-entry {
+    margin-bottom: 2rem;
+}
+
+.digest-citation {
+    line-height: 1.6;
+    margin-bottom: 0.25rem;
+}
+
+.digest-note {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0.25rem 0;
+}
+
+.digest-abstract {
+    margin-top: 0.5rem;
+}
+
+/* Digest-specific spacing */
+.digest-post-content {
+    h2 {
+        margin-bottom: 1.5rem; // Пространство после "Publications"
+    }
+
+    p {
+        margin-bottom: 0.5rem; // Стандартный отступ между параграфами
+        line-height: 1.6;
+    }
+
+    // КЛЮЧЕВОЕ ПРАВИЛО: убирает margin у параграфа ПЕРЕД details
+    p:has(+ details) {
+        margin-bottom: 0;
+    }
+
+    details {
+        margin: 0; // Никаких margins у details
+    }
+
+    // Разделитель между записями - пространство ПОСЛЕ details
+    details + p {
+        margin-top: 1.5rem;
+    }
+
+    // Для секций после details
+    details + h2,
+    details + h3 {
+        margin-top: 2.5rem;
+    }
+
+    /* Tighter line spacing for citations */
+    p {
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+}
+
 /* Forms & Inputs */
 input[type="text"] {
     outline: none;
