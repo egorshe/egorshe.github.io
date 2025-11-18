@@ -8,10 +8,16 @@ tags: []
 ## Publications 📚
 
 **Falsetti, Marco.** *Architecture in the Baltic States*. Routledge, 2025. [TOC](https://www.routledge.com/...) 
-
 <details markdown="1">
 <summary>About</summary>
 The book brings together several lectures originally presented at the international seminar *Small Baltic Conversation*, held in spring 2021 at Sapienza University of Rome, which have been developed into book chapters, along with additional original contributions commissioned by the editor.
+</details>
+
+**Woodworth, Bradley; Davoliute, Violeta; Staliunas, Darius**, editors. *Ethnic Relations in the Baltic Reconsidered*. Central European University Press, 2026.
+[link](https://www.aup.nl/en/book/9789048570447/ethnic-relations-in-the-baltic-reconsidered)
+<details markdown="1">
+<summary>About</summary>
+This collected volume offers an original perspective on the Baltic region by examining the intricate relationships between its diverse ethnic groups from the mid-nineteenth century to the present. Rather than focusing solely on national narratives or comparisons of historical development, the book analyzes ethnic relations through the lenses of identity, governance, empire, and violence. The nearly constant redrawing of geographic borders and boundaries among communities during this period destabilized fixed identities, generating novel, hybrid ways of self-identification along with a hardening of oppositions. Innovative forms of coexistence came with violent, sometimes genocidal conflicts. The contributors explore topics such as evolving senses of belonging, the impact of imperial and Soviet rule, instances of cooperation and conflict, and the legacies of historical trauma. By incorporating new sources and interdisciplinary approaches, they update traditional understandings of nations and nationalism in the Baltic region and provide insights relevant to similar regions.
 </details>
 
 **Ziemele, Ineta.** _State Continuity and Nationality: The Baltic States and Russia_. Second Revised Edition, Brill, 2025.
@@ -42,6 +48,11 @@ There are various spatial and historical concepts of Northern and Eastern Europe
 </details>
 
 
+**Culture Crossroads** Vol. 28  
+This special issue brings together selected papers from the international symposium “Naming / Norming: Interdisciplinary Approaches to Intangible Cultural Heritage (ICH)”, which explored the processes of designation and qualification of ICH through a multidisciplinary lens.  
+[Open access](https://culturecrossroads.lv/index.php/cc/index)
+
+
 ## Research News: Major Conference Announcement 📢
 The annual **Baltic Film History Conference**—its [tenth edition](https://www.balticfilmhistory.org/)—has just concluded in Tallinn. This year’s theme, _Dynamics of Change in Baltic Sea Region Cinema: Industries, Institutions, and Audiences_, was hosted by the Estonian Film Museum.  
 The conference ended with a screening, presented within the PÖFF festival program: _Cheka Commissar Miroschtschenko_ (1925), directed by Paul Sehnert—a world-premiere restoration of the oldest surviving Estonian fiction feature.  
@@ -50,36 +61,76 @@ More information is available on the festival’s [website](https://poff.ee/en/f
 
 ### Call for Papers 2026
 
-**Tenth Annual Tartu Conference  on East European and Eurasian Studies**
-_Global Flows and Frictions in Eastern Europe and Eurasia_
-10–12 June 2026, Tartu, Estonia
-Keynote speaker: **Dace Dzenovska**
-Deadline for proposal submission: 25 January 2026
+Tenth Annual Tartu Conference  on East European and Eurasian Studies **Global Flows and Frictions in Eastern Europe and Eurasia**  
+10–12 June 2026, Tartu, Estonia  
+Keynote speaker: **Dace Dzenovska**  
+Deadline for proposal submission: 25 January 2026  
 [Apply](https://sisu.ut.ee/tartuconference/)
 
-Workshop _Perestroika from below_
-01-03 June 2026, Kloster Seeon, Germany
-01.06.2026 - 03.06.2026
-Deadline for proposal submission: 15 December 2025
+Workshop **Perestroika from below**  
+01-03 June 2026, Kloster Seeon, Germany  
+01.06.2026 - 03.06.2026  
+Deadline for proposal submission: 15 December 2025  
 [Apply](https://socialhistoryportal.org/news/articles/312057)
 
+Conference **What Makes Literature: Redefining Realism, Poetics, and Belonging**  
+16-18 September, 2026 , Riga, Latvia  
+Venue: The Institute of Literature, Folklore and Art of the University of Latvia  
+Confirmed keynote speakers include Dirk Göttsche (University of Nottingham, Emeritus), Rosa Mucignat (King’s College London), and Riikka Rossi (University of Helsinki).  
+Deadline: January 12, 2026  
+[Apply](https://lulfmi.lv/en/conference-what-makes-literature-redefining-realism-poetics-and-belonging)
+
+Conference **Culture Matters Here. Cultivating Creative Place-based Innovation in Non-urban Communities**  
+11-13 May, 2026. Valmiera, Latvia  
+Organizers: Latvian Academy of Culture and the Centre for Social Studies of the University of Coimbra  
+Deadline: December 8, 2025  
+[Apply](https://insituculture.eu/culture-matters-here-cultivating-creative-place-based-innovation-in-non-urban-communities/)
+
+**Baltic Connections 2026: a Conference in Social Science History**  
+10-12 June, 2026. University of Jyväskylä, Finland  
+The seventh Riitta Hjerppe Lecture in Social Science History will be given by Joyce Burnette (Wabash College). Additional plenary session will be delivered by Marcelo Bucheli (University of Illinois).  
+[Apply](https://www.helsinki.fi/en/conferences/baltic-connections/call-papers-dl-february-15-2026)
+
+
 ## Festivals and Screenings
-A world premiere restoration of the oldest surviving Estonian fiction feature!
-![🎥](https://static.xx.fbcdn.net/images/emoji.php/v9/t9e/2/16/1f3a5.png) Cheka Commissar Miroschtschenko / Tšekaa komissar Miroštšenko by Paul Sehnert is a tense tale of love, deceit and violence. It follows a group of Estonians in 1920 Bolshevik Russia awaiting permission to return home.
-![🎞️](https://static.xx.fbcdn.net/images/emoji.php/v9/tf6/2/16/1f39e.png) Restored and presented by [Rahvusarhiiv](https://www.facebook.com/rahvusarhiiv?__cft__[0]=AZVJzMVyvn3xDALPWz0FuZ8CW2tMfQi1bVcj-99AcWVI7_oobtZfwXTQTBJzUrO3F_97Nxs_RvsyFg-H3OisEqubJp8TttNM2dL4_37Kl7-hrqDJUat-GXv53clQxAOqgRuCp9jTnFwb1qwCn4K5sf1Fy5VEFHKcLRfD4e1uyyM58IwmeDbUyr234811qC2esRs&__tn__=-]K-R) - Film Archive of the National Archives of Estonia, the movie is part of the 10th Baltic Sea Region Film History Conference and the [PÖFF | Tallinn Black Nights Film Festival](https://www.facebook.com/tallinnblacknightsff?__cft__[0]=AZVJzMVyvn3xDALPWz0FuZ8CW2tMfQi1bVcj-99AcWVI7_oobtZfwXTQTBJzUrO3F_97Nxs_RvsyFg-H3OisEqubJp8TttNM2dL4_37Kl7-hrqDJUat-GXv53clQxAOqgRuCp9jTnFwb1qwCn4K5sf1Fy5VEFHKcLRfD4e1uyyM58IwmeDbUyr234811qC2esRs&__tn__=-]K-R)
+**Tallinn Black Nights Film Festival PÖFF**  
+November 7-23, 2025  
+249 films (including Just Film) and 323 short films (PÖFF Shorts programmes) from 81 countries.  
+The Baltic competition program this year premieres new films by Giedrė Žickytė, Šarūnas Bartas, and Laila Pakalnina. Aistė Žegulytė, the author of the fantastic _Animus Animalis_ (2018), brings to the festival her new film on fungi — _Biodestruktoriai_ (Holy Destructors). More on the program's [page](https://poff.ee/en/doc-p-oe-ff-baltic-competition/).  
+Vladimir Loginov's film _Ööäär_ (Edge of the Night) is part of the International competition programme. The [trailer](https://www.youtube.com/watch?v=RgwuzKxHvUA) is here and it ends with fantastic-looking typography. Animator, director and artist Natalia Mirzoyan also made the [poster](https://www.instagram.com/p/DQbmTdnjSnt/) for the film.  
+The winners will be announced on November 23rd.
 
-![🕖](https://static.xx.fbcdn.net/images/emoji.php/v9/t4d/2/16/1f556.png) Screening Friday 14 November at 7:00 pm
+**Northern Lights Film Festival**  
+November 3-23, 2025  
+Place: Vilnius, Warsaw, Tallinn, and Online  
+[Website](https://www.en.northernlightsff.com/)
 
-![📍](https://static.xx.fbcdn.net/images/emoji.php/v9/tcc/2/16/1f4cd.png) [Kumu](https://www.facebook.com/kumu?__cft__[0]=AZVJzMVyvn3xDALPWz0FuZ8CW2tMfQi1bVcj-99AcWVI7_oobtZfwXTQTBJzUrO3F_97Nxs_RvsyFg-H3OisEqubJp8TttNM2dL4_37Kl7-hrqDJUat-GXv53clQxAOqgRuCp9jTnFwb1qwCn4K5sf1Fy5VEFHKcLRfD4e1uyyM58IwmeDbUyr234811qC2esRs&__tn__=-]K-R) Art Museum Auditorium - Tallinn
+**European Film Festival SCANORAMA**  
+November 6-23, 2025  
+Place: Vilnius  
+[Website](https://scanorama.lt/en)
 
-![🎫](https://static.xx.fbcdn.net/images/emoji.php/v9/t4b/2/16/1f3ab.png) Free entry (reservation): [https://f.mtr.cool/nxivoonldc](https://f.mtr.cool/nxivoonldc?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExTVNBRFl0VlE3Ym84SlV0SHNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIIY2FsbHNpdGUBMgABHhKn3thpuzKCYBaBjGk5ep_uIv8zst2OPKAQM4MeWCwp94UqlMsS__M6nhOu_aem_jFfyJg81GKvaKxURph9WEg)
+**Juris Podnieks' films** for free on the Filmas.lv portal as part of Patriot Week  
+Dates: November 11-19, 2025  
+5 films from Podnieks as a director, 7 as cinematographer, and 2 recent hits focusing on his figure: fiction *January* (2022) by Viesturs Kairišs and documentary *Podnieks on Podnieks* (2024) by Antra Cilinska and Anna Viduleja. Suprisingly, no subtitles are available
 
-‣‣‣ A Season of Classic Films is an initiative by [ACE - Association des Cinémathèques Européennes](https://www.facebook.com/AssociationdesCinemathequesEuropeennes?__cft__[0]=AZVJzMVyvn3xDALPWz0FuZ8CW2tMfQi1bVcj-99AcWVI7_oobtZfwXTQTBJzUrO3F_97Nxs_RvsyFg-H3OisEqubJp8TttNM2dL4_37Kl7-hrqDJUat-GXv53clQxAOqgRuCp9jTnFwb1qwCn4K5sf1Fy5VEFHKcLRfD4e1uyyM58IwmeDbUyr234811qC2esRs&__tn__=-]K-R) supported by the EU [Creative Europe](https://www.facebook.com/CreativeEuropeEU?__cft__[0]=AZVJzMVyvn3xDALPWz0FuZ8CW2tMfQi1bVcj-99AcWVI7_oobtZfwXTQTBJzUrO3F_97Nxs_RvsyFg-H3OisEqubJp8TttNM2dL4_37Kl7-hrqDJUat-GXv53clQxAOqgRuCp9jTnFwb1qwCn4K5sf1Fy5VEFHKcLRfD4e1uyyM58IwmeDbUyr234811qC2esRs&__tn__=-]K-R) MEDIA programme. The programme plays a key role in actively preserving and restoring international film heritage, attracting young audiences, and showcasing Europe’s cinematic memory.
-[Tallinn University](https://www.facebook.com/tallinn.university?__cft__[0]=AZVJzMVyvn3xDALPWz0FuZ8CW2tMfQi1bVcj-99AcWVI7_oobtZfwXTQTBJzUrO3F_97Nxs_RvsyFg-H3OisEqubJp8TttNM2dL4_37Kl7-hrqDJUat-GXv53clQxAOqgRuCp9jTnFwb1qwCn4K5sf1Fy5VEFHKcLRfD4e1uyyM58IwmeDbUyr234811qC2esRs&__tn__=-]K-R) [#ASeasonOfClassicFilms](https://www.facebook.com/hashtag/aseasonofclassicfilms?__eep__=6&__cft__[0]=AZVJzMVyvn3xDALPWz0FuZ8CW2tMfQi1bVcj-99AcWVI7_oobtZfwXTQTBJzUrO3F_97Nxs_RvsyFg-H3OisEqubJp8TttNM2dL4_37Kl7-hrqDJUat-GXv53clQxAOqgRuCp9jTnFwb1qwCn4K5sf1Fy5VEFHKcLRfD4e1uyyM58IwmeDbUyr234811qC2esRs&__tn__=*NK-R)
+**Litauisches Kino Goes Berlin**  
+Dates: November 6-9, 2025  
+Place: Berlin  
+[Website](http://ltkinogoesberlin.de/)
+
+**Vilnius Documentary Film Festival**  
+Dates: November 27 - December 7, 2025  
+Place: Vilnius, Klaipeda  
+[Programme](https://vdff.lt/en/programme/)  
+For the festival, Meno Avylis restored and Lina Kaminskaite curated a special program ["Pioneers: Lithuanian documentaries directed by women"](https://vdff.lt/en/movie/pioneers-lithuanian-documentaries-directed-by-women/)
 
 
-POFF
-Northern Lights
+
 ## Quick Links: Recent Articles
-* [Article Title 1] (Link) - Brief comment
-* [Article Title 2] (Link)
+* Webinar "Destalinization as Decolonization with Botakoz Kasymbekova". November 27, 2025 on Zoom [registration](https://forms.gle/rjtUGpCYpa81PVrGA), [FB Page](https://www.facebook.com/profile.php?id=61571694412054)
+* [Knowledge is a value in itself. A conversation with Una Bergmani](https://satori.lv/article/zinasanas-ir-vertiba-pati-par-sevi-saruna-ar-unu-bergmani)
+* [Exhibition "Podnieks' Timespace" at Film Museum of Riga](https://www.kinoraksti.lv/petijumi/personiba/izstade-podnieka-laiktelpa-apla-centra-ir-cilveks-1417)
+* How Konigsberg Became Kaliningrad, [podcast](https://www.euraknot.org/how-konigsberg-became-kaliningrad/) by The Eurasian Knot. Guest: Nicole Eaton, the author of *German Blood, Slavic Soil: How Nazi Königsberg Became Soviet Kaliningrad*
+* The Battle for Memory: Populism vs. Pluralism in Public History, [podcast](https://fpribalticinitiative.substack.com/p/the-battle-for-memory-populism-vs) by Baltic Ways
+* Latvia’s parliament [voted to quit the Istanbul Convention](https://eng.lsm.lv/article/politics/saeima/30.10.2025-latvian-parliament-votes-to-exit-istanbul-convention.a620375/) on the prevention of violence against women. After protests, President Edgars Rinkēvičs didn't sign the withdrawal and postponed the discussion to the next Saeima. 

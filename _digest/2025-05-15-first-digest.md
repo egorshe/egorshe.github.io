@@ -3,6 +3,7 @@ layout: digest-entry
 title: "October 2025 — New Baltic Film Research"
 date: 2025-10-01
 tags: [film, memory, history]
+draft: true
 locations:
   - title: "Baltic Film History Conference"
     city: "Riga"
