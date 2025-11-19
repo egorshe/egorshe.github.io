@@ -130,6 +130,7 @@ For the festival, Meno Avylis restored and Lina Kaminskaite curated a special pr
 ## Quick Links: Recent Articles
 * Webinar "Destalinization as Decolonization with Botakoz Kasymbekova". November 27, 2025 on Zoom [registration](https://forms.gle/rjtUGpCYpa81PVrGA), [FB Page](https://www.facebook.com/profile.php?id=61571694412054)
 * [Knowledge is a value in itself. A conversation with Una Bergmani](https://satori.lv/article/zinasanas-ir-vertiba-pati-par-sevi-saruna-ar-unu-bergmani)
+* [How Latin Became the Literary Language of the Grand Duchy of Lithuania](https://deepbaltic.com/2025/11/11/how-latin-became-the-literary-language-of-the-grand-duchy-of-lithuania/) -- a talk delivered by Francis Young to the British-Lithuanian Society in 2024 to introduce his book ["Poetry and Nation-Building in the Grand Duchy of Lithuania"](https://www.arc-humanities.org/9781802701579/poetry-and-nation-building-in-the-grand-duchy-of-lithuania/)
 * [Exhibition "Podnieks' Timespace" at Film Museum of Riga](https://www.kinoraksti.lv/petijumi/personiba/izstade-podnieka-laiktelpa-apla-centra-ir-cilveks-1417)
 * How Konigsberg Became Kaliningrad, [podcast](https://www.euraknot.org/how-konigsberg-became-kaliningrad/) by The Eurasian Knot. Guest: Nicole Eaton, the author of *German Blood, Slavic Soil: How Nazi Königsberg Became Soviet Kaliningrad*
 * The Battle for Memory: Populism vs. Pluralism in Public History, [podcast](https://fpribalticinitiative.substack.com/p/the-battle-for-memory-populism-vs) by Baltic Ways
