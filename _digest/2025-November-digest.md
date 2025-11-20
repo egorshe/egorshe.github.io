@@ -125,6 +125,11 @@ Place: Vilnius, Klaipeda
 [Programme](https://vdff.lt/en/programme/)  
 For the festival, Meno Avylis restored and Lina Kaminskaite curated a special program ["Pioneers: Lithuanian documentaries directed by women"](https://vdff.lt/en/movie/pioneers-lithuanian-documentaries-directed-by-women/)
 
+**Agnieszka Rayzacher. From Forests and Swamps**
+Dates: until November 27  
+Available at [Sinemateka.lt](https://www.sinemateka.lt/en/curated-programs#agnieszka-rayzacher-from-forests-and-swamps)  
+This program is part of the Meno Avilys Sinemateka series of events curated by Ona Kotryna Dikavičiūtė and Gerda Paliušytė.
+
 
 
 ## Quick Links: Recent Articles
