@@ -67,6 +67,12 @@ Keynote speaker: **Dace Dzenovska**
 Deadline for proposal submission: 25 January 2026  
 [Apply](https://sisu.ut.ee/tartuconference/)
 
+NECS conference 2026 **IN|VISIBLE**  
+18-20 June 2026  
+Place: Université Paul-Valéry Montpellier, France  
+Deadline: 28 January, 2026  
+[Apply](https://necs.org/conference/2026/montpellier)
+
 Workshop **Perestroika from below**  
 01-03 June 2026, Kloster Seeon, Germany  
 01.06.2026 - 03.06.2026  
