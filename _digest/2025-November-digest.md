@@ -4,7 +4,96 @@ title: "November 2025 — New Baltic Film Research"
 date: 2025-11-05
 draft: false
 tags: []
+locations:
+  - title: "Tallinn Black Nights Film Festival"
+    city: "Tallinn"
+    venue: "Various venues"
+    coords: [59.43349358448446, 24.751265728859863]
+    country: "estonia"
+    date: "2025-11-07 to 2025-11-23"
+    description: "Film festival"
+
+  - title: "Northern Lights Film Festival"
+    city: "Vilnius"
+    venue: "Various venues"
+    coords: [54.6872, 25.2797]
+    country: "lithuania"
+    date: "2025-11-03 to 2025-11-23"
+    description: "Film festival"
+
+  - title: "European Film Festival SCANORAMA"
+    city: "Vilnius"
+    venue: "Various venues"
+    coords: [54.69075801848098, 25.27771113691384]
+    country: "lithuania"
+    date: "2025-11-06 to 2025-11-23"
+    description: "Film festival"
+
+  - title: "Litauisches Kino Goes Berlin"
+    city: "Berlin"
+    venue: "Babylon Kino (primary venue)"
+    coords: [52.526042181989745, 13.411487879352293]
+    country: "germany"
+    date: "2025-11-06 to 2025-11-09"
+    description: "Film festival"
+
+  - title: "Vilnius Documentary Film Festival"
+    city: "Vilnius"
+    venue: "Skalvija Cinema Centre"
+    coords: [54.69075801848098, 25.27771113691384]
+    country: "lithuania"
+    date: "2025-11-27 to 2025-12-07"
+    description: "Film festival"
+
+  - title: "Tartu Conference on East European and Eurasian Studies"
+    city: "Tartu"
+    venue: "University of Tartu"
+    coords: [58.38115736939895, 26.719919549643592]
+    country: "estonia"
+    date: "2026-06-10 to 2026-06-12"
+    description: "Call for submissions"
+
+  - title: "NECS Conference 2026 — IN|VISIBLE"
+    city: "Montpellier"
+    venue: "Université Paul-Valéry Montpellier"
+    coords: [43.63299728952078, 3.87015304821986]
+    country: "france"
+    date: "2026-06-18 to 2026-06-20"
+    description: "Call for submissions"
+
+  - title: "Perestroika from Below — Workshop"
+    city: "Kloster Seeon"
+    venue: "Kloster Seeon Kultur und Bildungszentrum des Bezirks Oberbayern"
+    coords: [47.97505340206375, 12.447883977322261]
+    country: "germany"
+    date: "2026-06-01 to 2026-06-03"
+    description: "Call for submissions"
+
+  - title: "What Makes Literature: Redefining Realism, Poetics, and Belonging"
+    city: "Riga"
+    venue: "Institute of Literature, Folklore and Art (University of Latvia)"
+    coords: [56.95091506768867, 24.11624883377882]
+    country: "latvia"
+    date: "2026-09-16 to 2026-09-18"
+    description: "Call for submissions"
+
+  - title: "Culture Matters Here — Creative Place-based Innovation Conference"
+    city: "Valmiera"
+    venue: "Latvian Academy of Culture"
+    coords: [57.5385, 25.4264]
+    country: "latvia"
+    date: "2026-05-11 to 2026-05-13"
+    description: "Call for submissions"
+
+  - title: "Baltic Connections 2026 — Social Science History Conference"
+    city: "Jyväskylä"
+    venue: "University of Jyväskylä"
+    coords: [62.236626608314104, 25.731687252475865]
+    country: "finland"
+    date: "2026-06-10 to 2026-06-12"
+    description: "Call for submissions"
 ---
+
 ## Publications 📚
 
 **Falsetti, Marco.** *Architecture in the Baltic States*. Routledge, 2025. [TOC](https://www.routledge.com/...) 
@@ -145,4 +234,4 @@ This program is part of the Meno Avilys Sinemateka series of events curated by O
 * [Exhibition "Podnieks' Timespace" at Film Museum of Riga](https://www.kinoraksti.lv/petijumi/personiba/izstade-podnieka-laiktelpa-apla-centra-ir-cilveks-1417)
 * How Konigsberg Became Kaliningrad, [podcast](https://www.euraknot.org/how-konigsberg-became-kaliningrad/) by The Eurasian Knot. Guest: Nicole Eaton, the author of *German Blood, Slavic Soil: How Nazi Königsberg Became Soviet Kaliningrad*
 * The Battle for Memory: Populism vs. Pluralism in Public History, [podcast](https://fpribalticinitiative.substack.com/p/the-battle-for-memory-populism-vs) by Baltic Ways
-* Latvia’s parliament [voted to quit the Istanbul Convention](https://eng.lsm.lv/article/politics/saeima/30.10.2025-latvian-parliament-votes-to-exit-istanbul-convention.a620375/) on the prevention of violence against women. After protests, President Edgars Rinkēvičs didn't sign the withdrawal and postponed the discussion to the next Saeima. 
+* Latvia’s parliament [voted to quit the Istanbul Convention](https://eng.lsm.lv/article/politics/saeima/30.10.2025-latvian-parliament-votes-to-exit-istanbul-convention.a620375/) on the prevention of violence against women. After protests, President Edgars Rinkēvičs didn't sign the withdrawal and postponed the discussion to the next Saeima.
