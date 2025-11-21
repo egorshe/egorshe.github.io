@@ -5,11 +5,20 @@ stack: "Project description"
 category: postcommunist-material-legacy
 pinned: true
 order:
+has_image_comparison: true
 status: active
 ---
 
 
 In 2018, on the 100th anniversary of the Republic of Estonia, the Estonian History Museum's Maarjamäe Palace was opened as a “discovery center”–offering a venue for receptions, concerts, and seminars. Its summer hall room is advertised as featuring Evald Okas’ Soviet monumental painting The Friendship of Nations. This visual legacy that Estonian museum inherited from its Soviet past carries an entangled set of ideological, ethical, aesthetical, and historical messages. They can be manually activated by a single switch that controls a covering interactive glass that becomes opaque or fully transparent. “[I]f necessary, the painting can be covered,” the description states.
+
+{% include image-comparison.html 
+   before="/assets/img/Projects/Material/Summary/okas-before.webp" 
+   after="/assets/img/Projects/Material/Summary/okas-after.webp"
+   before_alt="Original Okas image"
+   after_alt="Restored Okas image"
+   show_labels=true
+%}
 
 Focusing on the material culture produced in the Soviet period in Estonia, Latvia, and Lithuania, such as paintings (murals, frescoes, mosaics), architectural objects, urban spaces, monuments, spaces and aesthetic/anesthetic regimes they are situated in, this postdoctoral project analyzes and speculates upon the strong affective weight of the Soviet era artifacts in the Baltic states as signifiers of colonial oppression. The project, entitled “Soviets Objects in the Post-Soviet Spaces in the Baltic Countries,” will remediate insights developed in my doctoral research about the entanglements between the last Soviet generation of non-fiction filmmakers and the representations and negotiations of issues of national identity they had to face.
 
@@ -57,7 +66,6 @@ To map the place of the Baltic countries within the uneven post-communist spaces
 
 To contribute to wider conversation about the historical and spatial imagination and migration of imagery in Baltic postcolonial societies after the collapse of the USSR.
 
-In its objectives, the project responds to the SDG initiatives, striving to increase awareness and provide conceptual understanding of social and economic inequalities local communities face when living in the Soviet-built neighbourhoods (Goal 10). The research also addresses the issues of protection of cultural heritage and the risks faced by defenders of cultural heritage in situation of a changing ideological and memorial environment (SDG Goal 11). Working across these objectives, my postdoctoral project will answer larger questions around a cultural struggle for re-appropriation and transfiguration of symbolical objects of the former dominant power within embedded histories and research into Baltic postcoloniality, urban development, and material post-Soviet legacy.
 
 ## Methodology
 

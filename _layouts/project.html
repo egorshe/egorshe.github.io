@@ -11,8 +11,8 @@ layout: default
 
     {% if page.category %}
     <p style="text-align: left; margin-top: 2em">
-        <a href="{{ site.baseurl }}/projects/#{{ page.category }}"
-            >← Back to {{ page.category | capitalize }}</a
+        <a href="{{ site.baseurl }}/{{ page.category }}/"
+            >← Back to {{ page.category | replace: '-', ' ' | capitalize }}</a
         >
     </p>
     {% endif %}
