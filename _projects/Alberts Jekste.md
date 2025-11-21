@@ -12,4 +12,4 @@ location:
   country: Latvia
 ---
 
-banner_image: /assets/img/Projects-people-jekste/Jekste-card.jpg
+to be published...
