@@ -170,3 +170,30 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Mobile Image Comparison Slider */
+@media screen and (max-width: 45rem) {
+    .image-comparison {
+        margin: 1.5em auto;
+        touch-action: none; /* Prevent scrolling while dragging */
+    }
+
+    .slider-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .slider-button::before {
+        left: 10px;
+        width: 12px;
+        height: 12px;
+        border-width: 2.5px;
+    }
+
+    .slider-button::after {
+        right: 10px;
+        width: 12px;
+        height: 12px;
+        border-width: 2.5px;
+    }
+}

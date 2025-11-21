@@ -19,19 +19,55 @@ document.addEventListener("DOMContentLoaded", function () {
     let isActive = false;
 
     // Mouse events
-    slider.addEventListener("mousedown", () => (isActive = true));
-    document.addEventListener("mouseup", () => (isActive = false));
+    slider.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      isActive = true;
+    });
+
+    document.addEventListener("mouseup", () => {
+      isActive = false;
+    });
+
     document.addEventListener("mousemove", (e) => {
       if (!isActive) return;
+      e.preventDefault();
       updateSlider(e.pageX);
     });
 
-    // Touch events
-    slider.addEventListener("touchstart", () => (isActive = true));
-    document.addEventListener("touchend", () => (isActive = false));
-    document.addEventListener("touchmove", (e) => {
-      if (!isActive) return;
-      updateSlider(e.touches[0].pageX);
+    // Touch events - improved for mobile
+    slider.addEventListener(
+      "touchstart",
+      (e) => {
+        e.preventDefault();
+        isActive = true;
+      },
+      { passive: false },
+    );
+
+    document.addEventListener("touchend", () => {
+      isActive = false;
+    });
+
+    document.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!isActive) return;
+        e.preventDefault();
+        const touch = e.touches[0];
+        updateSlider(touch.pageX);
+      },
+      { passive: false },
+    );
+
+    // Also allow clicking/tapping anywhere on the container
+    container.addEventListener("click", (e) => {
+      updateSlider(e.pageX);
+    });
+
+    container.addEventListener("touchend", (e) => {
+      if (e.changedTouches.length > 0) {
+        updateSlider(e.changedTouches[0].pageX);
+      }
     });
 
     function updateSlider(x) {
