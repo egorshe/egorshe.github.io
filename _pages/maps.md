@@ -250,7 +250,7 @@ permalink: /maps/
 
 <h1 class="page-title">Maps</h1>
 <p class="page-intro">
-    Explore Baltic research through geography. Click markers on the interactive map to discover posts and projects connected to specific locations across Estonia, Latvia, Lithuania, and beyond.
+    Follow the geography of the Baltics to find research tied to specific locations. Click markers on the map to discover posts, projects, and events connected to specific locations across Estonia, Latvia, and Lithuania. Zoom out to go beyond the region.
 </p>
 
 <div class="map-container">
