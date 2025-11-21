@@ -10,7 +10,7 @@ This website grew out of my attempts to organize the accumulating knowledge and 
 
 What?
 ---
-The term _Baltic states_ or simply _the Baltics_ usually refers to three republics—Estonia, Latvia, and Lithuania—listed from north to south. Yet when we speak of the Baltic region or the area around the Baltic Sea, it becomes impossible to ignore the mutual influences of neighboring countries such as Poland, Germany, Finland, Sweden, and Russia. Even this broader list is far from complete if we take into account larger geographical or geopolitical notions like Eastern Europe, Northern Europe, or the Nordic countries.
+The term _Baltic states_ or simply _the Baltics_ usually refers to three republics—Estonia, Latvia, and Lithuania—listed from north to south. Yet when we speak of the Baltic region or the area around the Baltic Sea, it becomes impossible to ignore the mutual influences of neighboring countries such as Poland, Germany, Finland, Sweden, Belarus and Russia. Even this broader list is far from complete if we take into account larger geographical or geopolitical notions like Eastern Europe, Northern Europe, or the Nordic countries.
 
 Here, however, my focus is on the three Baltic states—distinct yet intertwined in their histories, geographies, cultures, and languages. The title _MatoBaltica_ comes from the Lithuanian verb _matau_, meaning _I see_—it reflects both a way of looking at and thinking through the Baltic space.
 
