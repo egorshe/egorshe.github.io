@@ -1,1 +1,1 @@
-Test Mato Baltica repository
+Mato Baltica repository
