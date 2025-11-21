@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Postpoetic Soviet Baltic Documentaries of the 1980s: The Aesthetics of Disappearance"
 stack: "Summary of the thesis proposal"
 category: postpoetic-documentary
@@ -480,8 +480,8 @@ epic narrative. (Pētersone 2012)
 > USA. October 17, 2018
 >
 > Andión, Margarita, Antía María López Gómez, and Marta Pérez Pereiro.
-> 2016. \"European Cinema In The Languages Of Stateless And Small
-> Nations\". *Revista Latina De Comunicación Social*, no. 71: 309-331.
+> 2016 "European Cinema In The Languages Of Stateless And Small
+> Nations". *Revista Latina De Comunicación Social*, no. 71: 309-331.
 > doi:10.4185/RLCS-2016-1097en.
 >
 > Annus, Epp. (ed.) 2018. Coloniality, Nationality, Modernity. A

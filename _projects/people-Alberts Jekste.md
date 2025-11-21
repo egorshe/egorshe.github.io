@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Alberts Jekste"
 stack: "Filmmakers, Latvia, emigre"
 category: people
