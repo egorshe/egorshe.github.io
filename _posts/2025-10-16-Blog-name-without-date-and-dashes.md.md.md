@@ -6,6 +6,7 @@ tags:
   - tag3
   - super long and wordy tag
 title: title of the post
+draft: true
 ---
 # Тестирование Автоматической Публикации и Ссылок
 

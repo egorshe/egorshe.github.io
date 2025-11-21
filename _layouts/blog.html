@@ -33,11 +33,15 @@ layout: default
     <p>
         {% assign sorted_tags = site.data.sorted_tag_names %} {% for tag_name in
         sorted_tags %} {% assign tag_posts = site.data.normalized_tags[tag_name]
-        %}
+        %} {% comment %} Count non-draft posts for this tag {% endcomment %} {%
+        assign non_draft_count = 0 %} {% for post in tag_posts %} {% unless
+        post.draft %} {% assign non_draft_count = non_draft_count | plus: 1 %}
+        {% endunless %} {% endfor %} {% comment %} Only show tag if it has
+        non-draft posts {% endcomment %} {% if non_draft_count > 0 %}
         <a href="{{ site.baseurl }}/tag/{{ tag_name | slugify }}">
-            {{ tag_name }} ({{ tag_posts | size }})
+            {{ tag_name }} ({{ non_draft_count }})
         </a>
-        {% unless forloop.last %}, {% endunless %} {% endfor %}
+        {% unless forloop.last %}, {% endunless %} {% endif %} {% endfor %}
     </p>
 </section>
 

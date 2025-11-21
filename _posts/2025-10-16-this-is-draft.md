@@ -2,6 +2,7 @@
 date: 2025-10-16T18:15:06
 layout: post
 title: This is Draft
+draft: true
 location:
   lat: 59.4370
   lng: 24.7536

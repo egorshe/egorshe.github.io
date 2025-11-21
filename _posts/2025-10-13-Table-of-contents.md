@@ -2,6 +2,7 @@
 layout: post
 title: "Welcome to Jekyll!"
 toc: true
+draft: true
 ---
 
 # The Importance of Digital Archiving
