@@ -622,9 +622,7 @@ epic narrative. (Pētersone 2012)
 > Ukraine in the Postcolonial Perspective. (Sodertorn Academic Studies,
 > 32). Stockholm: Soedertoerns hoegskola.
 >
-> Kõrver, M. 2012. The World of Estonian Film, Estonian Institute,
-> \[Online\], Available at:
-> http://www.estinst.ee/issues/420_The%20World%20of%20Estonian%20Film.pdf
+> Kõrver, M. 2012. The World of Estonian Film, Estonian Institute.
 >
 > Kristensen, Lars. 2013. *Postcommunist Film - Russia, Eastern Europe
 > And World Culture*. London: Routledge.
