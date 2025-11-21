@@ -7,10 +7,7 @@ pinned: false
 order:
 status: active
 ---
-**Thesis Proposal**
-
-
-## Summary
+# Summary
 
 The overall goal of my dissertation, provisionally titled "Postpoetic
 Soviet Baltic Documentaries of the 1980s: The Aesthetics of

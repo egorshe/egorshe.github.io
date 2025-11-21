@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Soviet Objects in the Post-Soviet Spaces in the Baltic Countries"
 stack: "Project description"
 category: postcommunist-material-legacy
@@ -7,8 +7,7 @@ pinned: true
 order:
 status: active
 ---
-# Project Description
-## Originality/Contribution to Knowledge
+
 
 In 2018, on the 100th anniversary of the Republic of Estonia, the Estonian History Museum's Maarjamäe Palace was opened as a “discovery center”–offering a venue for receptions, concerts, and seminars. Its summer hall room is advertised as featuring Evald Okas’ Soviet monumental painting The Friendship of Nations. This visual legacy that Estonian museum inherited from its Soviet past carries an entangled set of ideological, ethical, aesthetical, and historical messages. They can be manually activated by a single switch that controls a covering interactive glass that becomes opaque or fully transparent. “[I]f necessary, the painting can be covered,” the description states.
 

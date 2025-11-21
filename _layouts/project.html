@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article itemscope itemtype="http://schema.org/Article">
+    <header>
+        <h1 class="page-title" itemprop="headline">{{ page.title }}</h1>
+
+        {% if page.stack %}
+        <p class="text-muted project-stack">{{ page.stack }}</p>
+        {% endif %}
+    </header>
+
+    <div itemprop="articleBody">{{ content }}</div>
+
+    {% if page.category %}
+    <p style="text-align: left; margin-top: 2em">
+        <a href="{{ site.baseurl }}/projects/#{{ page.category }}"
+            >← Back to {{ page.category | capitalize }}</a
+        >
+    </p>
+    {% endif %}
+</article>
