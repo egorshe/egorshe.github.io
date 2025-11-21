@@ -174,7 +174,9 @@
 /* Mobile Image Comparison Slider */
 @media screen and (max-width: 45rem) {
     .image-comparison {
-        margin: 1.5em auto;
+        margin: 1.5em 0;
+        width: 100%;
+        max-width: 100%;
         touch-action: none; /* Prevent scrolling while dragging */
     }
 
