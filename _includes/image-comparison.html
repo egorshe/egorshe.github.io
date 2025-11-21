@@ -1,0 +1,17 @@
+<div class="image-comparison">
+    <div class="comparison-after">
+        <img
+            src="{{ site.baseurl }}{{ include.after }}"
+            alt="{{ include.after_alt | default: 'After' }}"
+        />
+    </div>
+    <div class="comparison-before">
+        <img
+            src="{{ site.baseurl }}{{ include.before }}"
+            alt="{{ include.before_alt | default: 'Before' }}"
+        />
+    </div>
+    <div class="comparison-slider">
+        <div class="slider-button"></div>
+    </div>
+</div>

@@ -11,6 +11,13 @@
         <!-- Navigation script -->
         <script src="{{ site.baseurl }}/assets/js/nav.js" defer></script>
 
+        <!-- Image Comparison script - only load when needed -->
+        {% if page.has_image_comparison %}
+        <script
+            src="{{ site.baseurl }}/assets/js/image-comparison.js"
+            defer
+        ></script>
+        {% endif %}
         <!-- Theme Toggle Script -->
         <script>
             // Theme Toggle Script - Light/Dark only (no auto)
