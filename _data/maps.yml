@@ -22,6 +22,9 @@
   source: "Vilnius literature"
   link: "http://www.vilniusliterature.flf.vu.lt/en/"
   link_text: "Vilnius Literature Project"
+  category: "literature"
+  country: "lithuania"
+  period: "20th-century"
 
 - title: "Literary Tallinn"
   image: "/assets/img/maps/Literary_Tallinn.webp"
@@ -29,6 +32,19 @@
   source: "Kirjanduslik Tallinn.ee"
   link: "https://www.kirjandusliktallinn.ee/"
   link_text: "To the website (in Estonian)"
+  category: "literature"
+  country: "estonia"
+  period: "contemporary"
+
+- title: "The map of Baltic tribes and provinces c. A.D.1200"
+  image: "/assets/img/maps/tribes-provinces-A.D.1200.webp"
+  description: "This is a fascinating study of the ancient peoples that lived in the Baltic Sea area. The book has hundreds of drawings and photos of various archeological finds, all of which are extensively discussed."
+  source: "The Balts (1963) by Gimbutienė, Marija (1921-1994)"
+  link: "https://www.kirjandusliktallinn.ee/"
+  link_text: "https://archive.org/details/gimbutas-the-balts-1963/page/24/mode/1up"
+  category: "history"
+  country: "Baltic region"
+  period: "pre-modern"
 # ============================================
 # To add a new map:
 # ============================================
