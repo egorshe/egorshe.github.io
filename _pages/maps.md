@@ -300,9 +300,65 @@ permalink: /maps/
 
 <div class="map-gallery">
     <h2 class="section-title">Historical & Thematic Maps</h2>
+    
+    <!-- Gallery Filter Controls -->
+    <div class="gallery-filters">
+        <div class="filter-dropdown">
+            <label>Category</label>
+            <button class="dropdown-toggle" id="categoryDropdown" aria-haspopup="true" aria-expanded="false">
+                All Categories
+            </button>
+            <div class="dropdown-menu" id="categoryMenu">
+                <button class="dropdown-item active" data-gallery-filter="category" data-value="all">All Categories</button>
+                {% assign categories = site.data.maps | map: 'category' | uniq | sort %}
+                {% for category in categories %}
+                {% if category and category != '' %}
+                <button class="dropdown-item" data-gallery-filter="category" data-value="{{ category }}">{{ category | capitalize }}</button>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="filter-dropdown">
+            <label>Country</label>
+            <button class="dropdown-toggle" id="countryDropdown" aria-haspopup="true" aria-expanded="false">
+                All Countries
+            </button>
+            <div class="dropdown-menu" id="countryMenu">
+                <button class="dropdown-item active" data-gallery-filter="country" data-value="all">All Countries</button>
+                {% assign countries = site.data.maps | map: 'country' | uniq | sort %}
+                {% for country in countries %}
+                {% if country and country != '' %}
+                <button class="dropdown-item" data-gallery-filter="country" data-value="{{ country }}">{{ country | capitalize }}</button>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="filter-dropdown">
+            <label>Period</label>
+            <button class="dropdown-toggle" id="periodDropdown" aria-haspopup="true" aria-expanded="false">
+                All Periods
+            </button>
+            <div class="dropdown-menu" id="periodMenu">
+                <button class="dropdown-item active" data-gallery-filter="period" data-value="all">All Periods</button>
+                {% assign periods = site.data.maps | map: 'period' | uniq | sort %}
+                {% for period in periods %}
+                {% if period and period != '' %}
+                <button class="dropdown-item" data-gallery-filter="period" data-value="{{ period }}">{{ period | capitalize | replace: '-', ' ' }}</button>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
     <div class="gallery-grid">
         {% for map in site.data.maps %}
-        <div class="gallery-item">
+        <div class="gallery-item" 
+             data-category="{{ map.category | default: 'unknown' }}"
+             data-country="{{ map.country | default: 'unknown' }}"
+             data-period="{{ map.period | default: 'unknown' }}">
             <img src="{{ site.baseurl }}{{ map.image }}"
                  alt="{{ map.title }}"
                  onerror="this.src='https://via.placeholder.com/400x180/2f4f4f/ffffff?text={{ map.title | url_encode }}'">
@@ -318,6 +374,12 @@ permalink: /maps/
             </div>
         </div>
         {% endfor %}
+        
+        <!-- No Results Message -->
+        <div class="no-results-message hidden">
+            <h3>No maps found</h3>
+            <p>Try adjusting your filters to see more results.</p>
+        </div>
     </div>
 </div>
 
@@ -471,7 +533,7 @@ const locations = [
             coords: {{ loc.coords | jsonify }},
             country: {{ loc.country | jsonify }},
             type: "posts",
-            date: null, // Don't use formatted date for ranges
+            date: null,
             rawDate: {{ loc.date | default: post.date | jsonify }},
             description: {{ loc.description | default: post.excerpt | strip_html | truncatewords: 15 | jsonify }},
             url: {{ post.url | jsonify }}
@@ -485,7 +547,7 @@ const locations = [
         coords: {{ post.location.coords | jsonify }},
         country: {{ post.location.country | jsonify }},
         type: "posts",
-        date: null, // Don't use formatted date for ranges
+        date: null,
         rawDate: {{ post.date | jsonify }},
         excerpt: {{ post.excerpt | strip_html | truncatewords: 20 | jsonify }},
         url: {{ post.url | jsonify }}
@@ -521,7 +583,7 @@ const locations = [
             coords: {{ loc.coords | jsonify }},
             country: {{ loc.country | jsonify }},
             type: "digest",
-            date: null, // Don't use formatted date for ranges
+            date: null,
             rawDate: {{ loc.date | default: item.date | jsonify }},
             description: {{ loc.description | default: item.excerpt | strip_html | truncatewords: 15 | jsonify }},
             url: {{ item.url | jsonify }}
@@ -535,7 +597,7 @@ const locations = [
         coords: {{ item.location.coords | jsonify }},
         country: {{ item.location.country | jsonify }},
         type: "digest",
-        date: null, // Don't use formatted date for ranges
+        date: null,
         rawDate: {{ item.date | jsonify }},
         excerpt: {{ item.excerpt | strip_html | truncatewords: 20 | jsonify }},
         url: {{ item.url | jsonify }}
@@ -543,10 +605,6 @@ const locations = [
     {% endif %}
     {% endfor %}
 ].filter(loc => loc.title && loc.lat && loc.lng);
-
-// Debug: Log all locations to check data
-console.log('Total locations loaded:', locations.length);
-console.log('Sample location data:', locations[0]);
 
 // Parse coordinates
 locations.forEach(location => {
@@ -588,11 +646,9 @@ map.addLayer(markerClusters);
 let markers = [];
 
 function getMarkerColor(type, isUpcoming) {
-    // If upcoming events filter is active and this is a digest event, use green
     if (isUpcoming && type === 'digest') {
-        // Check current theme
         const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
-        return isDarkMode ? '#4ade80' : '#046A38'; // Brighter green in dark mode
+        return isDarkMode ? '#4ade80' : '#046A38';
     }
 
     const colors = {
@@ -625,7 +681,6 @@ function createPopupContent(location) {
     }
 
     if (location.rawDate) {
-        // Use formatDateRange for proper date display
         const formattedDate = formatDateRange(location.rawDate);
         html += `<div class="popup-date">${formattedDate}</div>`;
     } else if (location.date) {
@@ -643,16 +698,6 @@ function createPopupContent(location) {
 locations.forEach(location => {
     const isUpcoming = location.type === 'digest' && isUpcomingEvent(location.rawDate);
 
-    // Debug: Log digest items
-    if (location.type === 'digest') {
-        console.log('Digest item:', {
-            title: location.title,
-            rawDate: location.rawDate,
-            isUpcoming: isUpcoming,
-            parsed: parseDate(location.rawDate)
-        });
-    }
-
     const marker = L.marker([location.lat, location.lng], {
         icon: createCustomIcon(location.type, false),
         country: location.country,
@@ -668,7 +713,7 @@ locations.forEach(location => {
 });
 
 // ============================================
-// Dropdown Functionality
+// Dropdown Functionality (Interactive Map)
 // ============================================
 function setupDropdown(toggleId, menuId) {
     const toggle = document.getElementById(toggleId);
@@ -703,13 +748,18 @@ function setupDropdown(toggleId, menuId) {
 setupDropdown('typeDropdown', 'typeMenu');
 setupDropdown('locationDropdown', 'locationMenu');
 
+// Also setup gallery dropdowns
+setupDropdown('categoryDropdown', 'categoryMenu');
+setupDropdown('countryDropdown', 'countryMenu');
+setupDropdown('periodDropdown', 'periodMenu');
+
 document.addEventListener('click', () => {
     document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
     document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('active'));
 });
 
 // ============================================
-// Filter Functionality
+// Filter Functionality (Interactive Map)
 // ============================================
 let activeType = 'all';
 let activeCountry = 'all';
@@ -721,13 +771,10 @@ function updateMarkers() {
     markers.forEach(marker => {
         const matchesType = activeType === 'all' || marker.options.type === activeType;
         const matchesCountry = activeCountry === 'all' || marker.options.country === activeCountry;
-
-        // When upcoming filter is active, show only digest items that are upcoming
         const matchesUpcoming = !showUpcomingOnly ||
             (marker.options.type === 'digest' && marker.options.isUpcoming);
 
         if (matchesType && matchesCountry && matchesUpcoming) {
-            // Update marker icon color when upcoming filter is active
             if (showUpcomingOnly && marker.options.type === 'digest') {
                 marker.setIcon(createCustomIcon(marker.options.type, true));
             } else {
@@ -760,8 +807,117 @@ if (upcomingCheckbox) {
     });
 }
 
-// ============================================
 // Initial marker state
-// ============================================
 updateMarkers();
+
+// ============================================
+// Gallery Filtering with Progressive Disabling
+// ============================================
+(function() {
+    // Build map data structure for quick lookups
+    const galleryData = [];
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        galleryData.push({
+            element: item,
+            category: item.dataset.category,
+            country: item.dataset.country,
+            period: item.dataset.period
+        });
+    });
+
+    const galleryFilters = {
+        category: 'all',
+        country: 'all',
+        period: 'all'
+    };
+
+    let lastChangedFilter = null; // Track which filter was changed last
+
+    // Get available values for a filter type given current selections
+    function getAvailableValues(filterType) {
+        const availableValues = new Set();
+        
+        galleryData.forEach(item => {
+            // Check if item matches OTHER filters (not the one we're checking)
+            let matches = true;
+            
+            if (filterType !== 'category' && galleryFilters.category !== 'all') {
+                matches = matches && item.category === galleryFilters.category;
+            }
+            if (filterType !== 'country' && galleryFilters.country !== 'all') {
+                matches = matches && item.country === galleryFilters.country;
+            }
+            if (filterType !== 'period' && galleryFilters.period !== 'all') {
+                matches = matches && item.period === galleryFilters.period;
+            }
+            
+            if (matches) {
+                availableValues.add(item[filterType]);
+            }
+        });
+        
+        return availableValues;
+    }
+
+    // Update which dropdown options are enabled/disabled
+    function updateDropdownStates() {
+        ['category', 'country', 'period'].forEach(filterType => {
+            const menu = document.getElementById(`${filterType}Menu`);
+            if (!menu) return;
+            
+            const availableValues = getAvailableValues(filterType);
+            
+            menu.querySelectorAll('[data-gallery-filter]').forEach(btn => {
+                const value = btn.dataset.value;
+                
+                if (value === 'all' || availableValues.has(value)) {
+                    btn.classList.remove('disabled');
+                } else {
+                    btn.classList.add('disabled');
+                }
+            });
+        });
+    }
+
+    // Update gallery display
+    function updateGalleryDisplay() {
+        galleryData.forEach(item => {
+            const matchesCategory = galleryFilters.category === 'all' || item.category === galleryFilters.category;
+            const matchesCountry = galleryFilters.country === 'all' || item.country === galleryFilters.country;
+            const matchesPeriod = galleryFilters.period === 'all' || item.period === galleryFilters.period;
+
+            if (matchesCategory && matchesCountry && matchesPeriod) {
+                item.element.classList.remove('hidden');
+            } else {
+                item.element.classList.add('hidden');
+            }
+        });
+        
+        // Update dropdown states to disable unavailable options
+        updateDropdownStates();
+    }
+
+    // Setup gallery filter buttons
+    document.querySelectorAll('[data-gallery-filter]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Don't allow clicking disabled options
+            if (this.classList.contains('disabled')) {
+                return;
+            }
+            
+            const filterType = this.dataset.galleryFilter;
+            const filterValue = this.dataset.value;
+
+            // Update filter state
+            galleryFilters[filterType] = filterValue;
+            lastChangedFilter = filterType;
+
+            // Update display
+            updateGalleryDisplay();
+        });
+    });
+
+    // Initialize
+    updateGalleryDisplay();
+})();
 </script>
