@@ -374,12 +374,6 @@ permalink: /maps/
             </div>
         </div>
         {% endfor %}
-        
-        <!-- No Results Message -->
-        <div class="no-results-message hidden">
-            <h3>No maps found</h3>
-            <p>Try adjusting your filters to see more results.</p>
-        </div>
     </div>
 </div>
 
