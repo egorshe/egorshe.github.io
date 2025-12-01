@@ -15,7 +15,7 @@ When discussing historical narratives, we must consider the role of collective m
 Adorno argues that "aesthetic judgment operates through a dialectical tension" {% cite adornoAestheticTheory1997 --page 45 %}.
 The concept of imagined communities remains central to understanding nationalism {% cite alisauskasImaginingLithuania1002018 --locator 112-115 %}.
 3. Citations with Multiple Page References
-According to recent scholarship on cultural trauma {% cite alexanderCulturalTraumaCollective2004 --locator 1-30 %}, collective memory shapes national identity in profound ways.
+According to recent scholarship on cultural trauma {% cite alexanderCulturalTraumaCollective2004 -l 1-30 %}, collective memory shapes national identity in profound ways.
 4. Multiple Citations in One Place
 Several scholars have examined the intersection of memory and national identity from different theoretical perspectives {% cite abdelalMemoriesNationsStates2002 abdelalMemoriesNationsStates2002a andrewWhatCinemaBazins2010 %}.
 5. Narrative-Style Citations with Pages
