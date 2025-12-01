@@ -13,4 +13,6 @@ group :jekyll_plugins do
   gem 'jekyll-glossary_tooltip' # Note the spelling (jekyll-glossary-tooltip)
   gem 'jekyll-target-blank'
   gem 'logger'
+  gem 'jekyll-scholar'
+
 end
