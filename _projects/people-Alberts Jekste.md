@@ -6,6 +6,7 @@ category: people
 pinned: false
 order:
 status: active
+draft: true
 banner_image: /assets/img/Projects-people-Jekste/Jekste-card.jpg
 location:
   coords: [56.949840799650154, 24.105984070680943]
