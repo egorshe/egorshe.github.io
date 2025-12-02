@@ -175,6 +175,7 @@ order: 1
 - [sinemateka.lt](https://www.sinemateka.lt/) -- Lithuanian films restored by Meno Avilys. The Cinemateques also has a physical collection of films and publications at Goštauto St. 2, Vilnius
 - [INFONDAS](https://www.kinofondas.lt/en/) -- database and streaming platform for Lithuanian films
 - [Lithuanian Shorts](https://lithuanianshorts.com/en/film-database/)
+- [LIMIS](https://www.limis.lt/) -- The Lithuanian Integral Museum Information System: virtual exhibitions, guides, and more.
 
 ## VOD and streaming
 - [Kino pavasaris at Telia.lt](https://play.telia.lt/more/vod_all_kino_pavasaris)
