@@ -47,6 +47,9 @@ exclude:
   - 00_meta/
   - .obsidian/
 
+kramdown:
+  footnote_backlink: "&#10569;"
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
