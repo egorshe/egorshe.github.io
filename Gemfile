@@ -14,5 +14,6 @@ group :jekyll_plugins do
   gem 'jekyll-target-blank'
   gem 'logger'
   gem 'jekyll-scholar'
+  gem 'citeproc-ruby', '~> 2.1'
 
 end
