@@ -16,11 +16,7 @@ GEM
       namae (~> 1.0)
       observer (< 1.0)
       open-uri (< 1.0)
-<<<<<<< HEAD
     citeproc-ruby (2.1.6)
-=======
-    citeproc-ruby (2.1.5)
->>>>>>> 7b3821ed0b23668d120ababc9e960ed6e161d555
       citeproc (~> 1.0, >= 1.0.9)
       csl (~> 2.0)
       observer (< 1.0)
