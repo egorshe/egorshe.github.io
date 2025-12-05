@@ -11,6 +11,7 @@ tags:
   - Colonialism
   - Alvis Hermanis
 toc: false
+author: egor shmonin
 locations:
 ---
 Inga Pērkone, professor at the Latvian Academy of Culture, director of the Latvian Film Museum, and one of the most prominent scholars of Latvian film history, recently [attended](https://www.kroders.lv/recenzijas/2314) _Apple Blossoms in the River_, Alvis Hermanis’s new stage production that attempts—through performance—to resurrect Aivars Freimanis’s 1974 classic. It ia emblematic, that Pērkone points out the production’s disconnection both from the fifty-year-old film and from the current political climate in the region, shaped by escalating international tensions. She attributes this to a weakness in the play itself, in which once-iconic sex symbols, now older, strain to embody a narrative void through visibly theatrical, but largely empty, gestures.
