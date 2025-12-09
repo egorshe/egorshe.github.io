@@ -19,6 +19,13 @@ locations:
   country: "lithuania" 
   date: "2025-12-11" 
   description: "Exhibition opening and presentation of the book 'Šešėly ir šviesoj. Martynas Zaleskis ir Kauno vaizdas'."
+- title: "The Book of Homo Novus — book launch" 
+  city: "Riga" 
+  venue: "Galerija “Istaba”" 
+  coords: [56.95412570666401, 24.12677150870862] 
+  country: "latvia" 
+  date: "2025-12-15" 
+  description: "To mark the 30th anniversary of the International Festival of Contemporary Theatre _Homo Novus, a bilingual volume – Homo Novus grāmata / The Book of Homo Novus – has been published in collaboration with Neputns Publishing House."
 ---
 
 ## Publications 📚
@@ -85,6 +92,8 @@ Agris Redovičs. *Juris Podnieks. Dienasgrāmatas 1975–1981.* Latvijas mediji,
 Estonian documentary filmmaker and classic Andres Sööt has released a new [photo book](https://rahvaraamat.ee/et/raamatud/fotograafia/reisialbumid-muud-riigid/fotoalbum-camino/2262067) — an album from his personal Camino pilgrimage made between 2004 and 2015. It is also worth revisiting his 2011 [film](https://efis.ee/en/film/16163) about the Way of St. James. Sööt calls it his last major work, which I very much hope is not the case.
 
 Greta Vilnelė's [review](https://www.lfc.lt/lt/Page=ArticleList&ID=18890&Y=) of Lithuanian short films from the recent "Scanorama"  
+
+Neptuns [publishes](https://homonovus.lv/en/about-book/) The Book of Homo Novus has been published. This bilingual publication brings together over 50 contributors — artists, creators and participants of the famous Riga festival — who offer personal memories of _Homo Novus_, outline important theoretical themes, and envision the future of theatre in visual form. Book launch — December 15 at 6 p.m. at the Gallery “Istaba”, K.Barona iela 31b, Riga.
 
 ### Journals & Magazines
 <span style="background-color: #5a96d0; color: white; padding: 0.25em 0.4em; border-radius: 0.25rem; font-size: 75%; line-height: 1;">Open Access</span> A special issue of _Culture Crossroads_ №29 [has been published](https://www.culturecrossroads.lv/index.php/cc/issue/view/38/131). This issue is dedicated to the tenth anniversary of the International Scientific Conference on Teaching Spanish as a Foreign Language, with guest editors Dr. Philol. Ana León-Manzanero (Latvian Academy of Culture, Latvia) and PhD Olvido Andújar-Molina (University of Oviedo, Spain).  
