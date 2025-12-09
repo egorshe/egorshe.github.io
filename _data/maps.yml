@@ -45,6 +45,16 @@
   category: "history"
   country: "Baltic region"
   period: "pre-modern"
+
+- title: "Interactive map of archaeological research in Vilnius"
+  image: "/assets/img/maps/Vilnius-arc-research.webp"
+  description: "The map synthesizes locations of archaeological research conducted between 1950 and 2024, with each point providing full bibliographic details including authors, report titles, research/report years, and signatures. This resource is intended to be an essential tool for archaeologists, researchers of material heritage, heritage protection specialists, architects involved in city planning, and any individual interested in the rich history and material culture of Vilnius."
+  source: "Lithuanian institute of History"
+  link: "https://experience.arcgis.com/experience/fc664b92e0134bd9820546a98c4a4373/page/%C5%BDEM%C4%96LAPIS"
+  link_text: "Try the interactive map"
+  category: "history"
+  country: "lithuania"
+  period: "contemporary"
 # ============================================
 # To add a new map:
 # ============================================
