@@ -82,18 +82,23 @@ The article presents the strategies of the soviet regime that were used to colon
 Agris Redovičs. *Juris Podnieks. Dienasgrāmatas 1975–1981.* Latvijas mediji, 2025 [link](https://izdevnieciba.latvijasmediji.lv/lv/jaunumi/9789934296727)  
 [Read an excerpt from Podnieks' diaries on KinoRaksti](https://www.kinoraksti.lv/petijumi/personiba/juris-podnieks-dienasgramatas-piezimes-vestules-fragmenti-1421)
 
-A special issue of _Culture Crossroads_ №29 [has been published](https://www.culturecrossroads.lv/index.php/cc/issue/view/38/131). This issue is dedicated to the tenth anniversary of the International Scientific Conference on Teaching Spanish as a Foreign Language, with guest editors Dr. Philol. Ana León-Manzanero (Latvian Academy of Culture, Latvia) and PhD Olvido Andújar-Molina (University of Oviedo, Spain).
+Estonian documentary filmmaker and classic Andres Sööt has released a new [photo book](https://rahvaraamat.ee/et/raamatud/fotograafia/reisialbumid-muud-riigid/fotoalbum-camino/2262067) — an album from his personal Camino pilgrimage made between 2004 and 2015. It is also worth revisiting his 2011 [film](https://efis.ee/en/film/16163) about the Way of St. James. Sööt calls it his last major work, which I very much hope is not the case.
 
-A special issue of Acta Academiae Artium Vilnensis on the cultural, political and artistic intersections between Africa and the Central-Eastern Europe during the Cold War has been [published](https://aaav.vda.lt/journal/issue/view/aaav117) 
+Greta Vilnelė's [review](https://www.lfc.lt/lt/Page=ArticleList&ID=18890&Y=) of Lithuanian short films from the recent "Scanorama"  
+
+### Journals & Magazines
+<span style="background-color: #5a96d0; color: white; padding: 0.25em 0.4em; border-radius: 0.25rem; font-size: 75%; line-height: 1;">Open Access</span> A special issue of _Culture Crossroads_ №29 [has been published](https://www.culturecrossroads.lv/index.php/cc/issue/view/38/131). This issue is dedicated to the tenth anniversary of the International Scientific Conference on Teaching Spanish as a Foreign Language, with guest editors Dr. Philol. Ana León-Manzanero (Latvian Academy of Culture, Latvia) and PhD Olvido Andújar-Molina (University of Oviedo, Spain).  
+
+<span style="background-color: #5a96d0; color: white; padding: 0.25em 0.4em; border-radius: 0.25rem; font-size: 75%; line-height: 1;">Open Access</span>   *Art History & Criticism* Vol 21, Issue 1 has now been [published](https://reference-global.com/issue/MIK/21/1), featuring work on Čiurlionis, artist migration, Lithuanian design, ecological culture, virtual materiality, and more.
+
+<span style="background-color: #5a96d0; color: white; padding: 0.25em 0.4em; border-radius: 0.25rem; font-size: 75%; line-height: 1;">Open Access</span> A special issue of Acta Academiae Artium Vilnensis on the cultural, political and artistic intersections between Africa and the Central-Eastern Europe during the Cold War has been [published](https://aaav.vda.lt/journal/issue/view/aaav117) 
 
 Sirp, new issue -- 45 [link](https://www.sirp.ee/issues/select-2025-45-4069/)  
 Check Tristan Priimägi's short piece on the issue of [second screens](https://www.sirp.ee/teine-ekraan/)
 
 Kulturos Barai, new issue -- 11 [Table of contents, texts should be available online next month](https://www.kulturosbarai.lt/)
 
-Estonian documentary filmmaker and classic Andres Sööt has released a new [photo book](https://rahvaraamat.ee/et/raamatud/fotograafia/reisialbumid-muud-riigid/fotoalbum-camino/2262067) — an album from his personal Camino pilgrimage made between 2004 and 2015. It is also worth revisiting his 2011 [film](https://efis.ee/en/film/16163) about the Way of St. James. Sööt calls it his last major work, which I very much hope is not the case.
-
-Greta Vilnelė's [review](https://www.lfc.lt/lt/Page=ArticleList&ID=18890&Y=) of Lithuanian short films from the recent "Scanorama"  
+ 
 
 
 
