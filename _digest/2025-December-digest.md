@@ -28,7 +28,11 @@ Fatehi, Erfan; Herkman, Juha; Koivukoski, Joonas; Laineste, Liisi. "National ide
 This study provides a comprehensive examination of humor scandals in Estonia from 1991 to 2022 through a mixed-method approach. The research identifies ten major national humor scandals, analyzed within the theoretical intersections of humor and scandal studies, with a specific emphasis on how they affect and are affected by Estonian national identity. Through systematic quantitative mapping, the study outlines the frequency, scope, and media coverage of these scandals, revealing a growing trend in humor-related controversies in Estonia’s post-Soviet era. The findings highlight the sensitivity toward national identity in Estonian humor controversies and contribute to the broader understanding of humor’s dynamic role in society. 
 </details>
 
-  
+<span style="background-color: #5a96d0; color: white; padding: 0.25em 0.4em; border-radius: 0.25rem; font-size: 75%; line-height: 1;">Open Access</span> Lundberg, Gustav. "Pluralism in peril? Examining the protectionist turn in Latvian integration policy." Journal of Baltic Studies, 2025. [doi](https://doi.org/10.1080/01629778.2025.2596801)
+<details markdown="1">
+<summary>Abstract</summary>
+Many scholars have drawn attention to the growing influence of nationalist ideology within Latvian politics in recent years. The causes behind this nationalist turn remain disputed. This article studies this process through analyzing four integration policy documents, followed by an examination of different plausible hypotheses explaining the nationalist turn. The author compares two popular explanations – identified as the Potemkin pluralism hypothesis and the external threat hypothesis. Lastly, the author proposes a third hypothesis, the ethnic party system hypothesis, in order to further emphasize the role of the Latvian party system in shaping the state’s increasingly nationalist policy output.and here it is 
+</details>
 
 Jurkynas, Mindaugas. "Lost and Found: Discovery and Implications of First Elections In Post-Communist Lithuania." Problems of Post-Communism, 2025-11-18, pp. 1–14. [doi](https://www.tandfonline.com/doi/full/10.1080/10758216.2025.2582674)
 
