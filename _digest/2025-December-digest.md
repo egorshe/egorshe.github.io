@@ -21,7 +21,7 @@ locations:
   description: "Exhibition opening and presentation of the book 'Šešėly ir šviesoj. Martynas Zaleskis ir Kauno vaizdas'."
 ---
 
-## Publications
+## Publications 📚
 Fatehi, Erfan; Herkman, Juha; Koivukoski, Joonas; Laineste, Liisi. "National identity through the prism of satire: humor scandals in Estonia 1991–2022." Journal of Baltic Studies, vol. 56, no. 4, 2025-1-30, pp. 1–22. [doi](https://www.tandfonline.com/doi/full/10.1080/01629778.2025.2460503)
 <details markdown="1">
 <summary>Abstract</summary>
@@ -93,7 +93,7 @@ Greta Vilnelė's [review](https://www.lfc.lt/lt/Page=ArticleList&ID=18890&Y=) of
 
 
 
-## Conferences and calls for papers
+## Conferences and calls for papers 📢📝
 Registration is now open for the International Conference “Social and Humanities Research in/on Central and Eastern Europe: Envisioning Futures from a Tumultuous Present”  
 On the occasion of the 25th anniversary of the journal Topos. Journal for Philosophy and Cultural Studies.  
 12-13 December, 2025, Vilnius  
@@ -110,26 +110,26 @@ Article submission deadline: _**1 February 2026**_
 Review submission deadline: _**1 March 2026**_  
 [Guidelines and instructions](https://student-journals.ucl.ac.uk/slovo/news/88/)  
 
-**Thematical issue of Nordicum** - Mediterraneum on Decoloniality  
+Thematical issue of Nordicum - "Mediterraneum on Decoloniality"  
 Type: theoretical reflections  
 Deadline: 2025-01-10  
 [Apply](https://media.licdn.com/dms/document/media/v2/D4D1FAQEgE5ICDtovHg/feedshare-document-pdf-analyzed/B4DZrFKDJ7JIAY-/0/1764244339257?e=1766016000&v=beta&t=kdTldZ9qitjg2PzuxeO4JtTmLpLcARW22NqqFyk6aDo)  
 
 Many calls listed in the [November digest](https://www.matobaltica.ca/digest/2025-November-digest/) are still open. Check them out.
 
-## Exhibitions
+## Exhibitions 🖼️
 On December 3, the gallery Prospekto Galerija opened a group photo exhibition, ["Mobilumai kadre ir už kadro"](https://www.photography.lt/en/exhibitions/esamos/mobilities-in-and-1v86.html). The 2025 annual of the Lithuanian Photographers’ Union, _Lithuanian Photography, was also presented. For this edition, editor Agnė Gintalaitė selected 302 works by 32 artists. In the exhibition, where there is no hierarchy or canon, the works of the 32 authors (from J. Kazlauskas to contemporary artists) function as nodes of ideas, exploring (im)mobility as either coercion or privilege, and addressing themes ranging from space travel to border control. The exhibition runs until January 17.  
 
 On December 11, the _Kaunas Town Hall_ will host the opening of the exhibition ["Šešėly ir šviesoj. Kauno vaizdas"](https://kaunomuziejus.lt/visi-renginiai/parodos-sesely-ir-sviesoj-kauno-vaizdas-atidarymas-ir-ja-lydincios-knygos-pristatymas/) along with the presentation of the book "Šešėly ir šviesoj. Martynas Zaleskis ir Kauno vaizdas.  
 
 Following the recent protests against Latvia’s withdrawal from the Istanbul Convention on domestic violence—which is currently suspended—I recommend visiting the online documentary exhibition [“Physical Evidence Museum”](https://www.evidencemuseum.com/). The museum’s collection consists of everyday items—witnesses of domestic violence—collected with the help of many women from across Latvia, as well as from other countries the museum has visited, including Estonia, Poland, and Switzerland. All items represent real stories from real people.  
 
-## Watch
+## Watch ▶
 The Association for the Advancement of Baltic Studies hosted an online roundtable discussion on "Demographic Development in the Baltic States: Identity, Integration, and Inequality" on Tuesday, December 2, 2025. The recording is now [available on youtube](https://www.youtube.com/watch?v=QDTPDFD0A8E)  
 
 
 
-## News
+## News 📰
 The _Nemuno Aušra_ party, which is part of the ruling coalition in the current Seimas, has initiated new amendments to the law regulating the work of the Lithuanian National Radio and Television (LRT). The amendments are designed to make it easier for the ruling parties to replace LRT’s leadership and to freeze the broadcaster’s budget for the next three years. The media community [has organized protests](https://www.lrt.lt/en/news-in-english/19/2762109/lithuanian-public-broadcaster-staff-launch-week-long-protest) in response. Recently, the party also found itself at the center of yet another scandal involving the appointment of a new Minister of Culture, who resigned after a week amid mass protests and continued criticism.  
 
 The Estonian Rahvusarhiiv [announced](https://www.ra.ee/johan-laidoneri-ja-konstantin-patsiga-seotud-kgb-dokumendid-joudsid-rahvusarhiivi/) the upcoming digitization and public availability of KGB documents related to [Johan Laidoner](https://en.wikipedia.org/wiki/Johan_Laidoner) and [Konstantin Päts](https://en.wikipedia.org/wiki/Konstantin_P%C3%A4ts). The three boxes of materials, covering the years 1940–1960, concern Laidoner, Päts, and their relatives. The documents originate from the archives of the Estonian SSR as well as the Penza and Bashkir security services. This rare material reached the National Archives thanks to historian Küllo Arjakas. The documents will be processed and digitized by mid-March at the latest. They can already be viewed in the AIS archival information system. I hope this new collection will also shed some light on how these materials were located and retrieved from such difficult-to-access institutions.  
