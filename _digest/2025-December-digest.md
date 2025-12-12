@@ -142,8 +142,15 @@ On December 11, the _Kaunas Town Hall_ will host the opening of the exhibition [
 
 Following the recent protests against Latvia’s withdrawal from the Istanbul Convention on domestic violence—which is currently suspended—I recommend visiting the online documentary exhibition [“Physical Evidence Museum”](https://www.evidencemuseum.com/). The museum’s collection consists of everyday items—witnesses of domestic violence—collected with the help of many women from across Latvia, as well as from other countries the museum has visited, including Estonia, Poland, and Switzerland. All items represent real stories from real people.  
 
-## Watch ▶
+## Watch /Listen▶
 The Association for the Advancement of Baltic Studies hosted an online roundtable discussion on "Demographic Development in the Baltic States: Identity, Integration, and Inequality" on Tuesday, December 2, 2025. The recording is now [available on youtube](https://www.youtube.com/watch?v=QDTPDFD0A8E)  
+
+**Integration Through Art: Documentary and Dance in Estonia** (Podcast)  
+By: Baltic ways  
+Platform: Spotify, Apple podcast, RSS  
+Duration: 24  
+Over 100,000 Ukrainian refugees have come to Estonia at some point since Russia’s full-scale invasion of Ukraine in February 2022. Of those, tens of thousands remain in the country, building their own communities and integrating with local Estonians. For many, art is an important assertion of Ukrainian identity, but also a bridge to their new neighbors. Scholar and filmmaker Parker Watt set out to document these stories and embarked on an integration journey of his own during a year spent in Estonia, finding meaning at each step, proverbial and literal, along the way.  
+[Listen](https://fpribalticinitiative.substack.com/p/integration-through-art-documentary?publication_id=2366611&post_id=181159499&r=r7o79&triedRedirect=true)
 
 
 
