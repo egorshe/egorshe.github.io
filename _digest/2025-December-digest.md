@@ -95,17 +95,20 @@ Greta Vilnelė's [review](https://www.lfc.lt/lt/Page=ArticleList&ID=18890&Y=) of
 
 Neptuns [publishes](https://homonovus.lv/en/about-book/) The Book of Homo Novus has been published. This bilingual publication brings together over 50 contributors — artists, creators and participants of the famous Riga festival — who offer personal memories of _Homo Novus_, outline important theoretical themes, and envision the future of theatre in visual form. Book launch — December 15 at 6 p.m. at the Gallery “Istaba”, K.Barona iela 31b, Riga.
 
-### Journals & Magazines
-<span style="background-color: #5a96d0; color: white; padding: 0.25em 0.4em; border-radius: 0.25rem; font-size: 75%; line-height: 1;">Open Access</span> A special issue of _Culture Crossroads_ №29 [has been published](https://www.culturecrossroads.lv/index.php/cc/issue/view/38/131). This issue is dedicated to the tenth anniversary of the International Scientific Conference on Teaching Spanish as a Foreign Language, with guest editors Dr. Philol. Ana León-Manzanero (Latvian Academy of Culture, Latvia) and PhD Olvido Andújar-Molina (University of Oviedo, Spain).  
+## New Journal Issues 📖
+A special issue of _Culture Crossroads_ №29 [has been published](https://www.culturecrossroads.lv/index.php/cc/issue/view/38/131). This issue is dedicated to the tenth anniversary of the International Scientific Conference on Teaching Spanish as a Foreign Language, with guest editors Dr. Philol. Ana León-Manzanero (Latvian Academy of Culture, Latvia) and PhD Olvido Andújar-Molina (University of Oviedo, Spain).  
 
-<span style="background-color: #5a96d0; color: white; padding: 0.25em 0.4em; border-radius: 0.25rem; font-size: 75%; line-height: 1;">Open Access</span>   *Art History & Criticism* Vol 21, Issue 1 has now been [published](https://reference-global.com/issue/MIK/21/1), featuring work on Čiurlionis, artist migration, Lithuanian design, ecological culture, virtual materiality, and more.
+*Art History & Criticism* Vol 21, Issue 1 has now been [published](https://reference-global.com/issue/MIK/21/1), featuring work on Čiurlionis, artist migration, Lithuanian design, ecological culture, virtual materiality, and more.
 
-<span style="background-color: #5a96d0; color: white; padding: 0.25em 0.4em; border-radius: 0.25rem; font-size: 75%; line-height: 1;">Open Access</span> A special issue of Acta Academiae Artium Vilnensis on the cultural, political and artistic intersections between Africa and the Central-Eastern Europe during the Cold War has been [published](https://aaav.vda.lt/journal/issue/view/aaav117) 
+*Journal of the Institute of Latvian History*, Vol. 1, No. 123 (2025).  
+[PDF](https://www.lvi.lu.lv/fileadmin/user_upload/lu_portal/lvi.lu.lv/LVIZ_Numuri/2025_1/LVIZ_2025_1-e.pdf)
 
-Sirp, new issue -- 45 [link](https://www.sirp.ee/issues/select-2025-45-4069/)  
-Check Tristan Priimägi's short piece on the issue of [second screens](https://www.sirp.ee/teine-ekraan/)
+A special issue of *Acta Academiae Artium Vilnensis* on the cultural, political and artistic intersections between Africa and the Central-Eastern Europe during the Cold War has been [published](https://aaav.vda.lt/journal/issue/view/aaav117) 
 
-Kulturos Barai, new issue -- 11 [Table of contents, texts should be available online next month](https://www.kulturosbarai.lt/)
+*Sirp*, new issue -- 45 [link](https://www.sirp.ee/issues/select-2025-45-4069/)  
+	Check Tristan Priimägi's short piece on the issue of [second screens](https://www.sirp.ee/teine-ekraan/)
+
+*Kulturos Barai*, new issue -- 11 [Table of contents, texts should be available online next month](https://www.kulturosbarai.lt/)
 
  
 
