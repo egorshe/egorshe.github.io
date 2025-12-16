@@ -26,6 +26,13 @@ locations:
   country: "latvia" 
   date: "2025-12-15" 
   description: "To mark the 30th anniversary of the International Festival of Contemporary Theatre _Homo Novus, a bilingual volume – Homo Novus grāmata / The Book of Homo Novus – has been published in collaboration with Neputns Publishing House."
+- title: "20013" 
+  city: "Vilnius" 
+  venue: "Meno Avilys" 
+  coords: [54.6909045661758, 25.276678778064152] 
+  country: "Lithuania" 
+  date: "2025-12-17" 
+  description: "This exhibition is a part of the Cinematheque event series curated by Ona Kotryna Dikavičiūtė and Gerda Paliušytė."
 ---
 
 ## Publications 📚
@@ -142,6 +149,12 @@ Many calls listed in the [November digest](https://www.matobaltica.ca/digest/202
 On December 3, the gallery Prospekto Galerija opened a group photo exhibition, ["Mobilumai kadre ir už kadro"](https://www.photography.lt/en/exhibitions/esamos/mobilities-in-and-1v86.html). The 2025 annual of the Lithuanian Photographers’ Union, _Lithuanian Photography, was also presented. For this edition, editor Agnė Gintalaitė selected 302 works by 32 artists. In the exhibition, where there is no hierarchy or canon, the works of the 32 authors (from J. Kazlauskas to contemporary artists) function as nodes of ideas, exploring (im)mobility as either coercion or privilege, and addressing themes ranging from space travel to border control. The exhibition runs until January 17.  
 
 On December 11, the _Kaunas Town Hall_ will host the opening of the exhibition ["Šešėly ir šviesoj. Kauno vaizdas"](https://kaunomuziejus.lt/visi-renginiai/parodos-sesely-ir-sviesoj-kauno-vaizdas-atidarymas-ir-ja-lydincios-knygos-pristatymas/) along with the presentation of the book "Šešėly ir šviesoj. Martynas Zaleskis ir Kauno vaizdas.  
+
+**20013**  
+Dates: 2025-12-17  
+Place: Vilnius, Lithuania, Meno Avilys  
+Description: This exhibition has no topic. Or to be more precise, the topic is too broad and abstract to define. “20013” is dedicated to the act of remixing, whilst viewing it both as a force of annihilation and empowerment. The main aim of this exhibition is to build an experience packed with raw destruction, humour, and a glimpse of melancholy – all to create a variety of moods we often use to define reality. It is sought that the exhibition – as well as works in it – would remind one of the opportunity for change or some space for potential; this potential sometimes arises in a bleak situation when a few pieces are rearranged.  
+[Website](https://menoavilys.org/en/20013-exhibition-in-the-cinematheque-exposition-space/)
 
 Following the recent protests against Latvia’s withdrawal from the Istanbul Convention on domestic violence—which is currently suspended—I recommend visiting the online documentary exhibition [“Physical Evidence Museum”](https://www.evidencemuseum.com/). The museum’s collection consists of everyday items—witnesses of domestic violence—collected with the help of many women from across Latvia, as well as from other countries the museum has visited, including Estonia, Poland, and Switzerland. All items represent real stories from real people.  
 
