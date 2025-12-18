@@ -1,0 +1,13 @@
+images:
+  - title: "Yesenia"
+    thumbnail: "/assets/img/gallery/covers/Cover_1.jpeg"
+    full: "/assets/img/gallery/covers/Cover_1.jpeg"
+    alt: "book cover"
+  - title: "Traveling Auteurs"
+    thumbnail: "/assets/img/gallery/covers/Cover_2.webp"
+    full: "/assets/img/gallery/covers/Cover_2.webp"
+    alt: "book cover"
+  - title: "World Socialist Cinema"
+    thumbnail: "/assets/img/gallery/covers/Cover_3.webp"
+    full: "/assets/img/gallery/covers/Cover_3.webp"
+    alt: "book cover"

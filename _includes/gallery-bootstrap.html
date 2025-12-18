@@ -1,0 +1,274 @@
+<!-- Bootstrap 5.3 Reusable Gallery Include -->
+
+{% assign gallery_name = include.gallery | default: "gallery" %} {% if
+gallery_name == "gal-classes" %} {% assign gallery_data =
+site.data["gal-classes"] %} {% elsif gallery_name == "gal-cms" %} {% assign
+gallery_data = site.data["gal-cms"] %} {% elsif gallery_name == "gal-covers" %}
+{% assign gallery_data = site.data["gal-covers"] %} {% elsif gallery_name ==
+"gal-events" %} {% assign gallery_data = site.data["gal-events"] %} {% elsif
+gallery_name == "gal-raah" %} {% assign gallery_data = site.data["gal-raah"] %}
+{% elsif gallery_name == "gal-sched" %} {% assign gallery_data =
+site.data["gal-sched"] %} {% else %} {% assign gallery_data = nil %} {% endif %}
+{% if gallery_data == nil or gallery_data.images == nil %}
+<div class="alert alert-warning" role="alert">
+    <strong>Gallery not found:</strong> No data file found at
+    <code>_data/{{ gallery_name }}.yml</code>
+</div>
+{% else %}
+
+<div class="container-fluid px-0 mb-4">
+    <div class="row g-3">
+        {% for image in gallery_data.images %}
+        <div class="col-6 col-md-4 col-lg-3">
+            <div
+                class="gallery-card"
+                data-bs-toggle="modal"
+                data-bs-target="#galleryModal-{{ gallery_name }}"
+                data-gallery="{{ gallery_name }}"
+                data-index="{{ forloop.index0 }}"
+                data-title="{{ image.title }}"
+                data-description="{{ image.description }}"
+                data-full="{{ site.baseurl }}{{ image.full | default: image.thumbnail }}"
+                role="button"
+                tabindex="0"
+            >
+                <img
+                    src="{{ site.baseurl }}{{ image.thumbnail }}"
+                    class="img-fluid"
+                    alt="{{ image.alt | default: image.title }}"
+                    loading="lazy"
+                    style="
+                        aspect-ratio: 8.5/11;
+                        object-fit: cover;
+                        width: 100%;
+                        border-radius: 4px;
+                    "
+                />
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Bootstrap Modal for this Gallery -->
+<div
+    class="modal fade"
+    id="galleryModal-{{ gallery_name }}"
+    tabindex="-1"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div
+            class="modal-content"
+            style="background: transparent; border: none"
+        >
+            <button
+                type="button"
+                class="btn-close position-absolute top-0 end-0 m-3"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                style="
+                    z-index: 1060;
+                    filter: invert(1) grayscale(100%) brightness(200%);
+                "
+            ></button>
+
+            <div class="modal-body p-2 text-center position-relative">
+                <img
+                    class="modal-image img-fluid"
+                    src=""
+                    alt=""
+                    style="max-height: 90vh; object-fit: contain"
+                />
+
+                <!-- Simple Navigation Arrows -->
+                <button
+                    type="button"
+                    class="prev-btn position-absolute top-50 start-0 translate-middle-y btn btn-link text-white fs-1 p-3"
+                    style="
+                        text-decoration: none;
+                        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                    "
+                >
+                    ‹
+                </button>
+                <button
+                    type="button"
+                    class="next-btn position-absolute top-50 end-0 translate-middle-y btn btn-link text-white fs-1 p-3"
+                    style="
+                        text-decoration: none;
+                        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                    "
+                >
+                    ›
+                </button>
+            </div>
+
+            <!-- Counter at bottom -->
+            <div
+                class="text-center text-white small py-2 modal-counter"
+                style="text-shadow: 0 0 10px rgba(0, 0, 0, 0.8)"
+            ></div>
+        </div>
+    </div>
+</div>
+
+{% endif %} {% unless page.gallery_scripts_loaded %}
+<style>
+    .gallery-card {
+        cursor: pointer;
+        transition:
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .gallery-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .gallery-card:focus {
+        outline: 2px solid var(--bs-primary);
+        outline-offset: 2px;
+    }
+
+    /* Modal with transparent background */
+    .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .modal-content {
+        box-shadow: none !important;
+    }
+
+    /* Navigation arrows hover */
+    .prev-btn:hover,
+    .next-btn:hover {
+        transform: scale(1.2);
+        opacity: 1 !important;
+    }
+
+    .prev-btn,
+    .next-btn {
+        opacity: 0.7;
+        transition: all 0.2s ease;
+    }
+
+    .prev-btn:disabled,
+    .next-btn:disabled {
+        opacity: 0.2;
+        pointer-events: none;
+    }
+</style>
+
+<script>
+    // Bootstrap Gallery Navigation - Supports Multiple Galleries
+    (function () {
+        const galleries = {};
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize all galleries
+            document.querySelectorAll("[data-gallery]").forEach((card) => {
+                const galleryName = card.dataset.gallery;
+
+                if (!galleries[galleryName]) {
+                    galleries[galleryName] = {
+                        images: [],
+                        currentIndex: 0,
+                    };
+                }
+
+                const index = parseInt(card.dataset.index);
+                galleries[galleryName].images[index] = {
+                    full: card.dataset.full,
+                    title: card.dataset.title || "",
+                    description: card.dataset.description || "",
+                };
+
+                // Click handler
+                card.addEventListener("click", function () {
+                    galleries[galleryName].currentIndex = index;
+                    loadImage(galleryName);
+                });
+
+                // Keyboard handler
+                card.addEventListener("keypress", function (e) {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        galleries[galleryName].currentIndex = index;
+                        loadImage(galleryName);
+                        const modal = new bootstrap.Modal(
+                            document.getElementById(
+                                "galleryModal-" + galleryName,
+                            ),
+                        );
+                        modal.show();
+                    }
+                });
+            });
+
+            // Setup navigation for each modal
+            document
+                .querySelectorAll('[id^="galleryModal-"]')
+                .forEach((modal) => {
+                    const galleryName = modal.id.replace("galleryModal-", "");
+
+                    modal
+                        .querySelector(".prev-btn")
+                        .addEventListener("click", () =>
+                            previousImage(galleryName),
+                        );
+                    modal
+                        .querySelector(".next-btn")
+                        .addEventListener("click", () =>
+                            nextImage(galleryName),
+                        );
+
+                    modal.addEventListener("keydown", function (e) {
+                        if (e.key === "ArrowLeft") previousImage(galleryName);
+                        if (e.key === "ArrowRight") nextImage(galleryName);
+                    });
+                });
+        });
+
+        function loadImage(galleryName) {
+            const gallery = galleries[galleryName];
+            const img = gallery.images[gallery.currentIndex];
+            const modal = document.getElementById(
+                "galleryModal-" + galleryName,
+            );
+
+            modal.querySelector(".modal-image").src = img.full;
+            modal.querySelector(".modal-image").alt =
+                img.title || "Gallery image";
+            modal.querySelector(".modal-counter").textContent =
+                `${gallery.currentIndex + 1} / ${gallery.images.length}`;
+
+            modal.querySelector(".prev-btn").disabled =
+                gallery.currentIndex === 0;
+            modal.querySelector(".next-btn").disabled =
+                gallery.currentIndex === gallery.images.length - 1;
+        }
+
+        function previousImage(galleryName) {
+            const gallery = galleries[galleryName];
+            if (gallery.currentIndex > 0) {
+                gallery.currentIndex--;
+                loadImage(galleryName);
+            }
+        }
+
+        function nextImage(galleryName) {
+            const gallery = galleries[galleryName];
+            if (gallery.currentIndex < gallery.images.length - 1) {
+                gallery.currentIndex++;
+                loadImage(galleryName);
+            }
+        }
+    })();
+</script>
+
+{% assign page.gallery_scripts_loaded = true %} {% endunless %}
