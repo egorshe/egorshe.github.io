@@ -3,7 +3,7 @@ images:
     full: "/assets/img/gallery/Events/Event_1.webp"
     alt: "poster for an event"
   - thumbnail: "/assets/img/gallery/Events/Event_2.webp"
-    full: "/assets/img/gallery/events/Event_2.webp"
+    full: "/assets/img/gallery/Events/Event_2.webp"
     alt: "poster for an event"
   - thumbnail: "/assets/img/gallery/Events/Event_3.webp"
     full: "/assets/img/gallery/Events/Event_3.webp"
