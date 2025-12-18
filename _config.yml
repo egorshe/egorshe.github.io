@@ -28,6 +28,7 @@ kramdown:
   input: GFM
   syntax_highlighter_opts:
     disable: false
+  footnote_backlink: "&#10569;"
 
 collections:
   pages:
@@ -46,9 +47,6 @@ collections:
 exclude:
   - 00_meta/
   - .obsidian/
-
-kramdown:
-  footnote_backlink: "&#10569;"
 
 plugins:
   - jekyll-sitemap
