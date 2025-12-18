@@ -7,7 +7,7 @@ author:
 
 description: nexus for the critical study of Baltic cinemas and broader regional culture # description of your site
 
-url: "https://matobaltica.ca" # The base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.matobaltica.ca" # The base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # The subpath of your site, e.g. /blog
 
 jekyllacademic:
