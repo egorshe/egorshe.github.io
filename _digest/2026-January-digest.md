@@ -9,7 +9,7 @@ locations:
     city: "Berlin"
     venue: "German Association for East European Studies (DGO), the Freie Universität Berlin (FU) and the Centre for East European and International Studies (ZOiS)"
     country: "Germany"
-    date: "2026-10-08 to 2026-10-09"
+    date: "2026-10-08 to 2026-10-09" 
     coords: [52.4993, 13.332]
     description: "How much certainty is there within the apparent uncertainties? How do people and societies deal with growing uncertainties, and how does this influence the stability of orders? How do changes of regional power relationships, structures, and institutions intersect with global developments? The inherent tension between certainty and uncertainty also raises definitional and methodological issues: What exactly constitutes (un)certainty? How can it be measured or observed?"
   - title: "Summer school: Young Researchers and Innovators"
@@ -54,6 +54,13 @@ locations:
     date: "2026-01-07 to 2026-01-18"
     coords: [48.862599089745316, 2.3450883771910216]
     description: "This retrospective explores Baltic cinema (Estonia, Latvia, and Lithuania) from the 1960s to the early 2000s, highlighting a \"poetic documentary\" tradition that emerged during the post-Stalinist era. By prioritizing subjectivity, formal experimentation, and visual virtuosity over Soviet propaganda, these filmmakers utilized the \"poetic\" as a form of political resistance and emancipation from state ideology. Featuring 52 films, the program connects this historical search for artistic freedom to contemporary geopolitical tensions, offering a profound look at how cinema serves as both a sensitive witness to reality and a sanctuary for the imagination"
+  - title: "Exhibition: Ojārs Ābols. Man's Absurd Projects on Earth"
+    city: "Riga"
+    venue: "Latvian National Museum of Art"
+    country: "Latvia"
+    date: "2026-01-10 to 2026-05-10"
+    coords: [56.95595770529403, 24.113531277127137]
+    description: "During his life, not a single personal exhibition of Ojārs Ābols’ oeuvre took place in Latvia, yet he actively participated in artists’ group exhibitions. After Ābols’ death, his wife Džemma Skulme continued the artistic processes they both had initiated in Latvia. Released to coincide with Ojārs Ābols’ exhibition, Dr. art. Elita Ansone’s monographic study Ojārs Ābols. Man’s Absurd Projects on Earth aims to bring together both sides of Ābols’ life – the communist one and the pro-Western one, his conformism and his non-conformism, attempting to grasp who exactly was Ojārs Ābols."
 ---
 
 ## Jump to
@@ -64,6 +71,7 @@ locations:
 - [Media & Podcasts](#media-podcasts-)
 - [Conferences](#conferences-)
 - [Festivals & Screenings](#festivals-screenings-)
+- [Exhibitions ️](#exhibitions-)
 - [Quick Links](#quick-links-)
 - [News](#news-)
 
@@ -194,6 +202,15 @@ Place: Paris, France, Forum des images, Centre Wallonie-Bruxelles, MK2 Biblioth�
 Description: This retrospective explores Baltic cinema (Estonia, Latvia, and Lithuania) from the 1960s to the early 2000s, highlighting a "poetic documentary" tradition that emerged during the post-Stalinist era. By prioritizing subjectivity, formal experimentation, and visual virtuosity over Soviet propaganda, these filmmakers utilized the "poetic" as a form of political resistance and emancipation from state ideology. Featuring 52 films, the program connects this historical search for artistic freedom to contemporary geopolitical tensions, offering a profound look at how cinema serves as both a sensitive witness to reality and a sanctuary for the imagination  
 [Website](https://cinematheque-documentaire.org/programme/cycles/poetiques-baltes-estonie-lettonie-lituanie)
 
+## Exhibitions 🖼️
+
+**Ojārs Ābols. Man's Absurd Projects on Earth**  
+Dates: 2026-01-10 to 2026-05-10  
+Place: Riga, Latvia, Latvian National Museum of Art  
+Description: During his life, not a single personal exhibition of Ojārs Ābols’ oeuvre took place in Latvia, yet he actively participated in artists’ group exhibitions. After Ābols’ death, his wife Džemma Skulme continued the artistic processes they both had initiated in Latvia.  
+Released to coincide with Ojārs Ābols’ exhibition, Dr. art. Elita Ansone’s monographic study Ojārs Ābols. Man’s Absurd Projects on Earth aims to bring together both sides of Ābols’ life – the communist one and the pro-Western one, his conformism and his non-conformism, attempting to grasp who exactly was Ojārs Ābols.  
+[Website](https://lnmm.gov.lv/en/latvian-national-museum-of-art/exhibitions/mans-absurd-projects-on-earth-549)
+
 ## Quick Links 🔗
 
 Satori Survey: Joys and Disappointments in Latvian Cinema of 2025  
@@ -213,3 +230,5 @@ Produced by Nafta Films and Sofija Ķezbere. Production design Martins Straupe. 
 Latvian writer Nora Ikstena dies after suffering a serious illness, aged 56.  
 
 "The Year of Protests" — that is how the past year was [labeled by editors LRT](https://www.lrt.lt/en/news-in-english/19/2790089/2025-in-lrt-photos-a-year-of-protests), the national broadcaster which itself remains at the center of heated legislative [debates](https://www.lrt.lt/en/news-in-english/19/2794184/amendments-would-amount-to-censorship-journalists-to-boycott-working-group-on-lrt). The protests are set to [resume](https://www.facebook.com/events/3232902330212505/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22attachment%22%2C%22surface%22%3A%22newsfeed%22%7D]%2C%22ref_notif_type%22%3Anull%7D) after the New Year holidays. Meanwhile, some look back with shared happiness at the [vivid images](https://www.youtube.com/watch?v=XHjZfAu6xm0) of the past year, which saw civil society unite in front of the capital’s government buildings. [Others](https://www.facebook.com/share/p/1AH7UjCkgK/), however, are turning to the President, questioning how his silence — motivated by "non-interference in freedom of speech" — leaves that very freedom without any protection.
+
+Similarly, Andrejs Vīksna, the editor-in-chief of Satori, characterizes the past year in Latvia through his [year-end column](https://satori.lv/article/protestu-gads). In it, he remembers the crowds at Doma Square advocating for European values and rights, and a [survey](https://satori.lv/article/satori-aptauja-2025-gada-prieks-un-vilsanas-valoda) of Latvian writers and poets.
