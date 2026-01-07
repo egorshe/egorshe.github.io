@@ -1,9 +1,9 @@
 ---
 layout: digest-entry
 title: "2026 January. Digest #3"
-date: "2026-01-15"
+date: "2026-01-07"
 tags:
-draft: true
+draft: false
 locations:
   - title: "Conference: ceecon26"
     city: "Berlin"
