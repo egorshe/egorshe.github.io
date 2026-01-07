@@ -70,7 +70,7 @@ locations:
 - [Grants](#grants)
 - [Media & Podcasts](#media--podcasts-)
 - [Conferences](#conferences-)
-- [Festivals & Screenings](#festivals--screenings-))
+- [Festivals & Screenings](#festivals--screenings-)
 - [Exhibitions ️](#exhibitions-️)
 - [Quick Links](#quick-links-)
 - [News](#news-)
