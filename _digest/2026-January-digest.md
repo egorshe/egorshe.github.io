@@ -68,7 +68,7 @@ locations:
 - [Publications](#publications-)
 - [New Journal Issues](#new-journal-issues-)
 - [Grants](#grants)
-- [Media & Podcasts](#media-podcasts-)
+- [Media & Podcasts](#media--podcasts-)
 - [Conferences](#conferences-)
 - [Festivals & Screenings](#festivals-screenings-)
 - [Exhibitions ️](#exhibitions-)
