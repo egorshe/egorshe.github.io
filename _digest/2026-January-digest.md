@@ -76,9 +76,9 @@ locations:
 - [Publications 📚](#publications-)
 - [New Journal Issues 📖](#new-journal-issues-)
 - [Grants](#grants)
-- [Media \& Podcasts 🎧](#media--podcasts-)
+- [Media & Podcasts 🎧](#media--podcasts-)
 - [Conferences 📢](#conferences-)
-- [Festivals \& Screenings 🎬](#festivals--screenings-)
+- [Festivals & Screenings 🎬](#festivals--screenings-)
 - [Exhibitions 🖼️](#exhibitions-️)
 - [Quick Links 🔗](#quick-links-)
 - [News 📰](#news-)
@@ -153,12 +153,12 @@ The deadline is February 1, 2026.
 **Ieva Akuratere and Andris Slapiņš** (Video)  
 By: Garainis. Lsm.lv  
 What story builds a bridge between the voice of thunder and the lens of a camera? What paths has Ieva Akuratere trod together with director and cameraman Andris Slapiņš? The penultimate screening of the year for the documentary series 'Garainis'—tracking the struggle for freedom then and now, shamanism, Kapitālais remonts (Major Overhaul), friendship in a boat, and a dog.  
-[Watch/Listen](https://replay.lsm.lv/lv/skaties/ieraksts/ltv/368082/garainis-2-ieva-akuratere-un-andris-slapins)
+[Watch](https://replay.lsm.lv/lv/skaties/ieraksts/ltv/368082/garainis-2-ieva-akuratere-un-andris-slapins)
 
 **Minority Identity in Baltic Literature and Film** (Podcast)  
 By: Baltic Ways  
 This episode of the Baltic Ways podcast welcomes Dr. Liina-Ly Roos, assistant professor at the University of Wisconsin-Madison in the German, Nordic, Slavic+ department. The discussion centers on Liina-Ly’s recent book: The Not-Quite Child: Colonial Histories, Racialization, and Swedish Exceptionalism (University of Washington Press, 2025), in which she analyzes films and literature that portray Indigenous Sámi, Tornedalian, and Finnish-speaking children and how these figures disrupt the normative understanding of growing up in Sweden. These cultural texts are filled with tensions of assimilation, invisibility, and the struggle to grow in a society that demands conformity to a specific “Swedishness.” The discussion also considers parallels to the Baltic context. Dr. Roos is a graduate of the University of Washington and a grant recipient from the Association for the Advancement of Baltic Studies.  
-[Watch/Listen](https://fpribalticinitiative.substack.com/p/minority-identity-in-baltic-literature?publication_id=2366611&post_id=183564799&r=r7o79&triedRedirect=true)
+[Listen](https://fpribalticinitiative.substack.com/p/minority-identity-in-baltic-literature?publication_id=2366611&post_id=183564799&r=r7o79&triedRedirect=true)
 
 ## Conferences 📢
 
@@ -207,7 +207,8 @@ Description: The screening of the documentary Bridges of Time (2018, 78 min) wil
 **Mark Soosaar 80: Author’s evening**  
 Dates: 2026-01-14  
 Place: KUMU  
-Description: Mark Soosaar is a documentary film-maker whose evocative and poetic films introduced a level of subjectivity never seen before. Soosaar is the founder of the Pärnu Museum of New Art, an organiser of the Pärnu Film Festival, a promoter of cinematic and visual arts, and a spokesperson for Kihnu culture. He will turn 80 on 12 January, and audiences will be treated to one of his masterpieces, Earthly Desires (Maised ihad, 1977), and the newly restored Harbour in the Mist (Sadam udus, 1986).
+Description: Mark Soosaar is a documentary film-maker whose evocative and poetic films introduced a level of subjectivity never seen before. Soosaar is the founder of the Pärnu Museum of New Art, an organiser of the Pärnu Film Festival, a promoter of cinematic and visual arts, and a spokesperson for Kihnu culture. He will turn 80 on 12 January, and audiences will be treated to one of his masterpieces, Earthly Desires (Maised ihad, 1977), and the newly restored Harbour in the Mist (Sadam udus, 1986).  
+[FB link](https://www.facebook.com/events/1530673088549159)
 
 **Poétiques Baltes • Estonie, Lettonie, Lituanie**  
 Dates: 2026-01-07 to 2026-01-18  
