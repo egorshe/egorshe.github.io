@@ -765,8 +765,18 @@ function updateMarkers() {
     markers.forEach(marker => {
         const matchesType = activeType === 'all' || marker.options.type === activeType;
         const matchesCountry = activeCountry === 'all' || marker.options.country === activeCountry;
-        const matchesUpcoming = !showUpcomingOnly ||
-            (marker.options.type === 'digest' && marker.options.isUpcoming);
+        
+        let matchesUpcoming = true;
+        
+        if (showUpcomingOnly) {
+            // When checkbox is checked: only show upcoming digest events
+            matchesUpcoming = (marker.options.type === 'digest' && marker.options.isUpcoming);
+        } else {
+            // Default: show all posts/projects, but only upcoming digest events
+            if (marker.options.type === 'digest') {
+                matchesUpcoming = marker.options.isUpcoming;
+            }
+        }
 
         if (matchesType && matchesCountry && matchesUpcoming) {
             if (showUpcomingOnly && marker.options.type === 'digest') {
