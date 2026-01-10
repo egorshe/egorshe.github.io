@@ -61,19 +61,27 @@ locations:
     date: "2026-01-10 to 2026-05-10"
     coords: [56.95595770529403, 24.113531277127137]
     description: "During his life, not a single personal exhibition of Ojārs Ābols’ oeuvre took place in Latvia, yet he actively participated in artists’ group exhibitions. After Ābols’ death, his wife Džemma Skulme continued the artistic processes they both had initiated in Latvia. Released to coincide with Ojārs Ābols’ exhibition, Dr. art. Elita Ansone’s monographic study Ojārs Ābols. Man’s Absurd Projects on Earth aims to bring together both sides of Ābols’ life – the communist one and the pro-Western one, his conformism and his non-conformism, attempting to grasp who exactly was Ojārs Ābols."
+  - title: "Screening: Mark Soosaar 80"
+    city: "Tallinn"
+    venue: "KUMU"
+    country: "Estonia"
+    date: "2026-01-14"
+    coords: [59.436309844915705, 24.796212628859852]
+    description: "He will turn 80 on 12 January, and audiences will be treated to one of his masterpieces, Earthly Desires (Maised ihad, 1977), and the newly restored Harbour in the Mist (Sadam udus, 1986)."
 ---
 
 ## Jump to
 
-- [Publications](#publications-)
-- [New Journal Issues](#new-journal-issues-)
+- [Jump to](#jump-to)
+- [Publications 📚](#publications-)
+- [New Journal Issues 📖](#new-journal-issues-)
 - [Grants](#grants)
-- [Media & Podcasts](#media--podcasts-)
-- [Conferences](#conferences-)
-- [Festivals & Screenings](#festivals--screenings-)
-- [Exhibitions ️](#exhibitions-️)
-- [Quick Links](#quick-links-)
-- [News](#news-)
+- [Media \& Podcasts 🎧](#media--podcasts-)
+- [Conferences 📢](#conferences-)
+- [Festivals \& Screenings 🎬](#festivals--screenings-)
+- [Exhibitions 🖼️](#exhibitions-️)
+- [Quick Links 🔗](#quick-links-)
+- [News 📰](#news-)
 
 ## Publications 📚
 
@@ -195,6 +203,11 @@ Dates: 2026-01-16
 Place: Riga, Latvia, Film Museum  
 Description: The screening of the documentary Bridges of Time (2018, 78 min) will be followed by a discussion with directors Kristīne Briede and Audrius Stonis, moderated by Jānis Putniņš. In addition to exploring the featured film, the conversation will provide insight into the upcoming project Hercs Franks: Life After Death by Audrius Stonis. The event is free of charge and will be conducted in both Latvian and English.  
 [Website](https://www.facebook.com/events/1219307820139854?active_tab=about)
+
+**Mark Soosaar 80: Author’s evening**  
+Dates: 2026-01-14  
+Place: KUMU  
+Description: Mark Soosaar is a documentary film-maker whose evocative and poetic films introduced a level of subjectivity never seen before. Soosaar is the founder of the Pärnu Museum of New Art, an organiser of the Pärnu Film Festival, a promoter of cinematic and visual arts, and a spokesperson for Kihnu culture. He will turn 80 on 12 January, and audiences will be treated to one of his masterpieces, Earthly Desires (Maised ihad, 1977), and the newly restored Harbour in the Mist (Sadam udus, 1986).
 
 **Poétiques Baltes • Estonie, Lettonie, Lituanie**  
 Dates: 2026-01-07 to 2026-01-18  
