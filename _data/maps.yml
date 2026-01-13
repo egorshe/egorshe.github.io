@@ -55,6 +55,16 @@
   category: "history"
   country: "lithuania"
   period: "contemporary"
+
+- title: "Jonas Šliūpas' proposed LT-LV Union state"
+  image: "/assets/img/maps/Jonas-Sliupas-union-state.jpg"
+  description: "In 1915, Jonas Šliūpas proposed a bi-national federation of Lithuania and Latvia. He argued that since the two nations shared common linguistic roots and faced the same threats of Russification and Germanization, they should unite into a single democratic republic modeled after Switzerland or the United States."
+  source: "John Szlupas, Lithuania in Retrospect and Prospect"
+  link: "https://en.wikipedia.org/wiki/Jonas_%C5%A0li%C5%ABpas#/media/File:Map_of_Lithuania-Latvia_by_%C5%A0li%C5%ABpas.jpg"
+  link_text: "The map in Wikipedia"
+  category: "imaginary"
+  country: "lithuania"
+  period: "20th-century"
 # ============================================
 # To add a new map:
 # ============================================
