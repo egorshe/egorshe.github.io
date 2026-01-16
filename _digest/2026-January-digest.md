@@ -68,6 +68,13 @@ locations:
     date: "2026-01-14"
     coords: [59.436309844915705, 24.796212628859852]
     description: "He will turn 80 on 12 January, and audiences will be treated to one of his masterpieces, Earthly Desires (Maised ihad, 1977), and the newly restored Harbour in the Mist (Sadam udus, 1986)."
+  - title: "DOCPOINT Tallinn"
+    city: "Tallinn"
+    venue: "Kino Sõprus"
+    country: "Estonia"
+    date: "2026-02-03 to 2026-02-08"
+    coords: [59.435256785467736, 24.745219006122568]
+    description: "DocPoint Tallinn is organized in collaboration with the DocPoint Helsinki Documentary Film Festival. The festival takes place in two capitals simultaneously and the programs include a combination of national and international documentary films from the recent years."
 ---
 
 ## Jump to
@@ -214,7 +221,13 @@ Description: Mark Soosaar is a documentary film-maker whose evocative and poetic
 Dates: 2026-01-07 to 2026-01-18  
 Place: Paris, France, Forum des images, Centre Wallonie-Bruxelles, MK2 Bibliothèque, and other locations  
 Description: This retrospective explores Baltic cinema (Estonia, Latvia, and Lithuania) from the 1960s to the early 2000s, highlighting a "poetic documentary" tradition that emerged during the post-Stalinist era. By prioritizing subjectivity, formal experimentation, and visual virtuosity over Soviet propaganda, these filmmakers utilized the "poetic" as a form of political resistance and emancipation from state ideology. Featuring 52 films, the program connects this historical search for artistic freedom to contemporary geopolitical tensions, offering a profound look at how cinema serves as both a sensitive witness to reality and a sanctuary for the imagination  
-[Website](https://cinematheque-documentaire.org/programme/cycles/poetiques-baltes-estonie-lettonie-lituanie)
+[Website](https://cinematheque-documentaire.org/programme/cycles/poetiques-baltes-estonie-lettonie-lituanie)  
+
+**DOCPOINT TALLINN**  
+Dates: 2026-02-03 to 2026-02-08  
+Place: Kino Sõprus, Kino Artis  
+Description: 38 top-tier films, including the long-planned Pirjo Honkasalo focus and masterclass, award-winners from last year’s festivals, currently trending and timeless topics, some new Estonian releases, and much more.  
+[Check out the program on the DocPoint website](https://docpoint.ee/en/films/)  
 
 ## Exhibitions 🖼️
 
