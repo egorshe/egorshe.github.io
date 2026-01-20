@@ -226,6 +226,12 @@ Place: Paris, France, Forum des images, Centre Wallonie-Bruxelles, MK2 Biblioth�
 Description: This retrospective explores Baltic cinema (Estonia, Latvia, and Lithuania) from the 1960s to the early 2000s, highlighting a "poetic documentary" tradition that emerged during the post-Stalinist era. By prioritizing subjectivity, formal experimentation, and visual virtuosity over Soviet propaganda, these filmmakers utilized the "poetic" as a form of political resistance and emancipation from state ideology. Featuring 52 films, the program connects this historical search for artistic freedom to contemporary geopolitical tensions, offering a profound look at how cinema serves as both a sensitive witness to reality and a sanctuary for the imagination  
 [Website](https://cinematheque-documentaire.org/programme/cycles/poetiques-baltes-estonie-lettonie-lituanie)  
 
+Lithuanian films at **Trieste Film Festival**  
+Dates: 2026-01-16 to 2026-01-24  
+Place: CINEMA AMBASCIATORI, POLITEAMA ROSSETTI  
+Description: This year, three Lithuanian films are competing in the festival's competition programs: Vytautas Katkus’s „Svečias“, Gabrielė Urbonaitė’s „Renovacija“, and the Lithuanian co-production „Gruodis“ (co-prod. Dagnė Vildžiūnaitė). The festival also features Šarūnas Bartas’s documentary essay „Lagūna“, Romas Zabarauskas’s detective drama „Aktyvistas“, the Lithuanian co-production „Du prokurorai“ (co-prod. Uljana Kim), and Gediminas Skvarnavičius’s short film „Ko ašaroja Medėja“ (1979). In the industry-focused event "When East Meets West," the latest projects are being presented: Lina Lužytė’s „Kapeika“, Kristijonas Vildžiūnas’s „Daisčingomatas“, and the Lithuanian co-production „Dabar matai“ (co-prod. Rasa Miškinytė). As is the case every year, a prize dedicated to co-developed Baltic and Italian film projects will be awarded during the event.  
+[Full programme](https://triestefilmfestival.it/wp-content/uploads/2026/01/PROGRAMMA-TSFF37-2026-WEB-DEF7.pdf)  
+
 **DOCPOINT TALLINN**  
 Dates: 2026-02-03 to 2026-02-08  
 Place: Kino Sõprus, Kino Artis  
