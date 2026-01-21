@@ -156,7 +156,11 @@ This issue of Acta Academiae Artium Vilnensis is dedicated to exploring the conc
 
 AABS 2026-2027 Grants and Fellowships  
 The deadline is February 1, 2026.  
-[Apply](https://aabs-balticstudies.org/2025/12/07/2026-grants-cfa/)
+[Apply](https://aabs-balticstudies.org/2025/12/07/2026-grants-cfa/)  
+
+The National Archives of Estonia is calling for grant applications in the field of collection, preservation, and publication of Estonian cultural heritage created by expatriates or about expatriates.  
+The deadline is February 4, 2026  
+[Apply](https://www.balther.net/the-national-archives-of-estonia-is-calling-for-grant-applications/)  
 
 ## Media & Podcasts 🎧
 
