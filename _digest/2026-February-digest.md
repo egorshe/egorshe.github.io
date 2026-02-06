@@ -1,7 +1,7 @@
 ---
 layout: digest-entry
 title: "February 2026. Digest #4"
-date: 2026-02-06
+date: "2026-02-06"
 tags: []
 draft: false
 locations:
