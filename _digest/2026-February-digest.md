@@ -39,6 +39,13 @@ locations:
       - 56.96652168057533
       - 24.135779693291315
     description: Celebrating the Legacy of Aivars Freimanis Cinema enthusiasts are invited to a special birthday commemorative evening honoring the legendary Latvian film director Aivars Freimanis (1936–2018). The event will feature a retrospective of film excerpts and personal memories, alongside a showcase of contemporary cinematic etudes produced by LKA National Film School students during the "Kuldīga Frescoes 2025" international workshop. Admission is free for all attendees to celebrate this icon of Latvian film.
+  - title: "Talk: Lost in the 90s: Film Heritage in Transition"
+    city: "Berlin"
+    venue: "Deutsche Kinemathek – Halle"
+    country: "Germany"
+    date: "2026-02-14"
+    coords: [52.50870951535636, 13.387156164430156]
+    description: "This year's Retrospective, “Lost in the 90s”, tackles not just aesthetics and the zeitgeist, but also the lost heritage of films from the post-communist era: the turbulent period in central and eastern Europe when state production and archival structures were in flux, and film studios privatised or sold off, so that many works were not centrally catalogued or stored. The successor states of the former Soviet Union, such as Ukraine and Georgia, lost direct access to their own cultural heritage in the 1990s – even now, countless original negatives are stored in Russian archives. Heleen Gerritsen in discussion with archivists and representatives of film heritage institutions in central and eastern Europe. The discussion focuses on (re)discoveries, lost films and the challenges of clarifying legal rights. The panel will also look at experiences with state security services and gaining access to holdings from the Cold War era."
 ---
 
 ## Jump to
@@ -46,6 +53,7 @@ locations:
 - [Publications](#publications-)
 - [New Journal Issues](#new-journal-issues-)
 - [Festivals & Screenings](#festivals-screenings-)
+- [Talks & Workshops](#talks-workshops-)
 - [Jobs](#jobs-)
 - [Grants](#grants)
 - [Call for Papers](#call-for-papers-)
@@ -132,6 +140,15 @@ Dates: 2026-02-13
 Place: Berlin, Germany  
 Description: There is a murder at a snowed-in mountain hotel. Could supernatural forces be at work here? This genre-busting film noir with elements of fantasy is based on the eponymous book by legendary Soviet writing duo Arkady and Boris Strugatsky.  
 [Website](https://www.berlinale.de/en/2026/programme/202602126.html)
+
+## Talks & Workshops 🎤
+
+**Lost in the 90s: Film Heritage in Transition**  
+Presenters: Heleen Gerritsen, Tomasz Kolankiewicz, Ivan Kozlenko, Stefanie Eckert, Eva Näripea  
+Date: 2026-02-14 at 14:00  
+Place: Berlin, Germany, Deutsche Kinemathek – Halle  
+This year's Retrospective, “Lost in the 90s”, tackles not just aesthetics and the zeitgeist, but also the lost heritage of films from the post-communist era: the turbulent period in central and eastern Europe when state production and archival structures were in flux, and film studios privatised or sold off, so that many works were not centrally catalogued or stored. The successor states of the former Soviet Union, such as Ukraine and Georgia, lost direct access to their own cultural heritage in the 1990s – even now, countless original negatives are stored in Russian archives.
+Heleen Gerritsen in discussion with archivists and representatives of film heritage institutions in central and eastern Europe. The discussion focuses on (re)discoveries, lost films and the challenges of clarifying legal rights. The panel will also look at experiences with state security services and gaining access to holdings from the Cold War era. 
 
 ## Jobs 🚀
 
