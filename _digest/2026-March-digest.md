@@ -144,6 +144,8 @@ On 21 February, LSM announced the winners of the annual *Kilograms Kultūras* aw
 Jānis Streičs—the Latvian film director and author of This Dangerous Balcony Door (1976), a symbol of the Soviet Stagnation era, and A Limousine the Colour of Midsummer's Eve, a movie every Latvian has watched many times—has passed away at the age of 89.  
 Starting March 7, fans of Jānis Streičs worldwide can stream his film collection for free on the [films.lv portal](https://www.filmas.lv/rezisora-jana-streica-pieminas-izlase/).
 
+Estonian cinema has lost one of its most influential figures. Director and screenwriter Peeter Simm passed away on March 12 after a long illness.
+
 According to the Lithuania Film Centre, in 2025 film productions using the Film Tax Incentive received €25.6 million in investments from Lithuanian companies. This amount was nearly 42% higher than in 2024 and almost 22% higher than in 2023, which had previously been the most successful year to date.
 
 The 6th International Documentary Film Festival IDFF Artdocfest/Riga has concluded and announced the winners of its two competition programmes — Baltic Focus and Artdocfest OPEN.  
