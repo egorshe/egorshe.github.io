@@ -27,6 +27,7 @@ order: 1
 ## Databases and VOD platforms
 - [Eesti Filmi Andmebaas](https://www.efis.ee/en)
 - [Arkaader](https://arkaader.ee/landing/br/rHczO7kKnl)
+- [Estonian Film Institute's mediateque](https://classics.filmi.ee/movies/)
 - [ERR](https://jupiter.err.ee/filmid)
 - [ERR-archive](https://arhiiv.err.ee/)
 - [Anthill](https://anthill.ucoz.de/) -- vast collection of Estonian mostly Soviet era films (interface in Russian)
