@@ -1,14 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.9)
+    addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     base64 (0.3.0)
     bibtex-ruby (6.2.0)
       latex-decode (~> 0.0)
       logger (~> 1.7)
       racc (~> 1.7)
-    bigdecimal (4.1.0)
+    bigdecimal (4.1.1)
     citeproc (1.1.0)
       date
       forwardable
@@ -161,21 +161,21 @@ GEM
     rexml (3.4.4)
     rouge (4.7.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.98.0-aarch64-linux-gnu)
+    sass-embedded (1.97.3-aarch64-linux-gnu)
       google-protobuf (~> 4.31)
-    sass-embedded (1.98.0-aarch64-linux-musl)
+    sass-embedded (1.97.3-aarch64-linux-musl)
       google-protobuf (~> 4.31)
-    sass-embedded (1.98.0-arm-linux-gnueabihf)
+    sass-embedded (1.97.3-arm-linux-gnueabihf)
       google-protobuf (~> 4.31)
-    sass-embedded (1.98.0-arm-linux-musleabihf)
+    sass-embedded (1.97.3-arm-linux-musleabihf)
       google-protobuf (~> 4.31)
-    sass-embedded (1.98.0-arm64-darwin)
+    sass-embedded (1.97.3-arm64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.98.0-x86_64-darwin)
+    sass-embedded (1.97.3-x86_64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.98.0-x86_64-linux-gnu)
+    sass-embedded (1.97.3-x86_64-linux-gnu)
       google-protobuf (~> 4.31)
-    sass-embedded (1.98.0-x86_64-linux-musl)
+    sass-embedded (1.97.3-x86_64-linux-musl)
       google-protobuf (~> 4.31)
     set (1.1.2)
     singleton (0.3.0)
@@ -210,6 +210,7 @@ DEPENDENCIES
   jekyll-target-blank
   jekyll-toc
   logger
+  sass-embedded (= 1.97.3)
 
 BUNDLED WITH
    2.7.2

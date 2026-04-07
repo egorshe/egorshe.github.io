@@ -6,6 +6,7 @@ source "https://rubygems.org"
 gem 'jekyll', '~> 4.2' # Specify the version used by your theme or project
 gem 'jekyll-seo-tag'
 gem 'jekyll-sitemap'
+gem "sass-embedded", "1.97.3"
 
 group :jekyll_plugins do
   gem 'jekyll-feed'
