@@ -522,8 +522,8 @@ const locations = [
         {
             title: {{ post.title | jsonify }},
             subtitle: {{ loc.venue | default: loc.city | jsonify }},
-            lat: {{ loc.coords[0] | default: loc.lat }},
-            lng: {{ loc.coords[1] | default: loc.lng }},
+            lat: {{ loc.coords[0] | default: loc.lat | default: 'null' }},
+            lng: {{ loc.coords[1] | default: loc.lng | default: 'null' }},
             coords: {{ loc.coords | jsonify }},
             country: {{ loc.country | jsonify }},
             type: "posts",
@@ -536,8 +536,8 @@ const locations = [
     {% elsif post.location %}
     {
         title: {{ post.title | jsonify }},
-        lat: {{ post.location.coords[0] | default: post.location.lat }},
-        lng: {{ post.location.coords[1] | default: post.location.lng }},
+        lat: {{ post.location.coords[0] | default: post.location.lat | default: 'null' }},
+        lng: {{ post.location.coords[1] | default: post.location.lng | default: 'null' }},
         coords: {{ post.location.coords | jsonify }},
         country: {{ post.location.country | jsonify }},
         type: "posts",
@@ -554,8 +554,8 @@ const locations = [
     {% if project.location %}
     {
         title: {{ project.title | jsonify }},
-        lat: {{ project.location.coords[0] | default: project.location.lat }},
-        lng: {{ project.location.coords[1] | default: project.location.lng }},
+        lat: {{ project.location.coords[0] | default: project.location.lat | default: 'null' }},
+        lng: {{ project.location.coords[1] | default: project.location.lng | default: 'null' }},
         coords: {{ project.location.coords | jsonify }},
         country: {{ project.location.country | jsonify }},
         type: "projects",
@@ -572,8 +572,8 @@ const locations = [
         {
             title: {{ loc.title | default: item.title | jsonify }},
             subtitle: {{ loc.venue | default: loc.city | jsonify }},
-            lat: {{ loc.coords[0] | default: loc.lat }},
-            lng: {{ loc.coords[1] | default: loc.lng }},
+            lat: {{ loc.coords[0] | default: loc.lat | default: 'null' }},
+            lng: {{ loc.coords[1] | default: loc.lng | default: 'null' }},
             coords: {{ loc.coords | jsonify }},
             country: {{ loc.country | jsonify }},
             type: "digest",
@@ -586,8 +586,8 @@ const locations = [
     {% elsif item.location %}
     {
         title: {{ item.title | jsonify }},
-        lat: {{ item.location.coords[0] | default: item.location.lat }},
-        lng: {{ item.location.coords[1] | default: item.location.lng }},
+        lat: {{ item.location.coords[0] | default: item.location.lat | default: 'null' }},
+        lng: {{ item.location.coords[1] | default: item.location.lng | default: 'null' }},
         coords: {{ item.location.coords | jsonify }},
         country: {{ item.location.country | jsonify }},
         type: "digest",
