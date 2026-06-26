@@ -1,0 +1,491 @@
+$document-metadata.latex()$
+$passoptions.latex()$
+\documentclass[12pt, letterpaper]{report}
+$if(beamerarticle)$
+\usepackage{beamerarticle}
+$endif$
+\usepackage{xcolor}
+\usepackage{fontspec}
+\setmainfont{$if(mainfont)$$mainfont$$else$Times New Roman$endif$}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+$if(cancel)$
+\usepackage{cancel}
+$endif$
+
+\usepackage{etoolbox}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+
+% --- Custom Spacing & Alignment Fixes for Backmatter ---
+% We use \AtBeginDocument to safely overwrite Pandoc's injected bibliography environment
+\AtBeginDocument{
+  \renewenvironment{CSLReferences}[2]
+    {\begin{singlespacing}
+     \begin{list}{}{%
+       \setlength{\leftmargin}{0.5in}
+       \setlength{\itemindent}{-0.5in}
+       \setlength{\topsep}{0pt}
+       \setlength{\partopsep}{0pt}
+       \setlength{\itemsep}{0pt}
+       \setlength{\parsep}{0pt}
+     }}
+    {\end{list}\end{singlespacing}}
+}
+
+% Creates a custom container to force Filmographies to be flush-left with zero indents
+\newenvironment{filmography}
+  {\begin{singlespacing}%
+   \begin{list}{}{%
+     \setlength{\leftmargin}{0pt}%
+     \setlength{\itemindent}{0pt}%
+     \setlength{\topsep}{0pt}%
+     \setlength{\partopsep}{0pt}%
+     \setlength{\itemsep}{0.6em}%
+     \setlength{\parsep}{0pt}%
+     \setlength{\labelsep}{0pt}%
+     \setlength{\labelwidth}{0pt}%
+   }}
+  {\end{list}\end{singlespacing}}
+
+%% ── SINGLE-SPACING & SYMMETRIC BLOCKQUOTE SPACING ───────────────────────────
+\usepackage{footmisc} 
+\renewenvironment{quote}
+  {\par\addvspace{12pt}
+   \list{}{%
+     \leftmargin=0.5in
+     \rightmargin=0.5in
+     \topsep=0pt
+     \partopsep=0pt
+     \parsep=6pt   
+     \itemsep=0pt
+   }%
+   \item\relax
+   \singlespacing}
+  {\endlist\par\addvspace{12pt}}
+
+%% ── GLOBAL PAGE NUMBERING & HEADERS (Bottom-Right, Blank Top) ────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage} 
+\renewcommand{\headrulewidth}{0.0pt} 
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[R]{\thepage}
+  \renewcommand{\headrulewidth}{0.0pt}
+}
+
+%% ── MODERN HEADING CONTROL (Unified via titlesec) ───────────────────────────
+\usepackage[normalem]{ulem} 
+\usepackage{titlesec}
+\usepackage{titletoc}
+
+% H1 (Chapters) - 12pt, Regular (not bold), Centered
+\titleformat{\chapter}[block]
+  {\normalfont\normalsize\centering}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\chapter}{0pt}{0pt}{14pt}
+
+% H2 (Sections) - 12pt, Regular, Left-Aligned, Underlined
+\titleformat{\section}[block]
+  {\normalfont\normalsize\raggedright}
+  {}
+  {0pt}
+  {\uline}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% H3 (Subsubsections) - 12pt, Regular, Left-Aligned
+\titleformat{\subsection}[block]
+  {\normalfont\normalsize\raggedright}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\subsection}{0pt}{16pt}{6pt}
+
+%% ── CLEAN TOC & LOF VISUAL ALIGNMENT ─────────────────────────────────────────
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$2$endif$}%
+  \@starttoc{toc}%
+}
+\renewcommand{\listoffigures}{%
+  \@starttoc{lof}%
+}
+\makeatother
+
+\titlecontents{chapter}
+  [0em] {\addvspace{1.5em}\normalfont\normalsize} {} {} {\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{section}
+  [1.5em] {\addvspace{0em}\normalfont\normalsize} {} {} {\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{subsection}
+  [3.0em] {\addvspace{0em}\normalfont\normalsize} {} {} {\titlerule*[0.5pc]{.}\contentspage}
+
+% Formats List of Figures entries cleanly as "Figure X. Title..."
+\titlecontents{figure}
+  [0em] {\addvspace{0.5em}\normalfont\normalsize} {Figure~\thecontentslabel.\quad} {} {\titlerule*[0.5pc]{.}\contentspage}
+
+
+%% ── CONCORDIA UNIVERSITY THESIS METADATA STRUCTURING ─────────────────────────
+\makeatletter
+\newcommand{\subtitle}[1]{\def\@subtitle{#1}}
+\def\@subtitle{}
+
+\renewcommand{\maketitle}{
+\newpage
+\thispagestyle{empty}
+\begin{titlepage}
+\centering
+\vspace*{0.5in}
+
+$if(subtitle)$
+  $if(subtitle-same-line)$
+    {\normalsize \@title: \@subtitle \par}
+  $else$
+    {\normalsize \@title: \par}
+    \vspace{0.05in}
+    {\normalsize \@subtitle \par}
+  $endif$
+$else$
+  {\normalsize \@title \par}
+$endif$
+
+\vspace{0.3in}
+
+{\normalsize \@author \par}
+
+\vspace{0.6in}
+
+$if(department-inline)$
+{\normalsize A \@documenttype \par}
+\vspace{0.03in}
+{\normalsize in \par}
+\vspace{0.03in}
+{\normalsize \@department \par}
+$else$
+{\normalsize A \@documenttype \par}
+\vspace{0.03in}
+{\normalsize In the Department \par}
+\vspace{0.03in}
+{\normalsize Of \par}
+\vspace{0.03in}
+{\normalsize \@department \par}
+$endif$
+
+\vspace{0.6in}
+
+{\normalsize Presented in Partial Fulfillment of the Requirements \par}
+\vspace{0.03in}
+{\normalsize For the Degree of \par}
+\vspace{0.03in}
+{\normalsize \@degreename\ (\@specialization) \par}
+\vspace{0.03in}
+{\normalsize at \@universityname \par}
+\vspace{0.03in}
+{\normalsize \@universitylocation \par}
+
+\vfill
+{\normalsize \@submissiondate \par}
+\vspace{0.15in}
+{\normalsize \textcopyright\ \@author, \@copyrightyear \par}
+\end{titlepage}
+}
+
+\newcommand{\department}[1]{\def\@department{#1}}
+\newcommand{\specialization}[1]{\def\@specialization{#1}}
+\newcommand{\submissiondate}[1]{\def\@submissiondate{#1}}
+\newcommand{\copyrightyear}[1]{\def\@copyrightyear{#1}}
+\newcommand{\universityname}[1]{\def\@universityname{#1}}
+\newcommand{\universitylocation}[1]{\def\@universitylocation{#1}}
+\newcommand{\documenttype}[1]{\def\@documenttype{#1}}
+\newcommand{\documenttypelc}[1]{\def\@documenttypelc{#1}}
+\newcommand{\degreename}[1]{\def\@degreename{#1}}
+\newcommand{\schoolname}[1]{\def\@schoolname{#1}}
+
+\department{Your Department}
+\specialization{Your Specialization}
+\submissiondate{Month and Year}
+\copyrightyear{\the\year}
+\universityname{Your University}
+\universitylocation{City, Province/State, Country}
+\documenttype{Thesis}
+\documenttypelc{thesis}
+\degreename{Doctor of Philosophy}
+\schoolname{School of Graduate Studies}
+
+\newcommand{\makeproposalpage}{
+\newpage
+\thispagestyle{empty}
+\setcounter{page}{2}
+\begin{center}
+{\normalsize \bfseries \@universityname \par}
+{\normalsize \bfseries \@schoolname \par}
+\end{center}
+
+\vspace{10pt}
+\noindent{\normalsize This is to certify that the \@documenttypelc\ prepared}
+\vspace{8pt}
+
+\noindent\makebox[2.2cm][l]{By:}\textbf{\@author}
+\vspace{6pt}
+
+$if(subtitle)$
+  $if(subtitle-same-line)$
+\noindent\makebox[2.2cm][l]{Entitled:}\textbf{\@title: \@subtitle}
+  $else$
+\noindent\makebox[2.2cm][l]{Entitled:}\textbf{\@title:}
+\noindent\hspace{2.2cm}\textbf{\@subtitle}
+  $endif$
+$else$
+\noindent\makebox[2.2cm][l]{Entitled:}\textbf{\@title}
+$endif$
+
+\vspace{10pt}
+\noindent{\normalsize and submitted in partial fulfillment of the requirements for the degree of}
+\vspace{6pt}
+\begin{center}
+{\normalsize \textbf{\MakeUppercase{\@degreename} (\@specialization)}}
+\end{center}
+
+\vspace{6pt}
+\noindent{\normalsize complies with the regulations of the University and meets the accepted standards with respect to originality and quality.}
+\vspace{10pt}
+\noindent{\normalsize Signed by the final examining committee:}
+\vspace{6pt}
+
+\noindent
+\begin{tabular}{@{}p{1.5cm}p{8.5cm}p{3.5cm}@{}}
+& \hrulefill & Chair \\
+& \textit{\@chairname} & \\[0.05cm]
+& \hrulefill & External Examiner \\
+& \textit{\@externalexaminer} & \\[0.05cm]
+& \hrulefill & Examiner \\
+& \textit{\@examinerone} & \\[0.05cm]
+& \hrulefill & Examiner \\
+& \textit{\@examinertwo} & \\[0.05cm]
+& \hrulefill & Examiner \\
+& \textit{\@examinerthree} & \\[0.05cm]
+& \hrulefill & Thesis Supervisor \\
+& \textit{\@supervisor} & \\
+\end{tabular}
+
+\vspace{10pt}
+\noindent Approved by \underline{\hspace{9cm}}
+\vspace{2pt}
+\begin{center}
+{\normalsize \@gradprogramdirector, Graduate Program Director \par}
+\end{center}
+
+\vspace{10pt}
+$if(dateofdefence)$
+\noindent $dateofdefence$ \underline{\hspace{7.5cm}}
+$else$
+\noindent {[Month/day/year]} \underline{\hspace{7cm}}
+$endif$
+\vspace{2pt}
+\begin{center}
+{\normalsize \@deanname, Dean, \@facultyname \par}
+\end{center}
+}
+\makeatother
+
+\makeatletter
+\newcommand{\chairname}[1]{\def\@chairname{#1}}
+\newcommand{\externalexaminer}[1]{\def\@externalexaminer{#1}}
+\newcommand{\examinerone}[1]{\def\@examinerone{#1}}
+\newcommand{\examinertwo}[1]{\def\@examinertwo{#1}}
+\newcommand{\examinerthree}[1]{\def\@examinerthree{#1}}
+\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
+\newcommand{\gradprogramdirector}[1]{\def\@gradprogramdirector{#1}}
+\newcommand{\deanname}[1]{\def\@deanname{#1}}
+\newcommand{\facultyname}[1]{\def\@facultyname{#1}}
+\newcommand{\dateofdefence}[1]{\def\@dateofdefence{#1}}
+
+\chairname{Chair's Name}
+\externalexaminer{Examiner's Name}
+\examinerone{Examiner's Name}
+\examinertwo{Examiner's Name}
+\examinerthree{Examiner's Name}
+\supervisor{Supervisor's Name}
+\gradprogramdirector{Graduate Program Director}
+\deanname{Dean's Name}
+\facultyname{Faculty Name}
+\dateofdefence{DD/MM/YYYY}
+\makeatother
+
+$if(numbersections)$
+\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$else$
+\setcounter{secnumdepth}{-\maxdimen}
+$endif$
+\setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$2$endif$}
+$fonts.latex()$
+$font-settings.latex()$
+$common.latex()$
+$for(header-includes)$
+$header-includes$
+$endfor$
+$after-header-includes.latex()$
+$hypersetup.latex()$
+
+$if(pdf-trailer-id)$
+\ifXeTeX
+\special{pdf:trailerid [ $pdf-trailer-id$ ]}
+\fi
+\ifPDFTeX
+\pdftrailerid{}
+\pdftrailer{/ID [ $pdf-trailer-id$ ]}
+\fi
+\ifLuaTeX
+\pdfvariable trailerid {[ $pdf-trailer-id$ ]}
+\fi
+$endif$
+
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+\date{$date$}
+
+%% ─────────────────────────────────────────────────────────────────────────────
+%%  DOCUMENT MAIN EXECUTION BODY
+%% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+$if(title)$
+\department{$department$}
+\specialization{$specialization$}
+\submissiondate{$submissionmonth$ $submissionyear$}
+\copyrightyear{$copyrightyear$}
+$if(universityname)$\universityname{$universityname$}$endif$
+$if(universitylocation)$\universitylocation{$universitylocation$}$endif$
+$if(documenttype)$\documenttype{$documenttype$}$endif$
+$if(documenttypelc)$\documenttypelc{$documenttypelc$}$endif$
+$if(degreename)$\degreename{$degreename$}$endif$
+$if(schoolname)$\schoolname{$schoolname$}$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(chairname)$\chairname{$chairname$}$endif$
+$if(externalexaminer)$\externalexaminer{$externalexaminer$}$endif$
+$if(examinerone)$\examinerone{$examinerone$}$endif$
+$if(examinertwo)$\examinertwo{$examinertwo$}$endif$
+$if(examinerthree)$\examinerthree{$examinerthree$}$endif$
+$if(supervisor)$\supervisor{$supervisor$}$endif$
+$if(gradprogramdirector)$\gradprogramdirector{$gradprogramdirector$}$endif$
+$if(deanname)$\deanname{$deanname$}$endif$
+$if(facultyname)$\facultyname{$facultyname$}$endif$
+$if(dateofdefence)$\dateofdefence{$dateofdefence$}$endif$
+\maketitle
+\makeproposalpage
+
+%% ── FRONTMATTER STEP 1: ROMAN NUMERALS ───────────────────────────────────────
+\newpage
+\pagenumbering{roman}
+\setcounter{page}{3}
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{0pt}
+\setstretch{1.5} % Global 1.5 spacing for text blocks
+
+$if(abstract)$
+\chapter*{Abstract} 
+\vspace{0.15in}
+\noindent{\textbf{$title$$if(subtitle)$: $subtitle$$endif$}}\par
+\vspace{0.15in}
+\noindent{\textbf{$author$$if(degree)$, $degree$$endif$}}\par
+\noindent{\textbf{$institution$$if(year)$, $year$$endif$}}\par
+\vspace{0.3in}
+$abstract$
+$endif$
+
+$if(summary)$
+\chapter*{Summary}
+$summary$
+$endif$
+
+$if(acknowledgements)$
+\chapter*{Acknowledgements} 
+$acknowledgements$
+$endif$
+
+$if(dedication)$
+\chapter*{Dedication}
+\begin{flushright}
+$dedication$
+\end{flushright}
+$endif$
+
+$if(contributions)$
+\chapter*{Contribution of Authors}
+$contributions$
+$endif$
+
+$endif$
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+%% ── FRONTMATTER STEP 2: TOC & LOF SEQUENCE (Forced to Arabic Numerals) ───────
+$if(toc)$
+\clearpage
+\pagenumbering{arabic} % Switch engine to Arabic (1, 2, 3...) instead of Roman
+\setcounter{page}{1}   % TOC anchors as absolute document Page 1
+\pagestyle{empty}      % Suppresses headers/footers globally for multi-page TOCs
+\chapter*{Table of Contents}
+\thispagestyle{empty}  % Overrides the internal \chapter* auto-call to 'plain' style
+\begin{singlespace}
+\tableofcontents
+\end{singlespace}
+\clearpage             % Flushes the final TOC page before changing styles back
+\pagestyle{fancy}      % Restores normal headers/footers for subsequent sections
+$endif$
+
+$if(lof)$
+\clearpage
+\addcontentsline{toc}{chapter}{List of Figures} % List of Figures is pushed into the TOC
+\chapter*{List of Figures}
+\begin{singlespace}
+\listoffigures
+\end{singlespace}
+$endif$
+
+$if(lot)$
+\clearpage
+\addcontentsline{toc}{chapter}{List of Tables}
+\chapter*{List of Tables}
+\begin{singlespace}
+\listoftables
+\end{singlespace}
+$endif$
+
+%% ── MAIN CONTENT: CONTINUE ARABIC NUMERALS FROM FRONTMATTER ──────────────────
+\clearpage
+
+$body$
+
+$if(nocite-ids)$
+\nocite{$for(nocite-ids)$$it$$sep$, $endfor$}
+$endif$
+$if(natbib)$
+$if(bibliography)$
+$if(biblio-title)$
+$if(has-chapters)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+$endif$
+$endif$
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+$endif$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+\end{document}

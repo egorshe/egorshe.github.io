@@ -1,0 +1,48 @@
+# =============================================================================
+# UNIVERSAL THESIS/DISSERTATION METADATA
+# See TEMPLATE-GUIDE.md for full documentation of every field below.
+# =============================================================================
+
+# ---- General document settings --------------------------------------------
+pdf-engine: xelatex
+mainfont: "Times New Roman"      # any font installed on your system / fontspec-compatible
+dedication: |
+
+# ---- Title page content -----------------------------------------------------
+title: "Thesis Title"
+subtitle: "Subtitle"
+subtitle-same-line: true          # false puts subtitle on its own line
+author: "Name"
+
+# ---- Institution & program identity --
+universityname: "Your University"
+universitylocation: "City, Province/State, Country"
+schoolname: "School of Graduate Studies"  
+documenttype: "Thesis"             # "Thesis" or "Dissertation" (capitalized form)
+documenttypelc: "thesis"           # lowercase form, used mid-sentence
+degreename: "Doctor of Philosophy" # e.g. "Master of Arts", "Master of Fine Arts"
+
+department-inline: true            # true: "A Thesis in [Dept]"; false: "A Thesis In the Department Of [Dept]"
+department: "Your department"
+specialization: "Program"          # appears as "(Specialization)" after degree name
+submissionmonth: "Month"
+submissionyear: "Year"
+dateofdefence: "MM/DD/YYYY"
+copyrightyear: "Year"
+
+# ---- Signature/approval page information ------------------------------------
+chairname: "Chair's Name"
+externalexaminer: "External Examiner's Name"
+examinerone: "Examiner's Name"
+examinertwo: "Examiner's Name"
+examinerthree: "Examiner's Name"
+supervisor: "Supervisor's Name"
+gradprogramdirector: "Graduate Program Director's Name"
+deanname: "Dean's Name"
+facultyname: "Faculty Name"
+
+# ---- Global formatting -------------------------------------------------------
+toc: true # add table of contents
+toc-depth: 1 # "0" returns H1 only, "1": two levels=H1 and H2, etc
+lof: true # add list of figures
+biblio-spacing: true # makes biblio single-spaced

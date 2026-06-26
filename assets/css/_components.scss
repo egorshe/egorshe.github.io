@@ -310,3 +310,32 @@ input[type="text"] {
 .slider-button:hover::after {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
 }
+
+/* Code copy button */
+.copy-code-btn {
+    position: absolute;
+    top: 0.6em;
+    right: 0.6em;
+    padding: 0.3em 0.7em;
+    font-size: 0.75em;
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity $transition-fast, background $transition-fast;
+
+    &:hover {
+        background: var(--bg-card);
+    }
+
+    &.copied {
+        color: var(--accent-red);
+        border-color: var(--accent-red);
+    }
+}
+
+.highlight:hover .copy-code-btn {
+    opacity: 1;
+}

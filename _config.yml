@@ -41,6 +41,9 @@ collections:
   digest:
     output: true
     permalink: /digest/:title/
+  tools:
+    output: true
+    permalink: /academic-tools/:title/
 
 exclude:
   - 00_meta/
