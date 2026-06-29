@@ -5,7 +5,7 @@ date: "2026-06-20"
 ---
 # Universal Thesis/Dissertation Template — Guide
 
-A Pandoc + XeLaTeX pipeline for compiling Markdown chapters into a formatted, defense-ready thesis PDF. Can be reconfigured for any university, program, or degree type by editing `metadata.yaml` only — no LaTeX knowledge required for normal use.
+A Pandoc + XeLaTeX pipeline for compiling Markdown chapters into a formatted PDF/A. Can be reconfigured for any university, program, or degree type by editing `metadata.yaml` only — no LaTeX knowledge required for normal use.
 
 ## Download
 
@@ -253,6 +253,7 @@ These are the safe, intentional places to make structural changes if
 - **Margins** — `\usepackage[margin=1in]{geometry}`
 - **Line spacing** — `\setstretch{1.5}` (currently 1.5; many schools require double-spacing — change to `2`)
 - **TOC depth styling** — the `\titlecontents` blocks
+- **PDF/a title and author metadata** — To fix the title and author so your name and actual thesis title appear correctly in the metadata, edit "% --- METADATA ---" section in the template.
 
 Everything else (institution name, degree, dates, names) should be handled
 through `metadata.yaml` — if you find yourself editing the `.latex` file

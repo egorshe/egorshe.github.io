@@ -1,6 +1,16 @@
 $document-metadata.latex()$
+
+% --- METADATA ---
+\RequirePackage{filecontents}
+\begin{filecontents*}{\jobname.xmpdata}
+\Title{Your thesis title}
+\Author{Your name}
+\end{filecontents*}
+% -----------------------------
+
 $passoptions.latex()$
 \documentclass[12pt, letterpaper]{report}
+\usepackage[a-2b]{pdfx}
 $if(beamerarticle)$
 \usepackage{beamerarticle}
 $endif$
@@ -329,6 +339,13 @@ $header-includes$
 $endfor$
 $after-header-includes.latex()$
 $hypersetup.latex()$
+
+\hypersetup{
+    pdfpagemode=UseNone,
+    setpagesize=false,
+    pdfa=true,
+    pdfborderstyle={/S/U/W 0} % Strips non-compliant border styles
+}
 
 $if(pdf-trailer-id)$
 \ifXeTeX
