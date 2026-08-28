@@ -8,10 +8,10 @@ draft: false
 
 ## Jump to
 
-- [Publications](#publications)
-- [New Journal Issues](#new-journal-issues)
-- [News](#news)
-- [Opportunities](#opportunities)
+- [Publications](#publications-)
+- [New Journal Issues](#new-journal-issues-)
+- [News](#news-)
+- [Opportunities](#opportunities-)
 
 ## Publications 📚
 
