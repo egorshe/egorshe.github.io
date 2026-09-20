@@ -8,7 +8,7 @@ layout: default
     <img src="assets/img/userpic.webp" alt="Egor Shmonin" style="width: 100%; max-width: 250px; height: auto; border-radius: 4px;">
   </div>
   <div style="flex: 1; min-width: 250px;">
-    <p>My name is Egor Shmonin.  
+    <p>My name is Egor Shmonin.
     I hold a PhD in Film and Moving Image Studies from Concordia University in Montreal.</p>
     <p>I work at the intersection of visual culture and the history of media practices, with a focus on late-20th-century documentary cinema in the Baltic region. My research examines the aesthetic apparatuses that shape Baltic imaginaries and the forms of sensitivity they produce. This site gathers traces of my work — notes, materials, and ongoing projects, both my own and those I engage with.</p>
    </div>
