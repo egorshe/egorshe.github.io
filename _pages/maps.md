@@ -398,8 +398,8 @@ L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
 
-// CartoDB Positron - Clean, minimal style
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+// CartoDB Positron - Clean, minimal style with API key
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_4ni2_1_716350ac426d7643f1b04fd0', {
     attribution: '© OpenStreetMap contributors © CARTO',
     maxZoom: 19
 }).addTo(map);
