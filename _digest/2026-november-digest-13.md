@@ -169,7 +169,6 @@ Description: Focusing on marginalised and minoritised voices in the Baltic Sea R
 Dates: 2026-11-26 to 2026-11-27  
 Place: Stockholm, Sweden, Södertörn University  
 Description: The conference addresses the region both as an object of study and a laboratory of knowledge. It is here that we find “Orbán’s playbook” and “Putin’s playbook,” together with the different scales of counter-movements and practices of resistance to these developments.  
-  
 [Website](https://www.blogg.sh.se/cbees-annual-conference/184-2/#abstracts)  
 
 **Lithuanian Institute of History** "The Impact of Land Reform on Baltic Societies: Past and Present. Lessons from History."  
@@ -251,22 +250,22 @@ Description: The Beast of Joy: Women Artists from Soviet Republics highlights 
 
 ## Media & Podcasts
 
-**"Critique Scissors" (Kritikas grieznes) – A Conversation on Andrejs Ēķis’s Film The Dark Border (Tumšā robeža)** (Media)  
+**"Critique Scissors" (Kritikas grieznes) – A Conversation on Andrejs Ēķis’s Film The Dark Border (Tumšā robeža)** (Roundtable)  
 By: Latvian Academy of Culture  
 Critique Scissors is a discussion series exploring how we watch, analyze, and evaluate Latvian cinema.  
 This installment focuses on Andrejs Ēķis’s film The Dark Border as a case study. Alongside an artistic analysis of the film, the panel will discuss how historical feature films influence collective memory, how genre cinema shapes our perceptions of Latvia's past, how viewers distinguish historical fact from artistic interpretation, and how much creative license a director has when handling historical facts in a screenplay.  
 In Latvian  
 [Watch/Listen](https://www.youtube.com/live/obP-HutNcVo)  
 
-**Soviet Nationality Politics** (Media)  
+**Soviet Nationality Politics** (podcast)  
 By: The Eurasian Knot  
 The Soviet system was littered with contradictions. But one of the most perplexing was how it dealt with its multiethnic population. In fact, given the Bolsheviks were all about class, that they devoted so much to ethnicity is a paradox in and of itself. The Bolshevik created nations and urged ethnic minorities to develop and celebrate their cultures. This was done under the slogan “national in form, socialist in content.” Yet, Soviet authorities rejected and repressed ethnic nationalism. This produced a slippery slope. Creating nations could suddenly turn to destroying them depending on the nation and context. So how do we understand this delicate dance? Why was ethnicity an organizing principle of the Soviet Union? How did the performance of ethnicity result in racialization? And how did Soviet nationality politics contribute to the survival and destruction of the Soviet system? The Eurasian Knot asked Brigid O’Keeffe to untangle these knots at the core of the nationality question in the USSR.  
-[Watch/Listen](https://eurasianknot.substack.com/p/soviet-nationality-politics?utm_source=podcast-email&publication_id=1730594&post_id=225523761&utm_campaign=email-play-on-substack&utm_content=listen_now_button&r=r7o79&triedRedirect=true&utm_medium=email)  
+[Listen](https://eurasianknot.substack.com/p/soviet-nationality-politics?utm_source=podcast-email&publication_id=1730594&post_id=225523761&utm_campaign=email-play-on-substack&utm_content=listen_now_button&r=r7o79&triedRedirect=true&utm_medium=email)  
 
-**Tangible Light. A Conversation with Ieva Balode (in Latvian)** (Media)  
+**Tangible Light. A Conversation with Ieva Balode (in Latvian)** (Podcast)  
 By: Disociatīvā fūga  
 In an era dominated by digital moving images, analog cinema offers tangible light and darkness—a physical medium where every flaw, scratch, and shift can become an artistic discovery. Marking the tenth anniversary of Baltic Analog Lab (BAL), an experimental film workshop collective operating at the intersection of cinema and visual art, host Ieva Ozoliņa speaks with artist and BAL founder Ieva Balode about the lab’s origins and evolution, the materiality of film, experimentation as a mindset, and the enduring allure of analog technology in a digital age.  
-[Watch/Listen](https://open.spotify.com/episode/5JwTtBknHsxYpn9NSit8OB?si=e9XT-s1-QuC99Y5Y5t6MUg&utm_source=facebook-feed&fbclid=IwY2xjawVsTztleHRuA2FlbQIxMABwZG9mBWJyaWQRMURQMGZzb2s2Y25tNkxmWExzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEfTO7PrQWGP5BJ1hSiX52O1JDm8ydu1K9k3rNKGbozYgudBLuPPSjhi2nJ6o8_aem_7kFzSZMAajMUj3p9cmupWw&nd=1&dlsi=8595bc00b5ff4f88)  
+[Listen](https://open.spotify.com/episode/5JwTtBknHsxYpn9NSit8OB?si=e9XT-s1-QuC99Y5Y5t6MUg&utm_source=facebook-feed&fbclid=IwY2xjawVsTztleHRuA2FlbQIxMABwZG9mBWJyaWQRMURQMGZzb2s2Y25tNkxmWExzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEfTO7PrQWGP5BJ1hSiX52O1JDm8ydu1K9k3rNKGbozYgudBLuPPSjhi2nJ6o8_aem_7kFzSZMAajMUj3p9cmupWw&nd=1&dlsi=8595bc00b5ff4f88)  
 
 **The Curious Case of Kārlis Leyasmeyer** (Podcast)  
 By: Baltic Ways  
