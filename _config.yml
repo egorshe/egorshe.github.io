@@ -48,6 +48,7 @@ collections:
 exclude:
   - 00_meta/
   - .obsidian/
+  - guides/
 
 plugins:
   - jekyll-sitemap
